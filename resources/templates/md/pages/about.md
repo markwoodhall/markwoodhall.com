@@ -3,7 +3,7 @@
  :page-index 0
  :navbar? false}
 
-[Twitter](http://twitter.com/markwoodhall) | [Email](mailto:mark.woodhall@gmail.com) | [Skype](skype:markwoodhall1?call) | [Blog](http://www.markwoodhall.com) 
+[Twitter](http://twitter.com/markwoodhall) | [Email](mailto:mark.woodhall@gmail.com) | [Skype](skype:markwoodhall1?call) | [Blog](http://www.markwoodhall.com)
 
 I'm Mark, a passionate, 31 year old software developer based in the West Midlands, England. I've spent the last 10+ years developing using C# on the .NET framework.
 
@@ -16,7 +16,7 @@ While I think its important to have a deep understanding of the languages and to
 I like to go to local user group sessions when I can and attend at least 1 conference a year. Last year was the brilliant [DDDX](https://skillsmatter.com/conferences/6453-ddd-exchange-2015) and [FPX](https://skillsmatter.com/conferences/7036-functional-programming-exchange-2015).
 
 When I'm not developing or learning new skills I enjoy ultra running, spending time with my family and getting outside.
-<br />
+
 # Skills
 
 ### Languages
@@ -58,8 +58,7 @@ projects
 - Using tools like [New Relic](http://newrelic.com/ ) to monitor applications
 - Deploying to the cloud using [Azure](http://azure.microsoft.com/) and [Digital Ocean](https://www.digitalocean.comhttps://www.digitalocean.com). Limited experience with [AWS](http://aws.amazon.com)
 - Data visualisation and inspection using [Kibana](http://www.elasticsearch.org/overview/kibana/)
-<br />
-<br />
+
 # Open source
 ### Projects
 - [clova](https://github.com/markwoodhall/clova)
@@ -72,8 +71,7 @@ projects
 - [ServiceStack](https://github.com/ServiceStack/ServiceStack)
 - [clostache](https://github.com/fhd/clostache)
 - [omnisharp-vim](http://highscalability.com/)
-<br />
-<br />
+
 # Experience
 
 ### [ByBox](http://www.bybox.com)
@@ -82,17 +80,17 @@ projects
 
 ByBox manages more dropboxes than any other company in the UK, and delivers over 20 million parcels a year.  My role at ByBox involes working in a distributed, remote development team to constantly improve the technology platform and therefore the services offered to customers.
 
-We develop and maintain a large number of discrete components architechted in an SOA style. We employ TDD where appropriate with a focus on writing understandable and readable code.  
+We develop and maintain a large number of discrete components architechted in an SOA style. We employ TDD where appropriate with a focus on writing understandable and readable code.
 
 ### [Avelo/IRESS](http://www.iress.com)
 #### Software Developer
 #####May 2012 to June 2013
 
-Avelo/IRESS is a market leading provider of end to end financial services software solutions.  My role within the company involved designing and developing software systems to enable the financial industry to work in a more cost effective, efficient manner. 
+Avelo/IRESS is a market leading provider of end to end financial services software solutions.  My role within the company involved designing and developing software systems to enable the financial industry to work in a more cost effective, efficient manner.
 
 I worked on a number of key projects for the company and was part of an agile team working to the principles of Kanban.  I led a number of TDD developments and provided help and mentoring to other staff members where appropriate.  Using previous experience of TDD I was able to guide members of the management team and start refactoring a legacy code base toward a more modern one that reflected the TDD effort.
 
-Working with the Project Manager to promote user story and acceptance criteria based features enabled a purer TDD approach to be taken with tests that could genuinely drive product development. In many scenarios this was taken a step further since with direct involvement from customers a BDD approach started to naturally appear. 
+Working with the Project Manager to promote user story and acceptance criteria based features enabled a purer TDD approach to be taken with tests that could genuinely drive product development. In many scenarios this was taken a step further since with direct involvement from customers a BDD approach started to naturally appear.
 
-As well as development using the familiar microsoft stack, I also had the experience of developing what was the companies most popular and well received iOS app as well as the supporting infrastructure and back-end services. 
+As well as development using the familiar microsoft stack, I also had the experience of developing what was the companies most popular and well received iOS app as well as the supporting infrastructure and back-end services.
 
