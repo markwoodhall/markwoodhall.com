@@ -86,9 +86,9 @@ I don't use [vim-surround](https://github.com/tpope/vim-surround) just for this 
 
 Thanks to [@tpope](https://twitter.com/tpope)!
 
-## lein plugins
+# lein plugins
 
-[ultra](https://github.com/venantius/ultra/)
+##[ultra](https://github.com/venantius/ultra/)
 
 > A Leiningen plugin for a superior development environment
 
@@ -104,9 +104,8 @@ Thanks to [@tpope](https://twitter.com/tpope)!
 
 Thanks to [@venantius](https://twitter.com/venantius)!
 
-[eastwood](https://github.com/jonase/eastwood)
+##[eastwood](https://github.com/jonase/eastwood)
 
 > Eastwood is a Clojure lint tool that uses the tools.analyzer and tools.analyzer.jvm libraries to inspect namespaces and report possible problems.
 
 I run `lein eastwood` for Clojure linting. I've not yet tried the [vim-eastwood](https://github.com/venantius/vim-eastwood) plugin but it's on my list of things to try.
-
