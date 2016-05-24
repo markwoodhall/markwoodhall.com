@@ -20,11 +20,7 @@ body {
 
 .navbar {
     border-radius: 0;
-    background-image: url('../img/bg.jpg');
     border: none;
-    background-size: cover;
-    height: 60%;
-
 }
 
 .navbar-default {
@@ -32,16 +28,16 @@ body {
 }
 
 .navbar-default .navbar-brand {
-    color: #fff;
+    color: #000;
     font-family: "Open Sans", sans-serif;
 }
 
 .navbar-default .navbar-brand:hover {
-    color: #fff;
+    color: #000;
 }
 
 .navbar-default .navbar-nav li a {
-    color: #fff;
+    color: #000;
 }
 
 .navbar-default .navbar-nav li a:hover {
@@ -146,9 +142,6 @@ pre, code, .hljs {
 }
 
 @media (min-width: 768px) {
-    .navbar {
-        min-height: 550px;
-    }
     .dropdown-menu>li>a {
         color: #000;
         padding: 3px 20px;
@@ -169,9 +162,6 @@ pre, code, .hljs {
 @media (max-width: 767px) {
     body{
         font-size: 14px;
-    }
-    .navbar {
-        min-height: 250px;
     }
     .navbar-default .navbar-brand {
         font-size: 30px;
