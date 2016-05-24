@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Mark Woodhall: How to fix Clojars all commits point to HEAD.</title>
+    <link rel="canonical" href="http://markwoodhall.com/26-11-2015-how-to-fix-clojars-all-commits-point-to-head/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/default.min.css">
+    <link href="/css/screen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Mark Woodhall</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li
+                ><a href="/archives/">Archives</a></li>
+                <li><a href="/feed.xml">RSS</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div><!--/.container-fluid -->
+</nav>
+
+
+<div class="container">
+
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div id="content">
+                
+<div id="post">
+    <div class="post-header">
+    <div id="post-meta" class="row">
+        <div class="col-lg-6">November 26, 2015</div>
+        
+    </div>
+    <h2>How to fix Clojars all commits point to HEAD.</h2>
+</div>
+<div>
+    
+    <p>Recently I noticed an issue with one of the projects I deploy to Clojars. The "Pushed by with this commit" link was only ever linking back to HEAD on the GitHub repo.</p><h3><a name="before"></a>Before</h3><p><img src="http://i.imgur.com/r0b3iWI.png" alt="Clojars-before" /></p><p>This only happens when you specify an <code>:scm</code> key in your <code>project.clj</code>. Without the <code>:scm</code> key Leiningen will automatically discover the details from <code>.git</code>. I believe the <code>:scm</code> key was added for people using other systems, like HG.</p><p>I think there is a bug somewhere in Leiningen where the SCM info added to the artifacts <code>pom.xml</code> isn't generated correctly when there is an <code>:scm</code> key present. As soon as I removed the <code>:scm</code> key with <a href='https://github.com/markwoodhall/clova/commit/9cbc6bab1dc00fdd8e743f280a2ad0c294a857ef'>this commit</a> and did another Clojars deployment the problem was "fixed".</p><h3><a name="after"></a>After</h3><img src="http://i.imgur.com/Zx9iTP7.png" alt="Clojars-after" />
+</div>
+
+<div id="post-tags">
+    <b>Tags: </b>
+    
+    <a href="/tags/clojure/">clojure</a>
+    
+    <a href="/tags/clojars/">clojars</a>
+    
+</div>
+
+
+    <div id="prev-next">
+        
+        <a href="/09-05-2016-finally-v1-0-0-of-clj-ravendb-a-ravendb-client-for-clojure/">&laquo; Finally v1.0.0 of clj-ravendb, a RavenDB client for Clojure.</a>
+        
+        
+        <a class="right" href="/24-12-2015-a-request-for-a-clojure-code-review/">A request for a Clojure code review! &raquo;</a>
+        
+    </div>
+
+    
+
+
+</div>
+
+            </div>
+        </div>
+    </div>
+    <footer>Copyright &copy;  Mark Woodhall
+        <p style="text-align: center;">Powered by <a href="http://cryogenweb.org">Cryogen</a></p></footer>
+</div>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="/js/highlight.pack.js" type="text/javascript"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

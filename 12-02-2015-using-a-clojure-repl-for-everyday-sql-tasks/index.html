@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Mark Woodhall: Using a Clojure REPL for everyday SQL tasks.</title>
+    <link rel="canonical" href="http://markwoodhall.com/12-02-2015-using-a-clojure-repl-for-everyday-sql-tasks/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/default.min.css">
+    <link href="/css/screen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Mark Woodhall</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li
+                ><a href="/archives/">Archives</a></li>
+                <li><a href="/feed.xml">RSS</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div><!--/.container-fluid -->
+</nav>
+
+
+<div class="container">
+
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div id="content">
+                
+<div id="post">
+    <div class="post-header">
+    <div id="post-meta" class="row">
+        <div class="col-lg-6">February 12, 2015</div>
+        
+    </div>
+    <h2>Using a Clojure REPL for everyday SQL tasks.</h2>
+</div>
+<div>
+    
+    <p>I've described <a href='http://markwoodhall.com/2014/11/13/thoughts-9-months-after-switching-to-vim/'>previously</a> how I've been trying to improve my tooling and move away from using GUI tools so much. As well as this I've also had a more general move away from Windows to OSX.</p><p>Since I'm spending most of the day doing Windows based development on the .NET Framework there are a couple of tools I keep using in a VM. I've managed to get rid of most of these but I've not really found a good replacement for SQL Server Management Studio. There is <a href='http://razorsql.com/'>Razor</a> but I'm not very into that.</p><p>I've been spending more and more time doing Clojure development lately and consequently I've always got a Clojure REPL open. I thought it would be reasonably useful to setup a project I could use in the REPL to run the ad-hoc SQL queries I typically run throughout the day. I also get the added benefit of having query results as Clojure sequences and maps, which makes me happy. :)</p><p>The first thing I did to get started was create a new Clojure project. I called it <code>sqlrpl</code> but thats not important.</p><pre><code>lein new sqlrpl
+</code></pre>After that I added the <a href='https://github.com/clojure/java.jdbc'>java.jdbc</a> dependency to <code>project.clj</code>.<pre><code>&#91;org.clojure/java.jdbc &quot;0.3.6&quot;&#93;
+</code></pre><a href='https://github.com/clojure/java.jdbc'>java.jdbc</a> also has a dependency on the JDBC driver for the plaform you are using. I added the TDS driver for Microsoft SQL Server.<pre><code>&#91;net.sourceforge.jtds/jtds &quot;1.2.4&quot;&#93;
+</code></pre><p>Once you've done this you can run a basic query by starting a clojure REPL:<pre><code>lein repl
+ </code></pre> and then executing (after changing server details): <script src="https://gist.github.com/anonymous/99c3539bf6d43059889e.js"></script></p><p>This will return a sequence of maps, each map represents a single row returned by the query and will have keys matching the column names.</p><p>Obviously, doing this in the REPL isn't very friendly but since we have a lot of control we can write functions around this and make it easy to run queries.</p><p>I started building up a small DSL to compose queries, its very simple and functions follow a similar pattern. Each function returns a string generating function and combines it with the results of the <code>next-fn</code>. <script src="https://gist.github.com/anonymous/279871928daa14444415.js"></script></p><p>This makes it easy to write queries like: <script src="https://gist.github.com/anonymous/93792c730055d83f8d49.js"></script></p><p>I also make use of two other functions: <script src="https://gist.github.com/anonymous/408ce47ea20db3b23d88.js"></script></p><p>This means we can run the following to look at the generated SQL: <script src="https://gist.github.com/anonymous/c5fda5212abc822cbc50.js"></script></p><p>And the following to execute the query: <script src="https://gist.github.com/anonymous/87d0701a448e002d8346.js"></script></p><p>I think this is pretty nice, and its relatively easy to implement. You also don't have to compose queries like this, you can just do something like: <script src="https://gist.github.com/anonymous/f79ae640e864e44d3bfb.js"></script></p><p>I also thought it would be nice to have completion for table/column names. So I came up with this (no doubt horrible) bit of Clojure. This defs symbols that match table/column names and return the table/column names.</p><p><script src="https://gist.github.com/anonymous/004b426384f953bcf597.js"></script></p><p>This means we don't have to use the string representation for our table/column names, we use the symbols defined for us, so we get completion in the REPL and our queries become:</p><p><script src="https://gist.github.com/anonymous/ab0c161ed1a7f7145f38.js"></script></p><p>What I've put together is pretty rubbish but its simple and I'm finding it really useful. If you want to look at a really good project that gives you "Tasty SQL for Clojure" check out <a href='http://sqlkorma.com/'>Korma</a>.</p><p>I also have to give a hat tip to a plugin that has made working in the REPL even more awesome, <a href='https://github.com/venantius/ultra'>Ultra</a>. The colorized REPL is awesome when you are doing stuff like this.</p><p>While I'm in no way trying to suggest this is a replacement for all the stuff I can do in SQL Server Management Studio, its a start. It covers about 90% of the stuff I do on a day to day basis.</p><p>If you want to have a play, the source is <a href='https://bitbucket.org/markwoodhall/sqlrpl/overview'>here</a>.</p><p>A couple of extra bits:</p><ul><li>Generate a HTML table of our map sequence.</li></ul><p><script src="https://gist.github.com/anonymous/c56a2aac8e3203697d3f.js"></script></p><p><script src="https://gist.github.com/anonymous/79c62965aad1b2ecb7f8.js"></script></p><ul><li>Generate an ASCII style string of our map sequence.</li></ul><p><script src="https://gist.github.com/anonymous/1c964720d341c7fdcc78.js"></script></p><p><script src="https://gist.github.com/anonymous/1ba221e894f39f4629f7.js"></script></p>
+</div>
+
+<div id="post-tags">
+    <b>Tags: </b>
+    
+    <a href="/tags/clojure/">clojure</a>
+    
+    <a href="/tags/repl/">repl</a>
+    
+    <a href="/tags/sql/">sql</a>
+    
+</div>
+
+
+    <div id="prev-next">
+        
+        <a href="/21-02-2015-things-i-learnt-about-vim-this-week/">&laquo; Things I learnt about Vim this week: Joining lines of text.</a>
+        
+        
+        <a class="right" href="/28-11-2016-analysing-news-sentiment-using-clojure-elasticsearch-and-kibana/">Analysing news sentiment using Clojure, Elasticsearch and Kibana. &raquo;</a>
+        
+    </div>
+
+    
+
+
+</div>
+
+            </div>
+        </div>
+    </div>
+    <footer>Copyright &copy;  Mark Woodhall
+        <p style="text-align: center;">Powered by <a href="http://cryogenweb.org">Cryogen</a></p></footer>
+</div>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="/js/highlight.pack.js" type="text/javascript"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

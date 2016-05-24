@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Mark Woodhall: Destructuring in Clojure.</title>
+    <link rel="canonical" href="http://markwoodhall.com/23-06-2014-destructuring-in-clojure/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/default.min.css">
+    <link href="/css/screen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Mark Woodhall</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li
+                ><a href="/archives/">Archives</a></li>
+                <li><a href="/feed.xml">RSS</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div><!--/.container-fluid -->
+</nav>
+
+
+<div class="container">
+
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div id="content">
+                
+<div id="post">
+    <div class="post-header">
+    <div id="post-meta" class="row">
+        <div class="col-lg-6">June 23, 2014</div>
+        
+    </div>
+    <h2>Destructuring in Clojure.</h2>
+</div>
+<div>
+    
+    <blockquote><p> <a href='http://clojure.org/special_forms#Special Forms&ndash;Binding Forms (Destructuring'>Clojure desctructuring</a>) - Clojure supports abstract structural binding, often called destructuring, in let binding lists, fn parameter lists, and any macro that expands into a let or fn. The basic idea is that a binding-form can be a data structure literal containing symbols that get bound to the respective parts of the init-expr. The binding is abstract in that a vector literal can bind to anything that is sequential, while a map literal can bind to anything that is associative. </p></blockquote><h2><a name="sequential&#95;binding&#95;destructuring"></a>Sequential binding destructuring</h2><p>More often called "Vector binding destructuring" this allows us to bind names to parts of sequential things.</p><p>A typical example may be.</p><p><script src="https://gist.github.com/markwoodhall/9905812da129b8eb05e2.js"></script></p><p>Here we assign the names a, b and c to the items in a vector. The example above outputs `[1 2 3]```.</p><p>We can also capture parts of a sequential item and make the item as a whole available.</p><p><script src="https://gist.github.com/markwoodhall/e416048722c9936aa24a.js"></script></p><p>Here we capture the first two parts of the sequence as a and b while making available the whole sequence <code>:as</code> v. The example above outputs `{:a 1 :b 2 :v [1 2 3 4 5]}```</p><p>Sequential binding destructuring is not limted to vectors or lists, it can be used for anything that supports `nth```.</p><p>We can use it on strings.</p><p><script src="https://gist.github.com/markwoodhall/9212da5aef418804556b.js"></script></p><p>Again we capture the first two parts of the sequence as a and b while making available the whole sequence <code>:as</code> s. The example above outputs `{:a \d :b \e :s "destructuring"}```.</p><h2><a name="map&#95;binding&#95;destructuring"></a>Map binding destructuring</h2>This allows us to bind names to parts of a map.<p><script src="https://gist.github.com/markwoodhall/64829e8ee717139140c2.js"></script></p><p>Here we capture the values of the <code>:a</code> and <code>:b</code> keys from the map. This outputs `30```.</p><p>The same principals discussed in relation to sequential binding apply to map binding as well.</p><p>So, we can make available the whole map as follows.</p><p><script src="https://gist.github.com/markwoodhall/371bdc06b7f76a08248f.js"></script></p><p>Again we capture <code>:a</code> and <code>:b</code> but we also make the whole map available using <code>:as</code> m.</p><p>When we want to desctructure to bindings with the same name as map keys we can make this more concise by using `:keys```.</p><p><script src="https://gist.github.com/markwoodhall/069717b7edbabb5cb599.js"></script></p><h2><a name="destructuring&#95;function&#95;arguments"></a>Destructuring function arguments</h2><p>We can also destructure function arguments. As an example we can define a function like so.</p><p><script src="https://gist.github.com/markwoodhall/dfcbf2521354c30d04ea.js"></script></p><p>Then we can call it.</p><p><script src="https://gist.github.com/markwoodhall/2cc7943e15707561691d.js"></script></p><p>We can use what we learnt above to make available the whole map as well.</p><p><script src="https://gist.github.com/markwoodhall/86267845b9e9d4db76c7.js"></script></p><p>Now we can call it like this.</p><p><script src="https://gist.github.com/markwoodhall/355946019515a9570273.js"></script></p><p>What if we want to apply some default values?</p><p><script src="https://gist.github.com/markwoodhall/daf14377c1934603889b.js"></script></p><p>We can use <code>:or</code> to define default values to use if the keys are not present in the map.</p><p>We can call it like this.</p><p><script src="https://gist.github.com/markwoodhall/1e6798950a259e074fcf.js"></script></p><p>We can even add <code>:pre</code> conditions based on the destructures.</p><p><script src="https://gist.github.com/markwoodhall/b038170c6ed9da2a9425.js"></script></p><p>Calling like so will result in a <code>AssertionError</code>.</p><p><script src="https://gist.github.com/markwoodhall/a9cf776c3089e7cfc1f6.js"></script></p>
+</div>
+
+<div id="post-tags">
+    <b>Tags: </b>
+    
+    <a href="/tags/clojure/">clojure</a>
+    
+</div>
+
+
+    <div id="prev-next">
+        
+        <a href="/26-06-2014-command-line-applications-in-clojure/">&laquo; Command line applications in Clojure.</a>
+        
+        
+        <a class="right" href="/22-06-2014-using-ravendb-in-clojure-3/">Using RavenDB in Clojure, part three. &raquo;</a>
+        
+    </div>
+
+    
+
+
+</div>
+
+            </div>
+        </div>
+    </div>
+    <footer>Copyright &copy;  Mark Woodhall
+        <p style="text-align: center;">Powered by <a href="http://cryogenweb.org">Cryogen</a></p></footer>
+</div>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="/js/highlight.pack.js" type="text/javascript"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+
