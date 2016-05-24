@@ -36,15 +36,29 @@ body {
 .navbar {
     border-radius: 0;
     border: none;
+    margin-top: 10px;
 }
 
 .navbar-default {
     background-color: #fff;
 }
 
+.navbar-brand {
+    margin-top: 0px;
+    height: 100px;
+}
+
 .navbar-default .navbar-brand {
     color: #000;
     font-family: "Open Sans", sans-serif;
+}
+
+.navbar-default .navbar-brand-image {
+    float:left;
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    background-image: url('../img/circle.png');
 }
 
 .navbar-default .navbar-description {
@@ -197,6 +211,15 @@ pre, code, .hljs {
     }
     .navbar-default .navbar-brand {
         font-size: 30px;
+    }
+    .nav>li {
+        position: static;
+    }
+    .navbar-nav>li>a {
+        position: static;
+        width: 80px;
+        float: right;
+        padding: 10px;
     }
     #content{
         padding: 15px;
