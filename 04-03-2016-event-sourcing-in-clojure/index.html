@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Mark Woodhall: Event sourcing in Clojure.</title>
+    <link rel="canonical" href="http://markwoodhall.com/04-03-2016-event-sourcing-in-clojure/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/default.min.css">
+    <link href="/css/screen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div id="navbar" class="">
+                <a class="navbar-brand" href="/">
+                    <div class="navbar-brand-image"></div>
+                </a>
+            </div>
+        </div><!--/.nav-collapse -->
+    </div><!--/.container-fluid -->
+</nav>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div id="content">
+                
+<div id="post">
+    <div class="post-header">
+    <div id="post-meta" class="row">
+        <div class="col-lg-6">May 4, 2015</div>
+        
+    </div>
+    <h2>Event sourcing in Clojure.</h2>
+</div>
+<div>
+    
+    <p>Recently I came across <a href='http://jen20.com/2015/02/08/event-sourcing-in-go.html'>a blog post</a> by <a href='http://www.jen20.com'>James Nugent</a> that described some example patterns for implementing event sourcing in Go. I'm no expert, I've not studied much Go code before and I've never written any but I'd certainly have to agree with the observation James made, there is much less code than some C# implementations.</p><p>James made available the <a href='https://github.com/jen20/go-event-sourcing-sample'>code</a> for his post on GitHub, so I thought it would be interesting to have a look and come up with a Clojure implementation based on the same domain. I'd suggest reading James <a href='http://jen20.com/2015/02/08/event-sourcing-in-go.html'>post</a> as this one will follow the same structure.</p><p>FWIW, the comparison between Go and Clojure is a bit of an odd one really, this is just a bit of fun.</p><h4><a name="events"></a>Events</h4><p>As per James's post we will use a simplified domain model of a frequent flier. James uses mutable Go structures to define his events, we can make use of immutable Clojure records. We could probably just use Clojure maps but I'm planning to perform dispatch based on the event type, so a record or type is probably more suitable.</p><p>If we really wanted to use maps then we could probably attach some meta data to them using Clojures <a href='https://clojuredocs.org/clojure.core/with-meta'>with-meta</a> and then switch on that meta data. I don't think we need to worry about it though, Clojure records can be used as if they were maps in most scenarios.</p><h6><a name="go"></a>Go</h6><script src="https://gist.github.com/markwoodhall/ff71bcea3c59031502f2.js"></script><h6><a name="clojure"></a>Clojure</h6><script src="https://gist.github.com/markwoodhall/b8fb86fd48a9c3b97466.js"></script><p>Obviously the Clojure version of the events are dynamically typed, we could use <a href='http://clojure.org/java_interop#Java%20Interop-Type%20Hints'>type hints</a> if we really wanted to.</p><h4><a name="aggregates"></a>Aggregates</h4><p>In the Go example, James uses structs to represent aggregates and capture the state that will enable invariants during future behaviour, e.g. changing the frequent fliers status based on the stateful "tier points" value.<h6><a name="go"></a>Go</h6><script src="https://gist.github.com/markwoodhall/1c515599c88b8ab96f4f.js"></script></p><h6><a name="clojure"></a>Clojure</h6><script src="https://gist.github.com/markwoodhall/92edcee1840945f32cd2.js"></script><p>Its worth noting that the Go code above uses a <code>Status</code> enumeration to represent the frequent flier status, in the Clojure example I'll just be using the keys <code>:red</code>, <code>:silver</code> and <code>:gold</code>.</p><h4><a name="state&#95;transition&#95;and&#95;change&#95;tracking"></a>State transition and change tracking</h4><h6><a name="go"></a>Go</h6><script src="https://gist.github.com/markwoodhall/b46e79eaf4c96c328a55.js"></script><h6><a name="clojure"></a>Clojure</h6><script src="https://gist.github.com/markwoodhall/f17dbe8e4e733a47a9bd.js"></script><p>In general the Clojure version of the code implements the same pattern as the Go code. We call a function on the aggregate, perform some invariant checking if applicable, track the event and apply the "state" transition.</p><p>The Go version of the code switches based on the type of the event being processed and applies the state mutations.</p><p><script src="https://gist.github.com/markwoodhall/de5e3fb3c663064aeb40.js"></script></p><p>The Clojure version of the code uses a <a href='http://clojure.org/multimethods'>multimethod</a> to dispatch based on the event type being processed, each chunk of "state" mutation is isolated in its own function. Of course, when we say mutation that's not true, since really we just return a new version of the aggregate with the updated "state".</p><p>The Clojure code benefits from having no mutable state, each of the functions are pure in nature. James does mention in his post that having immutable records can make for a more elegant implementation. I'm not sure the Clojure version is "more elegant" but I think its pretty nice.</p><p><script src="https://gist.github.com/markwoodhall/6c4c91a7003be80fdb0f.js"></script></p><h4><a name="loading&#95;history"></a>Loading history</h4><h6><a name="go"></a>Go</h6><script src="https://gist.github.com/markwoodhall/dd2ae7c3781da691facc.js"></script><h6><a name="clojure"></a>Clojure</h6><script src="https://gist.github.com/markwoodhall/c9e0b3781389b517557e.js"></script><p>In the situation where you need to hydrate an aggregate using a collection of past events I think the Clojure implementation is pretty neat. All we need to do is <code>&#40;reduce transition ff history&#41;</code>. We reduce the history of events using the transition function and an inital default state frequent flier. If we had a massive number of events we could probably even use Clojures fold <a href='http://clojure.org/reducers'>reducer</a>, this would carry out the reduce operation in parallel. We also assoc in an expected version based on the history.</p><h4><a name="example&#95;usage"></a>Example usage</h4><h6><a name="go"></a>Go</h6><script src="https://gist.github.com/markwoodhall/5eb46d9d6fc16da4dc3a.js"></script><h6><a name="clojure"></a>Clojure</h6><script src="https://gist.github.com/markwoodhall/3b127c8b127ee43aac1f.js"></script><p>Both of the above examples hydrate a frequent flier from a history of events and print out the aggregate. They then record another <code>FlightTaken</code> event so that the accumulation of tier points causes an upgrade to gold status.</p><h4><a name="conclusion"></a>Conclusion</h4>Have a look at both the <a href='https://github.com/jen20/go-event-sourcing-sample'>Go version</a> and the <a href='https://github.com/markwoodhall/clj-event-sourcing-sample'>Clojure version</a> and see what you think. I noticed a few things:<ol><li>Lisp is beautiful (subjective at best)</li><li>Clojures immutability and built in support for things like map/reduce make things like hydrating an aggregate easy</li><li>Multimethods are quite a consice way of dispatching based on an event type</li><li>Go is a bit tricky to read but then again I am a total newbie</li></ol><p>If you know Clojure then please let me know if I'm doing anything really stupid or not very idiomatic by <a href='https://github.com/markwoodhall/clj-event-sourcing-sample'>sending a pull request</a>.</p><p>I'm going to write a Clojure follow up post with a more complicated domain model and a storage implementation, probably using <a href='https://geteventstore.com'>Event Store</a>.</p>
+</div>
+
+<div id="post-tags">
+    <b>Tags: </b>
+    
+    <a href="/tags/event sourcing/">event sourcing</a>
+    
+    <a href="/tags/clojure/">clojure</a>
+    
+</div>
+
+
+    <div id="prev-next">
+        
+        <a href="/17-11-2015-introducing-clova-a-small-validation-library-for-clojure-and-clojurescript/">&laquo; Introducing clova, a small validation library for Clojure and ClojureScript.</a>
+        
+        
+        <a class="right" href="/25-02-2015-using-new-relic-to-monitor-non-web-applications/">Using New Relic to monitor non web based Clojure applications. &raquo;</a>
+        
+    </div>
+
+    
+
+
+</div>
+
+            </div>
+        </div>
+    </div>
+    <footer>Copyright &copy;  Mark Woodhall
+        <br />
+        <a href="/">Home</a> | 
+        <a href="/archives/">Archives</a> | 
+        <a href="/feed.xml">Subscribe</a>
+        <p style="text-align: center;">Powered by <a href="http://cryogenweb.org">Cryogen</a></p></footer>
+</div>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="/js/highlight.pack.js" type="text/javascript"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

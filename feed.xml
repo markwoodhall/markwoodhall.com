@@ -12,7 +12,7 @@ http://markwoodhall.com
 Just a software blog
 </description>
 <lastBuildDate>
-Tue, 24 May 2016 20:45:39 +0100
+Tue, 24 May 2016 21:11:34 +0100
 </lastBuildDate>
 <generator>
 clj-rss
@@ -394,10 +394,10 @@ Thu, 13 Nov 2014 00:00:00 +0000
 </item>
 <item>
 <guid>
-http://markwoodhall.com/11-11-2016-creating-clj-tdo-a-command-line-todo-list-part-two/
+http://markwoodhall.com/11-11-2014-creating-clj-tdo-a-command-line-todo-list-part-two/
 </guid>
 <link>
-http://markwoodhall.com/11-11-2016-creating-clj-tdo-a-command-line-todo-list-part-two/
+http://markwoodhall.com/11-11-2014-creating-clj-tdo-a-command-line-todo-list-part-two/
 </link>
 <title>
 Creating clj-tdo, a command line todo list, part 2.

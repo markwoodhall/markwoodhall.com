@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Mark Woodhall: Unifying server and client validation using Clojure[Script] and Clova.</title>
+    <link rel="canonical" href="http://markwoodhall.com/16-05-2016-unifying-validation-logic-across-the-client-and-server-using-clojure-and-clova/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/default.min.css">
+    <link href="/css/screen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div id="navbar" class="">
+                <a class="navbar-brand" href="/">
+                    <div class="navbar-brand-image"></div>
+                </a>
+            </div>
+        </div><!--/.nav-collapse -->
+    </div><!--/.container-fluid -->
+</nav>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div id="content">
+                
+<div id="post">
+    <div class="post-header">
+    <div id="post-meta" class="row">
+        <div class="col-lg-6">May 16, 2016</div>
+        
+    </div>
+    <h2>Unifying server and client validation using Clojure[Script] and Clova.</h2>
+</div>
+<div>
+    
+    <p><a href='https://github.com/markwoodhall/clova'>clova</a> supports both Clojure and ClojureScript, in this blog post we will create a simple <a href='https://github.com/weavejester/compojure'>Compojure</a> server that validates a request and we will apply that same validation on the client side.</p><p>I'll be pushing all the code for this post to <a href='https://github.com/markwoodhall/clova-blog-post'>here</a>.</p><h2><a name="getting&#95;started"></a>Getting started</h2><p>Let's start by creating a new project using <code>lein</code>.</p><pre><code>lein new compojure clova-blog-post
+</code></pre><p>Once we've done that let's make sure it compiles...</p><pre><code>lein compile :all
+</code></pre><p>.. and that the server starts up.</p><pre><code>lein ring server
+</code></pre><p>You should see a new window in your default browser open and load <code>http://localhost:3000</code>, displaying "Hello World".</p><p>The current state of the project should match <a href='https://github.com/markwoodhall/clova-blog-post/tree/v0.0.1'>the v0.0.1 tag</a>.</p><p>Now that's out of the way, let's pull in the <a href='https://github.com/markwoodhall/clova'>clova</a> dependency. Open <code>project.clj</code> in your editor of choice (it's vim right?).</p><p>Once you've opened <code>project.clj</code> add <code>&#91;clova &quot;0.26.0&quot;&#93;</code> to <code>:dependencies</code> and run:</p><pre><code>lein compile :all
+</code></pre><p>Next, open <code>src/clova&#95;blog&#95;post/handler.clj</code> and <code>:require</code> <a href='http://markwoodhall.github.io/clova/clova.core.html'>clova.core</a>.</p><p><script src="https://gist.github.com/markwoodhall/001d6aaac3a0baa6b91326b0756a5dd8.js"></script></p><h2><a name="our&#95;first&#95;validation&#95;set"></a>Our first validation set</h2><p>For this blog post we will handle the <code>POST</code> of a simple to-do list model, let's declare the validation set for it.</p><p><script src="https://gist.github.com/markwoodhall/e5055993d43aa785c7d4c7c44d0651d1.js"></script></p><p>Validation sets are just sequences of keys followed by the functions that validate the key. Where a function requires arguments, such as the length value passed to <code>shorter?</code> it is wrapped in a sequence. Where map traversal needs to take place to get to the key to validate then we also wrap the key in a sequence, as in the <code>&#91;:meta :category&#93;</code> example.</p><p>In this validation set we make use of <a href='http://markwoodhall.github.io/clova/clova.core.html#var-required.3F'><code>required?</code></a>, <a href='http://markwoodhall.github.io/clova/clova.core.html#var-stringy.3F'><code>stringy?</code></a>, <a href='http://markwoodhall.github.io/clova/clova.core.html#var-shorter.3F'><code>shorter?</code></a>, <a href='http://markwoodhall.github.io/clova/clova.core.html#var-longer.3F'><code>longer?</code></a> and <a href='http://markwoodhall.github.io/clova/clova.core.html#var-date.3F'><code>date?</code></a>.</p><p>By default <a href='https://github.com/markwoodhall/clova'>clova</a> is somewhat relaxed about it's validation. Unless explicitly told by the use of <a href='http://markwoodhall.github.io/clova/clova.core.html#var-required.3F'><code>required?</code></a> all keys are considered to be optional.</p><p><a href='http://markwoodhall.github.io/clova/clova.core.html#var-stringy.3F'><code>stringy?</code></a> does what it says on the tin, checks for the presence of a string like value.</p><p><a href='http://markwoodhall.github.io/clova/clova.core.html#var-shorter.3F'><code>shorter?</code></a> works on strings and sequences and checks that a given value has a length shorter than X.</p><p><a href='http://markwoodhall.github.io/clova/clova.core.html#var-longer.3F'><code>longer?</code></a> works on strings and sequences and checks that a given value has a length longer than X.</p><p><a href='http://markwoodhall.github.io/clova/clova.core.html#var-date.3F'><code>date?</code></a> checks an input value to see if it is a date.</p><p>Now, let's compile again.</p><pre><code>lein compile :all
+</code></pre><p>At this point you will probably get an exception.</p><pre><code>Exception in thread &quot;main&quot; java.lang.RuntimeException: No such var: c/equal?, compiling:&#40;clova/core.cljc:267:7&#41;
+</code></pre><p>This is because <a href='https://github.com/markwoodhall/clova'>clova</a> makes use of <a href='https://github.com/clj-time/clj-time'>clj-time</a>, as does <a href='https://github.com/weavejester/compojure'>Compojure</a>. Unfortunately <a href='https://github.com/weavejester/compojure'>Compojure</a> pulls in an old version without the <code>equal?</code> function. We can fix this by excluding <a href='https://github.com/clj-time/clj-time'>clj-time</a> when we reference <a href='https://github.com/weavejester/compojure'>Compojure</a>, like so:</p><p><script src="https://gist.github.com/markwoodhall/f5dc3542781e4f07a01d228273789c7a.js"></script></p><p>Notice the <code>:exclusions</code> key for <a href='https://github.com/weavejester/compojure'>Compojure</a>.</p><p>After this run:</p><pre><code>lein clean
+lein compile :all
+</code></pre><p>Everything should be good again now. The current state of the project should match <a href='https://github.com/markwoodhall/clova-blog-post/tree/v0.0.2'>the v0.0.2 tag</a>.</p><p>Now, let's setup <code>handler.clj</code> for JSON requests/responses and enable <a href='https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS'>CORS</a>. To start with we need to add   <code>&#91;ring/ring-json &quot;0.4.0&quot;&#93;</code> to our <code>:dependencies</code> in <code>project.clj</code>, then we update our <code>ns</code> declaration in <code>handler.clj</code> to refer to <code>handler</code>, <code>response</code>, <code>wrap-json-response</code> and <code>wrap-json-params</code>, like so:</p><p><script src="https://gist.github.com/markwoodhall/175cc91863a1869c7fd2c84d5fc6c4fd.js"></script></p><p>Still editing <code>handler.clj</code> we create a couple of middleware functions to support <a href='https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS'>CORS</a>.</p><p><script src="https://gist.github.com/markwoodhall/cb41a8998d74568310fefb5545cbad6d.js"></script></p><p>Then we define our <code>app</code> to make use of both the middleware functions and our imported JSON functions.</p><p><script src="https://gist.github.com/markwoodhall/90accbcd6e3549b8bb62194d645bd6a5.js"></script></p><p>We can now remove the default GET route:</p><p><script src="https://gist.github.com/markwoodhall/2db4ef99f60f988dac995116b151f7d3.js"></script></p><p>Replacing it with a POST route for our to-do item.</p><p><script src="https://gist.github.com/markwoodhall/414745ab7bb9f7301792801fd096cc58.js"></script></p><p>Here, we validate the payload using the <code>to-do-validation</code> set we created earlier. If it is <code>valid?</code> we return the payload and a 200 status code, if it is not <code>valid?</code> we return the <code>:results</code> of the validation and a 400 status code.</p><h2><a name="testing&#95;the&#95;server"></a>Testing the server</h2><p>If we make a valid request to our handler, like so:</p><p><script src="https://gist.github.com/markwoodhall/339b4e05733a7bccb39b8e41b286d060.js"></script></p><p>We should see the payload in the response:</p><p><script src="https://gist.github.com/markwoodhall/1e87bc28fa15d3c8e7342e3174ab9abc.js"></script></p><p>If we make an invalid request to our handler by passing an invalid date value, like so:</p><p><script src="https://gist.github.com/markwoodhall/ccd2989426f604c478c203d89fae43e4.js"></script></p><p>We should see the validation results in the response:</p><p><script src="https://gist.github.com/markwoodhall/c46335654bd76514fd6573a11411243d.js"></script></p><p>With our server side validation working we can now move onto the client side. The state of the project currently should match <a href='https://github.com/markwoodhall/clova-blog-post/tree/v0.0.3'>the v0.0.3 tag</a></p><h2><a name="client&#95;side"></a>Client side</h2><p>Clojure 1.7 introduced <a href='http://dev.clojure.org/display/design/Reader+Conditionals'>reader conditionals</a>, these allow us to reuse as much code as possible across the various Clojure platforms.</p><p>In order to make our validation logic useable on the Clojure and ClojureScript platform we need to move it to a <code>&#42;.cljc</code> file, which is loadable by both Clojure and ClojureScript, let's do it.</p><p>First we need to create <code>validation.cljc</code>.</p><pre><code>vim src/clova&#95;blog&#95;post/validation.cljc
+</code></pre><p>Then, let's move our <code>to-do-validation</code> definition to that file. It should look like this:</p><p><script src="https://gist.github.com/markwoodhall/b5fcc2b64dbf326001a508b880833cd9.js"></script></p><p>We need to update <code>handler.clj</code> to refer to <code>to-do-validation</code>, we can add the following to<code>:require</code>.</p><pre><code>&#91;clova-blog-post.validation :refer &#91;to-do-validation&#93;&#93;
+</code></pre><p>Just to verify our changes we can restart the server and run our <code>curl</code> tests again.</p><p>With that out of the way we can open <code>project.clj</code> and add the ClojureScript dependency by adding <code>&#91;org.clojure/clojurescript &quot;1.8.51&quot;&#93;</code> to <code>:dependencies</code>.</p><p>If you are new to ClojureScript it is worth checking out the <a href='https://github.com/clojure/clojurescript/wiki/Quick-Start'>Quick Start wiki article</a>. We will start by getting a generic "Hello world" to print to the browser console.</p><p>First, let's bootstrap the ClojureScript build.</p><pre><code>vim src/clova&#95;blog&#95;post/build.clj
+</code></pre><p><script src="https://gist.github.com/markwoodhall/9af2a022714a75d2bd20b15bdf817b3b.js"></script></p><p>This is pretty self explanatory, we give it the path the build, the output path and specify a main entry point <code>clova-blog-post.client</code> (which we will define later).</p><p>I usually wrap this with a shell script.</p><p><script src="https://gist.github.com/markwoodhall/3ee6fb9a1b91a169b3760454a7458871.js"></script></p><p>Now we can create the <code>clova-blog-post.client</code> entry point:</p><pre><code>vim src/clova&#95;blog&#95;post/client.cljs
+</code></pre><script src="https://gist.github.com/markwoodhall/e0fb9c1b50617fad9db48d5f619c8c0b.js"></script><p>All we do here is enable console printing and write "Hello world", with that done we can create <code>index.html</code> and reference our compiled JavaScript.</p><pre><code>vim index.html
+</code></pre><script src="https://gist.github.com/markwoodhall/1dce13aeb5942e1528e4a0936903df82.js"></script><p>If you open <code>index.html</code> in your browser of choice you should see "Hello world" output to the developer console. (party)</p><p>Finally, let's hook up our validation.</p><pre><code>vim index.html
+</code></pre><p><script src="https://gist.github.com/markwoodhall/f3f9ecb498626016bf8e8fb0dd7e1d6e.js"></script></p><p>Here we add a few text fields to build our to-do and then a text area to dump our validation results to.</p><p>Now let's validate those text fields.</p><pre><code>vim src/clova&#95;blog&#95;post/client.cljs
+</code></pre><script src="https://gist.github.com/markwoodhall/0b493c8721f626b5fa2c330c8b834c54.js"></script><p>Here we pull out the values from our text boxes and build up our to-do map. Then we use exactly the same validation as we did on the server side (<code>to-do-validation</code>) and dump the results to our text area.</p><h2><a name="rounding&#95;up"></a>Rounding up</h2>I'm going to cut this short as it's already gone on way too long and we have worked through a simple example of using the same validation logic on the client and the server, even if we've not implemented any interaction between them, the principal remains the same.<p>Obviously this is a very simple example, we can handle much more complex validation and give a rich experience on the client side while still keeping the integrity of our data using server side validation. All this with as much re-use as possible for our core validation logic.</p><p>The state of the project currently should match <a href='https://github.com/markwoodhall/clova-blog-post/tree/v0.0.4'>the v0.0.4 tag</a></p>
+</div>
+
+<div id="post-tags">
+    <b>Tags: </b>
+    
+    <a href="/tags/clojure/">clojure</a>
+    
+    <a href="/tags/clova/">clova</a>
+    
+    <a href="/tags/clojurescript/">clojurescript</a>
+    
+</div>
+
+
+    <div id="prev-next">
+        
+        <a href="/21-05-2016-my-clojure-workflow-and-setup/">&laquo; My Clojure Workflow and Setup.</a>
+        
+        
+        <a class="right" href="/12-05-2016-building-a-distributed-in-memory-key-value-store-in-clojure/">Building a distributed in-memory key value store in Clojure. &raquo;</a>
+        
+    </div>
+
+    
+
+
+</div>
+
+            </div>
+        </div>
+    </div>
+    <footer>Copyright &copy;  Mark Woodhall
+        <br />
+        <a href="/">Home</a> | 
+        <a href="/archives/">Archives</a> | 
+        <a href="/feed.xml">Subscribe</a>
+        <p style="text-align: center;">Powered by <a href="http://cryogenweb.org">Cryogen</a></p></footer>
+</div>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="/js/highlight.pack.js" type="text/javascript"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

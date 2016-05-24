@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Mark Woodhall: Using RavenDB in Clojure, part two.</title>
+    <link rel="canonical" href="http://markwoodhall.com/21-06-2014-using-ravendb-in-clojure-2/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/default.min.css">
+    <link href="/css/screen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div id="navbar" class="">
+                <a class="navbar-brand" href="/">
+                    <div class="navbar-brand-image"></div>
+                </a>
+            </div>
+        </div><!--/.nav-collapse -->
+    </div><!--/.container-fluid -->
+</nav>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div id="content">
+                
+<div id="post">
+    <div class="post-header">
+    <div id="post-meta" class="row">
+        <div class="col-lg-6">June 21, 2014</div>
+        
+    </div>
+    <h2>Using RavenDB in Clojure, part two.</h2>
+</div>
+<div>
+    
+    <p>This is the second part of "Using RavenDB in Clojure", you can find the first part <a href='http://markwoodhall.com/2014/06/21/using-ravendb-in-clojure-1/'>here</a>.</p><p>In this part we will carry on from where we left off with our ravendbtest project. Lets cd into the ravendbtest directory and get going.</p><h2><a name="putting&#95;indexes"></a>Putting Indexes</h2><p>If you are familiar with RavenDB you will know that as well as loading documents using their keys you can also query indexes. This is how we can do that using the clj-ravendb client.</p><p>Start a clojure REPL again using <code>lein repl</code>, require and create a client to consume the northwind database.</p><p><script src="https://gist.github.com/markwoodhall/aecb4f58c02f42724b03.js"></script></p><p><script src="https://gist.github.com/markwoodhall/4c134ad7dbe2e6ee5790.js"></script></p><p>Now, lets create a few documents that our index can cover.</p><p><script src="https://gist.github.com/markwoodhall/18f2a58e12be5f6e9cd3.js"></script></p><p>We will create an index to cover documents "placedBy" Mark.</p><p><script src="https://gist.github.com/markwoodhall/c081eb24f49159d5dc53.js"></script></p><p>The index we create is represented as a map. It has a <code>:name</code>, an <code>:alias</code> that we can use to identify a document, a <code>:where</code> clause and a <code>:select</code> that projects the data items we can query.</p><p>Putting the index returns us a map with a <code>:status</code>, in this case a HTTP 201.</p><h2><a name="querying&#95;indexes"></a>Querying Indexes</h2><p>Since we have created a new index we can now query it.</p><p><script src="https://gist.github.com/markwoodhall/1d96f6812fe3230e29ba.js"></script></p><p>In this example we ask it to query the <code>:index</code> we just created, "MyOrders" and we request only orders that have a <code>:cost</code> of 102.</p><p>This returns us a map that contains a <code>:status</code> and the <code>:results</code> of the query.</p><p><script src="https://gist.github.com/markwoodhall/87343042a7626226c9e5.js"></script></p><p>Note. We also get a <code>:stale?</code> key and value in the returned map. As RavenDB indexes data asynchronously in a background thread there is the potential to query a stale index. This <code>:stale?</code> key value indicates if the query results are stale.</p><p>The following should be considered when querying indexes.</p><p><script src="https://gist.github.com/markwoodhall/338bda0b5f08f27a5b0c.js"></script></p><p>It is likely I'll make some more changes to index querying as the functionalty is quite narrow. Currently it only supports an "equals" operation against a projected data item.</p><p>In the next post, I'll cover two more topics. We will talk about the ability to "watch" documents/indexes for changes and replication.</p><p>Go to <a href='http://www.markwoodhall.com/2014/06/22/using-ravendb-in-clojure-3/'>part 3</a></p>
+</div>
+
+<div id="post-tags">
+    <b>Tags: </b>
+    
+    <a href="/tags/clojure/">clojure</a>
+    
+    <a href="/tags/clj-ravendb/">clj-ravendb</a>
+    
+    <a href="/tags/ravendb/">ravendb</a>
+    
+</div>
+
+
+    <div id="prev-next">
+        
+        <a href="/22-06-2014-using-ravendb-in-clojure-3/">&laquo; Using RavenDB in Clojure, part three.</a>
+        
+        
+        <a class="right" href="/21-06-2014-using-ravendb-in-clojure-1/">Using RavenDB in Clojure, part one. &raquo;</a>
+        
+    </div>
+
+    
+
+
+</div>
+
+            </div>
+        </div>
+    </div>
+    <footer>Copyright &copy;  Mark Woodhall
+        <br />
+        <a href="/">Home</a> | 
+        <a href="/archives/">Archives</a> | 
+        <a href="/feed.xml">Subscribe</a>
+        <p style="text-align: center;">Powered by <a href="http://cryogenweb.org">Cryogen</a></p></footer>
+</div>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="/js/highlight.pack.js" type="text/javascript"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+
