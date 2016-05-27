@@ -38,7 +38,7 @@ We configure any additional options, I usually add an ssh key and then click "Cr
 
 ![Options](http://i.imgur.com/qn1dFMM.png)
 
-I want to setup a domain name to point at the Dokku instance, so once the Droplet is created I make a note of the IP and head over to the "Networking" tab, below.
+I want to setup a domain name to point at the [Dokku](https://github.com/dokku/dokku) instance, so once the Droplet is created I make a note of the IP and head over to the "Networking" tab, below.
 
 ![Networking](http://i.imgur.com/1tPlayj.png)
 
@@ -46,12 +46,12 @@ I then add a domain name for the IP address I made a note of, the one below just
 
 ![Domain](http://i.imgur.com/hVv0Gmh.png)
 
-With that out the way it should be possible to head to http://ultrarunn.in and see the Dokku setup. I want to use the domain name I setup
+With that out the way it should be possible to head to http://ultrarunn.in and see the [Dokku](https://github.com/dokku/dokku) setup. I want to use the domain name I setup
 and I configure the use of virtual host naming, then I click "Finish Setup".
 
 ![Dokku Setup](http://i.imgur.com/z0IJTwt.png)
 
-Now that is done we have a Dokku instance that we can deploy to. In our case we will be able to do a:
+Now that is done we have a [Dokku](https://github.com/dokku/dokku) instance that we can deploy to. In our case we will be able to do a:
 
 ```
 git remote add deploy dokku@ultrarunn.in:ultrarunn.in # this will deploy to the root domain
@@ -64,13 +64,13 @@ Right, let's get something to deploy.
 
 ## Cryogen
 
-It's easy to get started with Cryogen, in a suitable directory run the following.
+It's easy to get started with [Cryogen](http://cryogenweb.org/), in a suitable directory run the following.
 
 ```
 lein new cryogen my-blog
 ```
 
-Then `cd my-blog` and run `lein ring server`. You should then see the default Cryogen site.
+Then `cd my-blog` and run `lein ring server`. You should then see the default [Cryogen](http://cryogenweb.org/) site.
 
 ![Default Cryogen](http://i.imgur.com/76qltCr.png)
 
@@ -85,7 +85,7 @@ I then add a `.env` file in the root with the following contents.
 export BUILDPACK_URL=https://github.com/markwoodhall/buildpack-nginx.git
 ```
 
-This instructs Dokku to use the GitHub repo for it's build back. This build back is an nginx buildpack that supports static site generators, I didn't create it but forked
+This instructs [Dokku](https://github.com/dokku/dokku) to use the GitHub repo for it's build back. This build back is an nginx buildpack that supports static site generators, I didn't create it but forked
 it and made some small adjustments.
 
 This buildpack also requires a `.static` file to exist, so I run `touch .static`.
