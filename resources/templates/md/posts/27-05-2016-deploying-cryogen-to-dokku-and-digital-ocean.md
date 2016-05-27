@@ -8,7 +8,7 @@
  wanted a little bit more control than it gave me.
 
  I've used static site generators previously and this time opted to go with [Cryogen](http://cryogenweb.org/). I chose
- it because it's written in Clojure using technology I like and am familiar with, it look relatively complete and
+ it because it's written in Clojure using technology I like and am familiar with, it looks relatively complete and
  gave a number of options for deployment.
 
  This post is a guide to deploying a [Cryogen](http://cryogenweb.org/) site using [Dokku](https://github.com/dokku/dokku) to the cloud infrastructure at
@@ -42,7 +42,7 @@ I want to setup a domain name to point at the [Dokku](https://github.com/dokku/d
 
 ![Networking](http://i.imgur.com/1tPlayj.png)
 
-I then add a domain name for the IP address I made a note of, the one below just happens to be one I have spare.
+I then add a domain name for the IP address I made a note of, the domain name below just happens to be one I have spare.
 
 ![Domain](http://i.imgur.com/hVv0Gmh.png)
 
@@ -70,11 +70,11 @@ It's easy to get started with [Cryogen](http://cryogenweb.org/), in a suitable d
 lein new cryogen my-blog
 ```
 
-Then `cd my-blog` and run `lein ring server`. You should then see the default [Cryogen](http://cryogenweb.org/) site.
+Then `cd my-blog` and run `lein ring server`. You should then see the default [Cryogen](http://cryogenweb.org/) site in your default browser.
 
 ![Default Cryogen](http://i.imgur.com/76qltCr.png)
 
-Next, stop the ring server. While still in the `my-blog` directory run `git init` and `git remote add deploy root@ultrarunn.in:ultrarunn.in`.
+Next, stop the ring server. While still in the `my-blog` directory run `git init` and `git remote add deploy dokku@ultrarunn.in:ultrarunn.in`.
 
 At this point I take a copy of everything in the `my-blog` directory and  clear it down, apart from the git required files. I then move the contents of `resources/public`
 from the copy I made of `my-blog` into the root of the `my-blog` folder and commit everything to the master branch.
@@ -98,7 +98,7 @@ After a couple of minutes (It's longer the first time as it downloads the buildp
 
 Note, the `/blog` comes from Cryogens config and can be easily changed, if desired.
 
-With all of that done I run `git checkout -b source` and copy contents from the copy I made of `my-blog`, I then commit that to the source branch. This leaves us with
+With all of that done I run `git checkout -b source` and copy the contents from the copy I made of `my-blog`, I then commit that to the source branch. This leaves us with
 `master` containing the results of `lein ring server` i.e. the static blog and `source` containing the source code. Anytime I push `master` to the `deploy` remote I
 update the deployed blog. I then push the git repo to GitHub/BitBucket etc.
 
