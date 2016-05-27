@@ -88,7 +88,7 @@ export BUILDPACK_URL=https://github.com/markwoodhall/buildpack-nginx.git
 This instructs [Dokku](https://github.com/dokku/dokku) to use the GitHub repo for it's build back. This build back is an nginx buildpack that supports static site generators, I didn't create it but forked
 it and made some small adjustments.
 
-This buildpack also requires a `.static` file to exist, so I run `touch .static`.
+This buildpack also requires a `.static` file to exist, so I run `touch .static` and commit the changes to `master`.
 
 Now it's as easy as running a `git push deploy master`.
 
