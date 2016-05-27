@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Mark Woodhall: Deploying Cryogen to Dokku and Digital Ocean.</title>
+    <link rel="canonical" href="http://markwoodhall.com/27-05-2016-deploying-cryogen-to-dokku-and-digital-ocean/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/default.min.css">
+    <link href="/css/screen.css" rel="stylesheet" type="text/css" />
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-56746791-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+
+
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div id="navbar" class="">
+                <a class="navbar-brand" href="/">
+                    <div class="navbar-brand-image"></div>
+                </a>
+            </div>
+        </div><!--/.nav-collapse -->
+    </div><!--/.container-fluid -->
+</nav>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div id="content">
+                
+<div id="post">
+    <div class="post-header">
+    <div id="post-meta" class="row">
+        <div class="col-lg-6">May 27, 2016</div>
+        
+    </div>
+    <h2>Deploying Cryogen to Dokku and Digital Ocean.</h2>
+</div>
+<div>
+    
+    <p> I've recently moved my blog away from <a href='https://ghost.org/'>Ghost Blog</a> hosted at Digital Ocean.  While I enjoyed using <a href='https://ghost.org/'>Ghost</a> I always found upgrading a bit of a pain and  wanted a little bit more control than it gave me.</p><p> I've used static site generators previously and this time opted to go with <a href='http://cryogenweb.org/'>Cryogen</a>. I chose  it because it's written in Clojure using technology I like and am familiar with, it look relatively complete and  gave a number of options for deployment.</p><p> This post is a guide to deploying a <a href='http://cryogenweb.org/'>Cryogen</a> site using <a href='https://github.com/dokku/dokku'>Dokku</a> to the cloud infrastructure at  Digital Ocean. In reality though, it's a guide to deploying to anywhere you can host <a href='https://github.com/dokku/dokku'>Dokku</a>. I choose Digital Ocean because  it's easy and convenient to set <a href='https://github.com/dokku/dokku'>Dokku</a> up.</p><h2><a name="setting&#95;up&#95;dokku"></a>Setting up Dokku</h2><p> You will need a Digital Ocean account, once you have one head over to their <a href='https://cloud.digitalocean.com'>management interface</a> and login. You should  see a list of your current droplets. Click on the "Create Droplet" button highlighted below.</p><p><img src="http://i.imgur.com/JrYNpxW.png" alt="Create Droplet" /></p><p>After you have clicked "Create Droplet" look for the "One Click Apps" tab.</p><p><img src="http://i.imgur.com/kxgyEDy.png" alt="One Click" /></p><p>Then we are looking for the <a href='https://github.com/dokku/dokku'>Dokku</a> image.</p><p><img src="http://i.imgur.com/j3d5nAF.png" alt="Dokku" /></p><p>Next we select a size and region for our Droplet.</p><p><img src="http://i.imgur.com/PVkhwZp.png" alt="Size & Region" /></p><p>We configure any additional options, I usually add an ssh key and then click "Create".</p><p><img src="http://i.imgur.com/qn1dFMM.png" alt="Options" /></p><p>I want to setup a domain name to point at the Dokku instance, so once the Droplet is created I make a note of the IP and head over to the "Networking" tab, below.</p><p><img src="http://i.imgur.com/1tPlayj.png" alt="Networking" /></p><p>I then add a domain name for the IP address I made a note of, the one below just happens to be one I have spare.</p><p><img src="http://i.imgur.com/hVv0Gmh.png" alt="Domain" /></p><p>With that out the way it should be possible to head to http://ultrarunn.in and see the Dokku setup. I want to use the domain name I setup and I configure the use of virtual host naming, then I click "Finish Setup".</p><p><img src="http://i.imgur.com/z0IJTwt.png" alt="Dokku Setup" /></p><p>Now that is done we have a Dokku instance that we can deploy to. In our case we will be able to do a:</p><pre><code>git remote add deploy dokku@ultrarunn.in:ultrarunn.in # this will deploy to the root domain
+git remote add deploy dokku@ultrarunn.in:blog # this will deploy to the blog sub domain
+
+git push deploy master
+</code></pre><p>Right, let's get something to deploy.</p><h2><a name="cryogen"></a>Cryogen</h2><p>It's easy to get started with Cryogen, in a suitable directory run the following.</p><pre><code>lein new cryogen my-blog
+</code></pre><p>Then <code>cd my-blog</code> and run <code>lein ring server</code>. You should then see the default Cryogen site.</p><p><img src="http://i.imgur.com/76qltCr.png" alt="Default Cryogen" /></p><p>Next, stop the ring server. While still in the <code>my-blog</code> directory run <code>git init</code> and <code>git remote add deploy root@ultrarunn.in:ultrarunn.in</code>.</p><p>At this point I take a copy of everything in the <code>my-blog</code> directory and  clear it down, apart from the git required files. I then move the contents of <code>resources/public</code> from the copy I made of <code>my-blog</code> into the root of the <code>my-blog</code> folder and commit everything to the master branch.</p><p>I then add a <code>.env</code> file in the root with the following contents.</p><pre><code>export BUILDPACK&#95;URL=https://github.com/markwoodhall/buildpack-nginx.git
+</code></pre><p>This instructs Dokku to use the GitHub repo for it's build back. This build back is an nginx buildpack that supports static site generators, I didn't create it but forked it and made some small adjustments.</p><p>This buildpack also requires a <code>.static</code> file to exist, so I run <code>touch .static</code>.</p><p>Now it's as easy as running a <code>git push deploy master</code>.</p><p>After a couple of minutes (It's longer the first time as it downloads the buildpack, which is then cached) browsing to http://ultrarunn.in/blog should result in.</p><p><img src="http://i.imgur.com/ylkBYfw.png" alt="Result" /></p><p>Note, the <code>/blog</code> comes from Cryogens config and can be easily changed, if desired.</p><p>With all of that done I run <code>git checkout -b source</code> and copy contents from the copy I made of <code>my-blog</code>, I then commit that to the source branch. This leaves us with <code>master</code> containing the results of <code>lein ring server</code> i.e. the static blog and <code>source</code> containing the source code. Anytime I push <code>master</code> to the <code>deploy</code> remote I update the deployed blog. I then push the git repo to GitHub/BitBucket etc.</p><p>I ended up creating a less than perfect script to automate this somewhat. I checkout the <code>source</code> branch, run <code>vim publish.sh</code> and add the following.<pre><code>cp -r resources/public ../public
+git checkout master
+cp -r ../public/&#42; ./
+git add .
+git commit . -m &quot;Publish&quot;
+git push origin master
+git push deploy master
+rm -rf ../public
+ </code></pre> I then commit <code>publish.sh</code>, run <code>lein ring server</code> and then kill it. Running <code>publish.sh</code> while on the <code>source</code> branch will copy the static content from <code>resources/public</code>, stash it a level higher up in <code>../public</code>, checkout the <code>master</code> branch, copy <code>../public/&#42;</code> back in and commit the change. After which it will push to <code>deploy</code> and <code>master</code>.</p>
+</div>
+
+<div id="post-tags">
+    <b>Tags: </b>
+    
+    <a href="/tags/cryogen/">cryogen</a>
+    
+    <a href="/tags/clojure/">clojure</a>
+    
+    <a href="/tags/dokku/">dokku</a>
+    
+</div>
+
+
+    <div id="prev-next">
+        
+        
+        <a class="right" href="/21-05-2016-my-clojure-workflow-and-setup/">My Clojure Workflow and Setup. &raquo;</a>
+        
+    </div>
+
+    
+
+
+</div>
+
+            </div>
+        </div>
+    </div>
+    <footer>Copyright &copy;  Mark Woodhall
+        <br />
+        <a href="/">Home</a> | 
+        <a href="/archives/">Archives</a> | 
+        <a href="/feed.xml">Subscribe</a>
+        <p style="text-align: center;">Powered by <a href="http://cryogenweb.org">Cryogen</a></p></footer>
+</div>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="/js/highlight.pack.js" type="text/javascript"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+
