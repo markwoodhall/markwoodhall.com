@@ -52,8 +52,7 @@ When I'm not developing or learning new skills I enjoy ultra running, spending t
 - [DDD](http://en.wikipedia.org/wiki/Domain-driven_design)
 
 ### Other
-- Familiarity working on [kanban](https://www.atlassian.com/agile/kanban) and [scrum](https://www.atlassian.com/agile/scrum)
-projects
+- Familiarity working on [kanban](https://www.atlassian.com/agile/kanban) and [scrum](https://www.atlassian.com/agile/scrum) projects
 - Experience working in distributed, remote teams
 - Using tools like [New Relic](http://newrelic.com/ ) to monitor applications
 - Deploying to the cloud using [Azure](http://azure.microsoft.com/) and [Digital Ocean](https://www.digitalocean.comhttps://www.digitalocean.com). Limited experience with [AWS](http://aws.amazon.com)
