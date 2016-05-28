@@ -69,7 +69,7 @@ When I'm not developing or learning new skills I enjoy ultra running, spending t
 - [AutoFixture](https://github.com/AutoFixture/AutoFixture)
 - [ServiceStack](https://github.com/ServiceStack/ServiceStack)
 - [clostache](https://github.com/fhd/clostache)
-- [omnisharp-vim](http://highscalability.com/)
+- [omnisharp-vim](https://github.com/OmniSharp/omnisharp-vim)
 
 # Experience
 
