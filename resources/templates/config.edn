@@ -18,8 +18,8 @@
  :theme              "blue_centered"
  :resources          ["img"]
  :keep-files         [".git"]
- :disqus?            false
- :disqus-shortname   ""
+ :disqus?            true
+ :disqus-shortname   "markwoodhall"
  :ignored-files      [#"\.#.*" #".*\.swp$"]
  :posts-per-page     6
  :blocks-per-preview 2
