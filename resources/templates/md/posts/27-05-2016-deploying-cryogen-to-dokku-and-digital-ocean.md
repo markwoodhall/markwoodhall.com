@@ -1,6 +1,7 @@
 {:title  "Deploying Cryogen to Dokku and Digital Ocean."
  :layout :post
  :date   "27-05-2016"
+ :image  "http://i.imgur.com/mayJRbx.png"
  :tags   ["clojure" "cryogen" "dokku"]}
 
  I've recently moved my blog away from [Ghost Blog](https://ghost.org/) hosted at Digital Ocean.
