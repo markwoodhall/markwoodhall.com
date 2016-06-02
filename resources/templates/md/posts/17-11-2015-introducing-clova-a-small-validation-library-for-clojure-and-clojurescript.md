@@ -1,6 +1,7 @@
 {:title  "Introducing clova, a small validation library for Clojure and ClojureScript."
  :layout :post
  :date   "17-11-2015"
+ :image  "http://i.imgur.com/qj5aG47.jpg"
  :tags   ["clojure" "clojurescript" "validation" "clova"]}
 
 TL;DR

@@ -30,8 +30,11 @@
 </head>
 <body>
 
-
+{% if post.image %}
+<nav class="navbar navbar-default" style="background-image:url('{{post.image}}');" >
+{% else %}
 <nav class="navbar navbar-default">
+{% endif %}
     <div class="container">
         <div id="navbar" class="">
                 <a class="navbar-brand" href="{{index-uri}}">

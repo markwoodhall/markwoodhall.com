@@ -1,6 +1,7 @@
 {:title  "A request for a Clojure code review!"
  :layout :post
  :date   "24-11-2015"
+ :image  "http://i.imgur.com/qj5aG47.jpg"
  :tags   ["clojure" "clova"]}
 
 So, I've gradually been spending more time looking at and writing Clojure. I've read plenty of books and looked at [useful blog posts](http://adambard.com/blog/five-mistakes-clojure-newbies-make/) and [articles](https://aphyr.com/tags/Clojure-from-the-ground-up). I've coded [a](https://github.com/markwoodhall/clj-tdo) [few](https://github.com/markwoodhall/clj-ravendb) things and tried to [write](http://markwoodhall.com/2015/03/04/event-sourcing-in-clojure/) [a](http://markwoodhall.com/2014/11/19/creating-clj-tdo-a-command-line-todo-list-part-three/) [few](http://markwoodhall.com/2014/06/23/destructuring-in-clojure/) [blog](http://markwoodhall.com/2014/06/22/using-ravendb-in-clojure-3/) posts. I'm still a newb though and the thought of ever writing Clojure for a living is far far away. I love the language, and the interactions I've had with the community so far have been great but the market for remote (or local) Clojure work is pretty slim.

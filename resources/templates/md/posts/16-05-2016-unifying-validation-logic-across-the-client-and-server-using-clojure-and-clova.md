@@ -1,6 +1,7 @@
 {:title  "Unifying server and client validation using Clojure[Script] and Clova."
  :layout :post
  :date   "16-05-2016"
+ :image  "http://i.imgur.com/qj5aG47.jpg"
  :tags   ["clojure" "clojurescript" "clova"]}
 
 [clova](https://github.com/markwoodhall/clova) supports both Clojure and ClojureScript, in this blog post we will create a simple [Compojure](https://github.com/weavejester/compojure) server that validates a request and we will apply that same validation on the client side.

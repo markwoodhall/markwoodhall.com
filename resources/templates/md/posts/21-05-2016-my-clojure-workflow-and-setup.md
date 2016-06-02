@@ -1,6 +1,7 @@
 {:title  "My Clojure Workflow and Setup."
  :layout :post
  :date   "21-05-2016"
+ :image  "http://i.imgur.com/9TmA2s2.jpg"
  :tags   ["clojure" "vim" "workflow"]}
 
 I've been using Clojure for at least a couple of years now, in that time I've jumped around various text editors. When I was first getting started I used [Light Table](http://lighttable.com/).

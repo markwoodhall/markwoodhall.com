@@ -37,6 +37,10 @@ body {
     border-radius: 0;
     border: none;
     margin-bottom: 0px;
+    min-height: 500px;
+    width:100%;
+    background-size: cover;
+    background-image: url('http://i.imgur.com/mayJRbx.png');
 }
 
 .navbar-default {
