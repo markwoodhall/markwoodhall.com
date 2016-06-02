@@ -37,10 +37,14 @@
 {% endif %}
     <div class="container">
         <div id="navbar" class="">
-                <a class="navbar-brand" href="{{index-uri}}">
-                    <div class="navbar-brand-image"></div>
-                </a>
-            </div>
+            <a class="navbar-brand" href="{{index-uri}}">
+                <div class="navbar-brand-image"></div>
+                {% if post.title %}
+                {% else %}
+                <div class="navbar-brand-title">{{title}}</div>
+                <div class="navbar-brand-description">{{description}}</div>
+                {% endif %}
+            </a>
         </div><!--/.nav-collapse -->
     </div><!--/.container-fluid -->
 </nav>
