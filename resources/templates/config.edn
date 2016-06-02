@@ -24,4 +24,5 @@
  :posts-per-page     6
  :blocks-per-preview 2
  :previews?          true
- :clean-urls?        true}
+ :clean-urls?        true
+ :twitter-name       "@markwodhall"}
