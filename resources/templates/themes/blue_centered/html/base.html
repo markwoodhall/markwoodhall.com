@@ -31,7 +31,7 @@
 <body>
 
 {% if post.image %}
-<nav class="navbar navbar-default" style="background-image:url('{{post.image}}');" >
+<nav class="navbar navbar-default">
 {% else %}
 <nav class="navbar navbar-default">
 {% endif %}
@@ -39,11 +39,6 @@
         <div id="navbar" class="">
             <a class="navbar-brand" href="{{index-uri}}">
                 <div class="navbar-brand-image"></div>
-                {% if post.title %}
-                {% else %}
-                <div class="navbar-brand-title">{{title}}</div>
-                <div class="navbar-brand-description">{{description}}</div>
-                {% endif %}
             </a>
         </div><!--/.nav-collapse -->
     </div><!--/.container-fluid -->

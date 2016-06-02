@@ -37,10 +37,7 @@ body {
     border-radius: 0;
     border: none;
     margin-bottom: 0px;
-    min-height: 380px;
     width:100%;
-    background-size: cover;
-    background-image: url('../img/bg.jpg');
 }
 
 .navbar-default {
@@ -66,25 +63,6 @@ body {
     height: 100px;
     background-size: cover;
     background-image: url('../img/circle.png');
-}
-
-.navbar-default .navbar-brand-title {
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    color: #fff;
-    margin-top: 70px;
-    text-align:center;
-}
-
-.navbar-default .navbar-brand-description {
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    color: #fff;
-    font-size:0.7em;
-    text-align:center;
-    margin-top: 10px;
 }
 
 .navbar-default .navbar-description {
