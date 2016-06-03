@@ -27,7 +27,7 @@ The difference was, it took me much longer to settle and find my place within th
 
 ###On-boarding process
 
-I think the new developer "on-boarding" process is key to taking on remote developers. This process has usually taken one of two forms in places I've worked.
+I think the new developer "on-boarding" process is key to taking on remote developers. This process has usually taken one of two forms in places I've worked:
 
 1. New developer works on an isolated but worthwhile project, maybe to improve system monitoring or similar.
 
@@ -45,7 +45,7 @@ It's all great working in isolation to get started but I found it quite difficul
 
 Throughout the hiring process and during the "on-boarding" phase I built up an unhealthy, unrealistic expectation of just how amazing I
 would need to be in order to make remote working a success. I valued the skills of fellow developers much higher than my own, this was a mistake though, it's
-a cliche but everyone brings unique skills and different experience. Only working with my new team "in the wild" really enabled me to see the
+a cliché but everyone brings unique skills and different experience. Only working with my new team "in the wild" really enabled me to see the
 real world view of this and to understand that there is stuff they don't know, they too have insecurities and face similar daily problems.
 
 Given my experience I'd argue that the best approach is to integrate a new remote developer with the rest of the team as quickly as possible. I know we often have stand ups, daily calls etc which provide some of this integration but nothing really beats that level of communication, understanding and empathy you share when working together constantly towards a common goal. Given that the number one problem for remote workers is isolation, delaying team building and integration for the purposes of an "onboarding" style project is a shame in my opinion and has the potential to hurt relationship forming with other developers. I've often found those very early stages set the tone for future relationships.
