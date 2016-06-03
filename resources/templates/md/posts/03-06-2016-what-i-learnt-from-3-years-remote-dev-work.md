@@ -1,6 +1,6 @@
 {:title  "What I Learnt From 3 Years Remote Software Development"
  :layout :post
- :date   "31-05-2016"
+ :date   "03-06-2016"
  :image  "http://i.imgur.com/N8TSRnb.jpg"
  :tags   ["remote" "development"]}
 
