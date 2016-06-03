@@ -1,4 +1,4 @@
-{:title  "What I Learnt From 3 Years Remote Software Development"
+{:title  "What I've Learnt From 3 Years Remote Software Development"
  :layout :post
  :date   "03-06-2016"
  :image  "http://i.imgur.com/N8TSRnb.jpg"
