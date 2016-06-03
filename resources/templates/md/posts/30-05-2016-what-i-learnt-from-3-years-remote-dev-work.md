@@ -1,7 +1,6 @@
 {:title  "What I Learnt From 3 Years Remote Software Development"
  :layout :post
  :date   "31-05-2016"
- :draft? true
  :tags   ["remote" "development"]}
 
 ###Intro and my story
@@ -46,9 +45,9 @@ It's all great working in isolation to get started but I found it quite difficul
 Throughout the hiring process and during the "on-boarding" phase I built up an unhealthy, unrealistic expectation of just how amazing I
 would need to be in order to make remote working a success. I valued the skills of fellow developers much higher than my own, this was a mistake though, it's
 a cliché but everyone brings unique skills and different experience. Only working with my new team "in the wild" really enabled me to see the
-real world view of this and to understand that there is stuff they don't know, they too have insecurities and face similar daily problems.
+real world view of this and to understand that there are technical things even they don't know, that they too have insecurities, and face similar daily problems.
 
-Given my experience I'd argue that the best approach is to integrate a new remote developer with the rest of the team as quickly as possible. I know we often have stand ups, daily calls etc which provide some of this integration but nothing really beats that level of communication, understanding and empathy you share when working together constantly towards a common goal. Given that the number one problem for remote workers is isolation, delaying team building and integration for the purposes of an "onboarding" style project is a shame in my opinion and has the potential to hurt relationship forming with other developers. I've often found those very early stages set the tone for future relationships.
+Given my experience I'd argue that the best approach is to integrate a new remote developer with the rest of the team as quickly as possible. I know we often have stand ups, daily calls etc which provide some of this integration but nothing really beats that level of communication, understanding, and empathy you share when working together constantly towards a common goal. Given that the number one problem for remote workers is isolation, delaying team building and integration for the purposes of an "onboarding" style project is a shame in my opinion and has the potential to hurt relationship forming with other developers. I've often found those very early stages set the tone for future relationships.
 
 ###Tips
 
@@ -60,7 +59,7 @@ If everything feels a little overwhelming just give it time to settle, you know 
 
 ####Consider others
 
-Assume everyone else is having the same kind of issues and concerns as you are. *Don't* assume that they are doing a flawless job and there is no way you could possibly compare to them. If you were all working in the same office this would all be much more noticeable but working remotely can put up a barrier to both the good and bad things that are happening.
+Assume everyone else is having the same kind of issues and concerns as you. *Don't* assume that they are doing a flawless job and there is no way you could possibly compare to them. If you were all working in the same office this would all be much more noticeable but working remotely can put up a barrier to both the good and bad things that are happening.
 
 ####Open up
 
@@ -71,7 +70,7 @@ Embrace any mistakes you make as an opportunity for both *you* and *your* team t
 ####Communicate
 
 I think it's important to engage in as much communication as possible as soon as you can.
-If you are given an isolated "on-boarding" project then involve as many others as you can, tell them what you are working on, ask if they have any input.
+If you are given an isolated "on-boarding" project then involve as many other people as possible, tell them what you are working on, and ask if they have any input.
 I know from personal experience it can be easy to find reasons to avoid communication but I also know that everything works out better if you don't.
 Communication is also one of those things that becomes more difficult each time you put it off. I say this not because I'm an expert but because I still make the same mistake.
 
