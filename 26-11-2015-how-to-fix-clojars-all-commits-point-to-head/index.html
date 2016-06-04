@@ -13,7 +13,7 @@
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@markwodhall" />
-    <meta name="twitter:description" content="<p>Recently I noticed an issue with one of the projects I deploy to Clojars. The "Pushed by with this commit" link was only ever linking back to HEAD on the GitHub repo.</p><h3><a name="before"></a>Before</h3><p><img src="http://i.imgur.com/r0b3iWI.png" alt="Clojars-before" /></p><p>This only happens when you specify an <code>:scm</code> key in your <code>project.clj</code>. Without the <code>:scm</code> key Leiningen will automatically discover the details from <code>.git</code>. I believe the <code>:scm</code> key was added for people using other systems, like HG.</p><p>I think there is a bug somewhere in Leiningen where the SCM info added to the artifacts <code>pom.xml</code> isn't generated correctly when there is an <code>:scm</code> key present. As soon as I removed the <code>:scm</code> key with <a href='https://github.com/markwoodhall/clova/commit/9cbc6bab1dc00fdd8e743f280a2ad0c294a857ef'>this commit</a> and did another Clojars deployment the problem was "fixed".</p><h3><a name="after"></a>After</h3><img src="http://i.imgur.com/Zx9iTP7.png" alt="Clojars-after" />" />
+    <meta name="twitter:description" content="How to fix Clojars all commits point to HEAD." />
     <meta name="twitter:title" content="How to fix Clojars all commits point to HEAD." />
     <meta name="twitter:image" content="" />
 
