@@ -19,7 +19,7 @@ I struggled to settle in and started to feel a bit like a fraud, how could *I* p
 I felt it a privilege to be able to work remotely, one I wasn't sure I had the right to or was "smart" enough for.
 
 I've always had a tendency towards feeling incapable or inferior to other developers, even when other people's opinions tend to indicate the
-exact opposite. I'd say it was [imposters syndrome](https://en.wikipedia.org/wiki/Impostor_syndrome) but then I'd have to think of myself
+exact opposite. I'd say it was [imposter syndrome](https://en.wikipedia.org/wiki/Impostor_syndrome) but then I'd have to think of myself
 as a high achiever, which is far from true. Remote working amplified this inferiority complex.
 
 You could argue, and you would be right to some degree, that I experienced similar things while working in an office every day.
