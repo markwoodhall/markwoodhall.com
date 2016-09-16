@@ -77,7 +77,7 @@ When I'm not developing or learning new skills I enjoy ultra running, spending t
 #### Software Developer
 #####June 2013 to present
 
-ByBox manages more dropboxes than any other company in the UK, and delivers over 20 million parcels a year.  My role at ByBox involes working in a distributed, remote development team to constantly improve the technology platform and therefore the services offered to customers.
+ByBox manages more dropboxes than any other company in the UK, and delivers over 20 million parcels a year.  My role at ByBox involves working in a distributed, remote development team to constantly improve the technology platform and therefore the services offered to customers.
 
 We develop and maintain a large number of discrete components architechted in an SOA style. We employ TDD where appropriate with a focus on writing understandable and readable code.
 
