@@ -22,6 +22,7 @@ When I'm not developing or learning new skills I enjoy ultra running, spending t
 ### Languages
 - C#
 - JavaScript
+    - ES6
 - Clojure
 - HTML/CSS
 - TSQL
@@ -32,16 +33,17 @@ When I'm not developing or learning new skills I enjoy ultra running, spending t
 - [RavenDB](http://ravendb.net)
 - [NServiceBus](http://particular.net/nservicebus)
 - [elasticsearch](http://www.elasticsearch.org)
+- [Microsft SQL Server](http://en.wikipedia.org/wiki/Microsoft_SQL_Server)
 - [SignalR](http://signalr.net)
 - [Nancy](http://nancyfx.org)
 - [Castle Windsor](http://docs.castleproject.org/Default.aspx?Page=MainPage&NS=Windsor&AspxAutoDetectCookieSupport=1)
-- [Ember](http://emberjs.com)
-- [Durandal](http://durandaljs.com)
-- [Microsft SQL Server](http://en.wikipedia.org/wiki/Microsoft_SQL_Server)
 - [Git](http://git-scm.com)
 - [Mercurial](http://mercurial.selenic.com)
 - [Docker](https://www.docker.com)
 - [Dokku](https://github.com/progrium/dokku)
+- [React](https://facebook.github.io/react/)
+- [Cordova](https://cordova.apache.org/)
+- [Ember](http://emberjs.com)
 
 ### Patterns and practices
 - [CQRS](http://martinfowler.com/bliki/CQRS.html)
@@ -56,7 +58,6 @@ When I'm not developing or learning new skills I enjoy ultra running, spending t
 - Experience working in distributed, remote teams
 - Using tools like [New Relic](http://newrelic.com/ ) to monitor applications
 - Deploying to the cloud using [Azure](http://azure.microsoft.com/) and [Digital Ocean](https://www.digitalocean.comhttps://www.digitalocean.com). Limited experience with [AWS](http://aws.amazon.com)
-- Data visualisation and inspection using [Kibana](http://www.elasticsearch.org/overview/kibana/)
 
 # Open source
 ### Projects
@@ -66,10 +67,12 @@ When I'm not developing or learning new skills I enjoy ultra running, spending t
 
 ## Contributions
 
+- [yada](https://github.com/juxt/yada)
+- [clostache](https://github.com/fhd/clostache)
+- [vim-fsharp](https://github.com/fsharp/vim-fsharp)
+- [omnisharp-vim](https://github.com/OmniSharp/omnisharp-vim)
 - [AutoFixture](https://github.com/AutoFixture/AutoFixture)
 - [ServiceStack](https://github.com/ServiceStack/ServiceStack)
-- [clostache](https://github.com/fhd/clostache)
-- [omnisharp-vim](https://github.com/OmniSharp/omnisharp-vim)
 
 # Experience
 
@@ -79,7 +82,7 @@ When I'm not developing or learning new skills I enjoy ultra running, spending t
 
 ByBox manages more dropboxes than any other company in the UK, and delivers over 20 million parcels a year.  My role at ByBox involves working in a distributed, remote development team to constantly improve the technology platform and therefore the services offered to customers.
 
-We develop and maintain a large number of discrete components architechted in an SOA style. We employ TDD where appropriate with a focus on writing understandable and readable code.
+We develop and maintain a large number of discrete components designed in an SOA style. We employ TDD where appropriate with a focus on writing understandable and readable code.
 
 ### [Avelo/IRESS](http://www.iress.com)
 #### Software Developer
