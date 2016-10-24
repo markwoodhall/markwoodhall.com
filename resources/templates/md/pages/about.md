@@ -61,9 +61,11 @@ When I'm not developing or learning new skills I enjoy ultra running, spending t
 
 # Open source
 ### Projects
-- [clova](https://github.com/markwoodhall/clova)
-- [clj-ravendb](https://github.com/markwoodhall/clj-ravendb)
-- [ravendb-py](https://github.com/firegrass/ravendb-py)
+- [clova](https://github.com/markwoodhall/clova) - Clojure(Script) validation library
+- [vim-cljreloaded](https://github.com/markwoodhall/vim-cljreloaded) - Vim plugin to support the Clojure "reloaded" workflow
+- [vim-figwheel](https://github.com/markwoodhall/vim-figwheel) - Vim plugin to support working with [Figwheel](https://github.com/bhauman/lein-figwheel)
+- [clj-ravendb](https://github.com/markwoodhall/clj-ravendb) - Clojure client for RavenDB
+- [ravendb-py](https://github.com/firegrass/ravendb-py) - Python client for RavenDB
 
 ## Contributions
 
