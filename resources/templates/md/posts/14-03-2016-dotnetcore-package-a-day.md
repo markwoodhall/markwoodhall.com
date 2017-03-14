@@ -1,7 +1,7 @@
 {:title  "Raising awareness of great packages that already support dotnet core!"
  :layout :post
  :date   "14-03-2017"
- :image  "http://i.imgur.com/N8TSRnb.jpg"
+ :image  "http://i.imgur.com/moEuXDY.jpg"
  :tags   ["dotnet core"]}
 
 There appears to be a never ending stream of content out there these days about the demise of .net and
