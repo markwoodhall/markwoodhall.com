@@ -2,8 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
     <meta charset="utf-8"/>
-    <title>Mark Woodhall: How to fix Clojars all commits point to HEAD.</title>
-    <link rel="canonical" href="http://markwoodhall.com/26-11-2015-how-to-fix-clojars-all-commits-point-to-head/">
+    <title>Mark Woodhall: Raising awareness of great packages that already support dotnet core!</title>
+    <link rel="canonical" href="http://markwoodhall.com/14-03-2016-dotnetcore-package-a-day/">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
@@ -14,8 +14,8 @@
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@markwodhall" />
     <meta name="twitter:description" content="Mark Woodhall - Just a software blog" />
-    <meta name="twitter:title" content="How to fix Clojars all commits point to HEAD." />
-    <meta name="twitter:image" content="" />
+    <meta name="twitter:title" content="Raising awareness of great packages that already support dotnet core!" />
+    <meta name="twitter:image" content="http://i.imgur.com/N8TSRnb.jpg" />
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -51,32 +51,28 @@
 <div id="post">
     <div class="post-header">
     <div id="post-meta" class="row">
-        <div class="col-lg-6">November 26, 2015</div>
+        <div class="col-lg-6">March 14, 2017</div>
         
     </div>
-    <h2>How to fix Clojars all commits point to HEAD.</h2>
+    <h2>Raising awareness of great packages that already support dotnet core!</h2>
 </div>
 <div>
     
-    <p>Recently I noticed an issue with one of the projects I deploy to Clojars. The "Pushed by with this commit" link was only ever linking back to HEAD on the GitHub repo.</p><h3><a name="before"></a>Before</h3><p><img src="http://i.imgur.com/r0b3iWI.png" alt="Clojars-before" /></p><p>This only happens when you specify an <code>:scm</code> key in your <code>project.clj</code>. Without the <code>:scm</code> key Leiningen will automatically discover the details from <code>.git</code>. I believe the <code>:scm</code> key was added for people using other systems, like HG.</p><p>I think there is a bug somewhere in Leiningen where the SCM info added to the artifacts <code>pom.xml</code> isn't generated correctly when there is an <code>:scm</code> key present. As soon as I removed the <code>:scm</code> key with <a href='https://github.com/markwoodhall/clova/commit/9cbc6bab1dc00fdd8e743f280a2ad0c294a857ef'>this commit</a> and did another Clojars deployment the problem was "fixed".</p><h3><a name="after"></a>After</h3><img src="http://i.imgur.com/Zx9iTP7.png" alt="Clojars-after" />
+    <p>There appears to be a never ending stream of content out there these days about the demise of .net and the difficulties of .net core adoption. I think we could be about to hit a turning point, with the recent <a href='https://github.com/dotnet/core/blob/master/release-notes/download-archives/1.1.1-download.md'>1.1.1 release</a> and  new tooling support in Visual Studio 2017 everything is starting to come together. I don't use Visual Studio much but the tooling in Visual Studio Code is just as good, it's a pleasure to use at the moment. </p><p>Many people I've spoked to about starting to use .net core have cited a lack of adoption in the community and particularly third party library authors as reasons to defer their own usage. In this series of posts I aim to highlight an awesome library that already has .net core support, every day, for 20 days.</p><p>If you don't want to keep checking back but instead want an email in your inbox then you can subscribe to the mailing list below.</p><p>Posts and emails will start on the 20th March.</p><p><link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css"> <div id="mc<i>embed</i>signup"> <form action="//xyz.us15.list-manage.com/subscribe/post?u=b6063259bae6e4712948e9cb9&amp;id=802d24879d" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate> <div id="mc<i>embed</i>signup_scroll"> <label for="mce-EMAIL">Subscribe to .net core package a day emails </label> <br /> <input style="padding:2px;" type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder=" email address" required> <!&ndash; real people should not fill this in and expect good things - do not remove this or risk form bot signups&ndash;> <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b<i>b6063259bae6e4712948e9cb9</i>802d24879d" tabindex="-1" value=""></div> <input style="padding:2px;" type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div> </div> </form> </div></p>
 </div>
 
 <div id="post-tags">
     <b>Tags: </b>
     
-    <a href="/tags/clojure/">clojure</a>
-    
-    <a href="/tags/clojars/">clojars</a>
+    <a href="/tags/dotnet core/">dotnet core</a>
     
 </div>
 
 
     <div id="prev-next">
         
-        <a href="/09-05-2016-finally-v1-0-0-of-clj-ravendb-a-ravendb-client-for-clojure/">&laquo; Finally v1.0.0 of clj-ravendb, a RavenDB client for Clojure.</a>
         
-        
-        <a class="right" href="/24-12-2015-a-request-for-a-clojure-code-review/">A request for a Clojure code review! &raquo;</a>
+        <a class="right" href="/12-06-2016-omnisharp-vim-and-completion-snippets/">OmniSharp-Vim and Completion Snippets &raquo;</a>
         
     </div>
 

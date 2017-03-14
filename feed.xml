@@ -12,11 +12,31 @@ http://markwoodhall.com
 Just a software blog
 </description>
 <lastBuildDate>
-Fri, 02 Dec 2016 12:50:23 +0000
+Tue, 14 Mar 2017 21:53:21 +0000
 </lastBuildDate>
 <generator>
 clj-rss
 </generator>
+<item>
+<guid>
+http://markwoodhall.com/14-03-2016-dotnetcore-package-a-day/
+</guid>
+<link>
+http://markwoodhall.com/14-03-2016-dotnetcore-package-a-day/
+</link>
+<title>
+Raising awareness of great packages that already support dotnet core!
+</title>
+<description>
+&lt;p&gt;There appears to be a never ending stream of content out there these days about the demise of .net and the difficulties of .net core adoption. I think we could be about to hit a turning point, with the recent &lt;a href='https://github.com/dotnet/core/blob/master/release-notes/download-archives/1.1.1-download.md'&gt;1.1.1 release&lt;/a&gt; and  new tooling support in Visual Studio 2017 everything is starting to come together. I don't use Visual Studio much but the tooling in Visual Studio Code is just as good, it's a pleasure to use at the moment. &lt;/p&gt;&lt;p&gt;Many people I've spoked to about starting to use .net core have cited a lack of adoption in the community and particularly third party library authors as reasons to defer their own usage. In this series of posts I aim to highlight an awesome library that already has .net core support, every day, for 20 days.&lt;/p&gt;&lt;p&gt;If you don't want to keep checking back but instead want an email in your inbox then you can subscribe to the mailing list below.&lt;/p&gt;&lt;p&gt;Posts and emails will start on the 20th March.&lt;/p&gt;&lt;p&gt;&lt;link href=&quot;//cdn-images.mailchimp.com/embedcode/slim-10_7.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt; &lt;div id=&quot;mc&lt;i&gt;embed&lt;/i&gt;signup&quot;&gt; &lt;form action=&quot;//xyz.us15.list-manage.com/subscribe/post?u=b6063259bae6e4712948e9cb9&amp;amp;id=802d24879d&quot; method=&quot;post&quot; id=&quot;mc-embedded-subscribe-form&quot; name=&quot;mc-embedded-subscribe-form&quot; class=&quot;validate&quot; target=&quot;_blank&quot; novalidate&gt; &lt;div id=&quot;mc&lt;i&gt;embed&lt;/i&gt;signup_scroll&quot;&gt; &lt;label for=&quot;mce-EMAIL&quot;&gt;Subscribe to .net core package a day emails &lt;/label&gt; &lt;br /&gt; &lt;input style=&quot;padding:2px;&quot; type=&quot;email&quot; value=&quot;&quot; name=&quot;EMAIL&quot; class=&quot;email&quot; id=&quot;mce-EMAIL&quot; placeholder=&quot; email address&quot; required&gt; &lt;!&amp;ndash; real people should not fill this in and expect good things - do not remove this or risk form bot signups&amp;ndash;&gt; &lt;div style=&quot;position: absolute; left: -5000px;&quot; aria-hidden=&quot;true&quot;&gt;&lt;input type=&quot;text&quot; name=&quot;b&lt;i&gt;b6063259bae6e4712948e9cb9&lt;/i&gt;802d24879d&quot; tabindex=&quot;-1&quot; value=&quot;&quot;&gt;&lt;/div&gt; &lt;input style=&quot;padding:2px;&quot; type=&quot;submit&quot; value=&quot;Subscribe&quot; name=&quot;subscribe&quot; id=&quot;mc-embedded-subscribe&quot; class=&quot;button&quot;&gt;&lt;/div&gt; &lt;/div&gt; &lt;/form&gt; &lt;/div&gt;&lt;/p&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Tue, 14 Mar 2017 00:00:00 +0000
+</pubDate>
+</item>
 <item>
 <guid>
 http://markwoodhall.com/12-06-2016-omnisharp-vim-and-completion-snippets/
@@ -72,7 +92,7 @@ endfunction
 
 </enclosure>
 <pubDate>
-Sun, 12 Jun 2016 00:00:00 +0100
+Sun, 12 Jun 2016 00:00:00 +0000
 </pubDate>
 </item>
 <item>
@@ -92,7 +112,7 @@ What I've Learnt From 3 Years Remote Software Development
 
 </enclosure>
 <pubDate>
-Fri, 03 Jun 2016 00:00:00 +0100
+Fri, 03 Jun 2016 00:00:00 +0000
 </pubDate>
 </item>
 <item>
@@ -126,7 +146,7 @@ rm -rf ../public
 
 </enclosure>
 <pubDate>
-Fri, 27 May 2016 00:00:00 +0100
+Fri, 27 May 2016 00:00:00 +0000
 </pubDate>
 </item>
 <item>
@@ -146,7 +166,7 @@ My Clojure Workflow and Setup.
 
 </enclosure>
 <pubDate>
-Sat, 21 May 2016 00:00:00 +0100
+Sat, 21 May 2016 00:00:00 +0000
 </pubDate>
 </item>
 <item>
@@ -181,7 +201,7 @@ lein compile :all
 
 </enclosure>
 <pubDate>
-Mon, 16 May 2016 00:00:00 +0100
+Mon, 16 May 2016 00:00:00 +0000
 </pubDate>
 </item>
 <item>
@@ -201,7 +221,7 @@ Building a distributed in-memory key value store in Clojure.
 
 </enclosure>
 <pubDate>
-Thu, 12 May 2016 00:00:00 +0100
+Thu, 12 May 2016 00:00:00 +0000
 </pubDate>
 </item>
 <item>
@@ -221,7 +241,7 @@ Finally v1.0.0 of clj-ravendb, a RavenDB client for Clojure.
 
 </enclosure>
 <pubDate>
-Mon, 09 May 2016 00:00:00 +0100
+Mon, 09 May 2016 00:00:00 +0000
 </pubDate>
 </item>
 <item>
@@ -301,7 +321,7 @@ Event sourcing in Clojure.
 
 </enclosure>
 <pubDate>
-Mon, 04 May 2015 00:00:00 +0100
+Mon, 04 May 2015 00:00:00 +0000
 </pubDate>
 </item>
 <item>
@@ -551,7 +571,7 @@ tdo ls -s C
 
 </enclosure>
 <pubDate>
-Wed, 02 Jul 2014 00:00:00 +0100
+Wed, 02 Jul 2014 00:00:00 +0000
 </pubDate>
 </item>
 <item>
@@ -585,7 +605,7 @@ Failed to validate &amp;quot;-p 100000&amp;quot;: Must be a number between 0 and
 
 </enclosure>
 <pubDate>
-Thu, 26 Jun 2014 00:00:00 +0100
+Thu, 26 Jun 2014 00:00:00 +0000
 </pubDate>
 </item>
 <item>
@@ -605,7 +625,7 @@ Destructuring in Clojure.
 
 </enclosure>
 <pubDate>
-Mon, 23 Jun 2014 00:00:00 +0100
+Mon, 23 Jun 2014 00:00:00 +0000
 </pubDate>
 </item>
 <item>
@@ -626,7 +646,7 @@ Using RavenDB in Clojure, part three.
 
 </enclosure>
 <pubDate>
-Sun, 22 Jun 2014 00:00:00 +0100
+Sun, 22 Jun 2014 00:00:00 +0000
 </pubDate>
 </item>
 <item>
@@ -646,7 +666,7 @@ Using RavenDB in Clojure, part two.
 
 </enclosure>
 <pubDate>
-Sat, 21 Jun 2014 00:00:00 +0100
+Sat, 21 Jun 2014 00:00:00 +0000
 </pubDate>
 </item>
 <item>
@@ -670,7 +690,7 @@ Using RavenDB in Clojure, part one.
 
 </enclosure>
 <pubDate>
-Sat, 21 Jun 2014 00:00:00 +0100
+Sat, 21 Jun 2014 00:00:00 +0000
 </pubDate>
 </item>
 </channel>
