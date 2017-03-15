@@ -1,4 +1,4 @@
-{:title  "Raising awareness of great packages that already support dotnet core!"
+{:title  "Raising awareness of great packages that already support .net core!"
  :layout :post
  :date   "14-03-2017"
  :image  "http://i.imgur.com/moEuXDY.jpg"
@@ -10,11 +10,11 @@ the difficulties of .net core adoption. I think we could be about to hit a turni
 new tooling support in Visual Studio 2017 everything is starting to come together. I don't use Visual Studio much
 but the tooling in Visual Studio Code is just as good, it's a pleasure to use at the moment. 
 
-Many people I've spoked to about starting to use .net core have cited a lack of adoption in the community and
+Many people I've spoken to about starting to use .net core have cited a lack of adoption in the community and
 particularly third party library authors as reasons to defer their own usage. In this series of posts
-I aim to highlight an awesome library that already has .net core support, every day, for 20 days.
+I aim to highlight an awesome library that already has .net core support, every day, for 15 days.
 
-If you don't want to keep checking back but instead want an email in your inbox then you can subscribe to the mailing list below.
+If you don't want to keep checking back but do want an email in your inbox then you can subscribe to the mailing list below.
 
 Posts and emails will start on the 20th March.
 
