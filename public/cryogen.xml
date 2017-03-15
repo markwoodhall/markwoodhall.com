@@ -12,7 +12,7 @@ http://markwoodhall.com
 Just a software blog
 </description>
 <lastBuildDate>
-Mon, 30 May 2016 21:49:36 +0100
+Wed, 15 Mar 2017 06:49:34 +0000
 </lastBuildDate>
 <generator>
 clj-rss
@@ -48,7 +48,7 @@ rm -rf ../public
 
 </enclosure>
 <pubDate>
-Fri, 27 May 2016 00:00:00 +0100
+Fri, 27 May 2016 00:00:00 +0000
 </pubDate>
 </item>
 </channel>

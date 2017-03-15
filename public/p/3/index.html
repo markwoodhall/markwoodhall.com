@@ -11,6 +11,12 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/default.min.css">
     <link href="/css/screen.css" rel="stylesheet" type="text/css" />
 
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@markwodhall" />
+    <meta name="twitter:description" content="Mark Woodhall - Just a software blog" />
+    <meta name="twitter:title" content="" />
+    <meta name="twitter:image" content="" />
+
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -26,12 +32,12 @@
 
 
 <nav class="navbar navbar-default">
+
     <div class="container">
         <div id="navbar" class="">
-                <a class="navbar-brand" href="/">
-                    <div class="navbar-brand-image"></div>
-                </a>
-            </div>
+            <a class="navbar-brand" href="/">
+                <div class="navbar-brand-image"></div>
+            </a>
         </div><!--/.nav-collapse -->
     </div><!--/.container-fluid -->
 </nav>
@@ -43,6 +49,63 @@
             <div id="content">
                 
 <div id="post">
+    
+    <div class="post-header">
+        <h2>Using New Relic to monitor non web based Clojure applications.</h2>
+        <div id="post-meta">
+            
+            <div class="date">February 25, 2015</div>
+            <div>
+                <b>Tags: </b>
+                
+                <a href="/tags/clojure/">clojure</a>
+                
+                <a href="/tags/new relic/">new relic</a>
+                
+            </div>
+        </div>
+    </div>
+    <p>Recently I wanted to use <a href="http://newrelic.com/" shape="rect">New Relic</a> to monitor and profile a Clojure application. This specific application was a "sentiment agent" running as a daemon and calculating the sentiment of various URLS.</p><p>The rest of this post assumes that you've already created a <a href="http://newrelic.com/" shape="rect">New Relic</a> account and installed the <a href="http://newrelic.com/" shape="rect">New Relic</a> agent for your platform of choice.</p>
+    <a href="/25-02-2015-using-new-relic-to-monitor-non-web-applications/">Continue reading &#8594;</a>
+    <hr>
+    
+    <div class="post-header">
+        <h2>Things I learnt about Vim this week: Joining lines of text.</h2>
+        <div id="post-meta">
+            
+            <div class="date">February 21, 2015</div>
+            <div>
+                <b>Tags: </b>
+                
+                <a href="/tags/vim/">vim</a>
+                
+            </div>
+        </div>
+    </div>
+    <p>I've been using Vim now for <a href="http://www.markwoodhall.com/2014/11/13/thoughts-9-months-after-switching-to-vim/" shape="rect">over a year</a> but I'm still increasingly amazed how little I know.</p><p>This week I've been writing some documentation in markdown. Working with text that isn't a programming language like C#, Clojure or JavaScript helped me to discover a few cool Vim commands I should have known already.</p>
+    <a href="/21-02-2015-things-i-learnt-about-vim-this-week/">Continue reading &#8594;</a>
+    <hr>
+    
+    <div class="post-header">
+        <h2>Using a Clojure REPL for everyday SQL tasks.</h2>
+        <div id="post-meta">
+            
+            <div class="date">February 12, 2015</div>
+            <div>
+                <b>Tags: </b>
+                
+                <a href="/tags/clojure/">clojure</a>
+                
+                <a href="/tags/repl/">repl</a>
+                
+                <a href="/tags/sql/">sql</a>
+                
+            </div>
+        </div>
+    </div>
+    <p>I've described <a href="http://markwoodhall.com/2014/11/13/thoughts-9-months-after-switching-to-vim/" shape="rect">previously</a> how I've been trying to improve my tooling and move away from using GUI tools so much. As well as this I've also had a more general move away from Windows to OSX.</p><p>Since I'm spending most of the day doing Windows based development on the .NET Framework there are a couple of tools I keep using in a VM. I've managed to get rid of most of these but I've not really found a good replacement for SQL Server Management Studio. There is <a href="http://razorsql.com/" shape="rect">Razor</a> but I'm not very into that.</p>
+    <a href="/12-02-2015-using-a-clojure-repl-for-everyday-sql-tasks/">Continue reading &#8594;</a>
+    <hr>
     
     <div class="post-header">
         <h2>Analysing news sentiment using Clojure, Elasticsearch and Kibana.</h2>
@@ -103,67 +166,6 @@
     </div>
     <p>I like writing command line applications in Clojure. I think its quite a good experience when using something like <a href="https://github.com/clojure/tools.cli" shape="rect">tools.cli</a>.</p><p>One thing thats always bothered me though, is the start up time of the JVM. When you expect a command line application to be instant and responsive its frustrating to experience a long start up time. <a href="https://github.com/ninjudd/drip.git" shape="rect">Drip</a> can help reduce those startup times.</p>
     <a href="/16-11-2014-use-drip-to-make-your-clojure-applications-start-faster/">Continue reading &#8594;</a>
-    <hr>
-    
-    <div class="post-header">
-        <h2>Thoughts 9 months after switching to Vim for .NET.</h2>
-        <div id="post-meta">
-            
-            <div class="date">November 13, 2014</div>
-            <div>
-                <b>Tags: </b>
-                
-                <a href="/tags/.net/">.net</a>
-                
-                <a href="/tags/vim/">vim</a>
-                
-            </div>
-        </div>
-    </div>
-    <p>It was about 9 months ago that I first started trying to invest in using Vim. Up to then I'd spent nearly 100% of development time in Visual Studio. If I was playing around learning something new then I might use Sublime Text.</p><p>My first experience of Vim was some years ago and it was very brief, at the time I was doing some development in PHP and I remember, when initially firing up vim, thinking I'd downloaded the wrong thing. I moved quickly onto NuSphere PhpEd.</p>
-    <a href="/13-11-2014-thoughts-9-months-after-switching-to-vim/">Continue reading &#8594;</a>
-    <hr>
-    
-    <div class="post-header">
-        <h2>Creating clj-tdo, a command line todo list, part 2.</h2>
-        <div id="post-meta">
-            
-            <div class="date">November 11, 2014</div>
-            <div>
-                <b>Tags: </b>
-                
-                <a href="/tags/list/">list</a>
-                
-                <a href="/tags/clojure/">clojure</a>
-                
-                <a href="/tags/todo/">todo</a>
-                
-            </div>
-        </div>
-    </div>
-    <p>In the <a href="http://www.markwoodhall.com/2014/07/02/creating-clj-tdo-a-command-line-todo-list/" shape="rect">previous post</a> we created a very simple command line todo list in clojure.</p><p>In this post we will be making a few improvements. You can get the code in its current state from <a href="https://bitbucket.org/markwoodhall/clj-tdo" shape="rect">here</a>, update to the <code>part-1</code> tag.</p>
-    <a href="/11-11-2014-creating-clj-tdo-a-command-line-todo-list-part-two/">Continue reading &#8594;</a>
-    <hr>
-    
-    <div class="post-header">
-        <h2>Creating clj-tdo, a command line todo list.</h2>
-        <div id="post-meta">
-            
-            <div class="date">July 2, 2014</div>
-            <div>
-                <b>Tags: </b>
-                
-                <a href="/tags/list/">list</a>
-                
-                <a href="/tags/clojure/">clojure</a>
-                
-                <a href="/tags/todo/">todo</a>
-                
-            </div>
-        </div>
-    </div>
-    <p>Using a todo list really appeals to me, I often find I go back to using one if I'm going through a period of not getting much done.</p><h2><a name="current_applications" shape="rect"></a>Current applications</h2>
-    <a href="/02-07-2014-creating-clj-tdo-a-command-line-todo-list/">Continue reading &#8594;</a>
     <hr>
     
 

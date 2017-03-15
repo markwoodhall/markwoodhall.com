@@ -37,6 +37,7 @@ body {
     border-radius: 0;
     border: none;
     margin-bottom: 0px;
+    width:100%;
 }
 
 .navbar-default {

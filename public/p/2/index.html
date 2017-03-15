@@ -11,6 +11,12 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/default.min.css">
     <link href="/css/screen.css" rel="stylesheet" type="text/css" />
 
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@markwodhall" />
+    <meta name="twitter:description" content="Mark Woodhall - Just a software blog" />
+    <meta name="twitter:title" content="" />
+    <meta name="twitter:image" content="" />
+
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -26,12 +32,12 @@
 
 
 <nav class="navbar navbar-default">
+
     <div class="container">
         <div id="navbar" class="">
-                <a class="navbar-brand" href="/">
-                    <div class="navbar-brand-image"></div>
-                </a>
-            </div>
+            <a class="navbar-brand" href="/">
+                <div class="navbar-brand-image"></div>
+            </a>
         </div><!--/.nav-collapse -->
     </div><!--/.container-fluid -->
 </nav>
@@ -43,6 +49,65 @@
             <div id="content">
                 
 <div id="post">
+    
+    <div class="post-header">
+        <h2>Building a distributed in-memory key value store in Clojure.</h2>
+        <div id="post-meta">
+            
+            <div class="date">May 12, 2016</div>
+            <div>
+                <b>Tags: </b>
+                
+                <a href="/tags/memdi/">memdi</a>
+                
+                <a href="/tags/clojure/">clojure</a>
+                
+            </div>
+        </div>
+    </div>
+    <p>In this series we are going to build a distributed in-memory key value store, from scratch, using Clojure. Why? For learning and fun!</p><p>The distributed in-memory store will be called <a href="https://github.com/markwoodhall/memdi" shape="rect"><code>memdi</code></a> and will have the following semantics.</p>
+    <a href="/12-05-2016-building-a-distributed-in-memory-key-value-store-in-clojure/">Continue reading &#8594;</a>
+    <hr>
+    
+    <div class="post-header">
+        <h2>Finally v1.0.0 of clj-ravendb, a RavenDB client for Clojure.</h2>
+        <div id="post-meta">
+            
+            <div class="date">May 9, 2016</div>
+            <div>
+                <b>Tags: </b>
+                
+                <a href="/tags/clojure/">clojure</a>
+                
+                <a href="/tags/clj-ravendb/">clj-ravendb</a>
+                
+                <a href="/tags/ravendb/">ravendb</a>
+                
+            </div>
+        </div>
+    </div>
+    <p>TL;DR</p><p>I've finally found the time to add a few missing features and a sprinkling of love to <a href="https://github.com/markwoodhall/clj-ravendb" shape="rect">clj-ravendb</a> and given it a <code>1.0.0</code> release. You can find the API docs <a href="http://markwoodhall.github.io/clj-ravendb" shape="rect">here</a></p>
+    <a href="/09-05-2016-finally-v1-0-0-of-clj-ravendb-a-ravendb-client-for-clojure/">Continue reading &#8594;</a>
+    <hr>
+    
+    <div class="post-header">
+        <h2>How to fix Clojars all commits point to HEAD.</h2>
+        <div id="post-meta">
+            
+            <div class="date">November 26, 2015</div>
+            <div>
+                <b>Tags: </b>
+                
+                <a href="/tags/clojure/">clojure</a>
+                
+                <a href="/tags/clojars/">clojars</a>
+                
+            </div>
+        </div>
+    </div>
+    <p>Recently I noticed an issue with one of the projects I deploy to Clojars. The "Pushed by with this commit" link was only ever linking back to HEAD on the GitHub repo.</p><h3><a name="before" shape="rect"></a>Before</h3>
+    <a href="/26-11-2015-how-to-fix-clojars-all-commits-point-to-head/">Continue reading &#8594;</a>
+    <hr>
     
     <div class="post-header">
         <h2>A request for a Clojure code review!</h2>
@@ -103,63 +168,6 @@
     </div>
     <p>Recently I came across <a href="http://jen20.com/2015/02/08/event-sourcing-in-go.html" shape="rect">a blog post</a> by <a href="http://www.jen20.com" shape="rect">James Nugent</a> that described some example patterns for implementing event sourcing in Go. I'm no expert, I've not studied much Go code before and I've never written any but I'd certainly have to agree with the observation James made, there is much less code than some C# implementations.</p><p>James made available the <a href="https://github.com/jen20/go-event-sourcing-sample" shape="rect">code</a> for his post on GitHub, so I thought it would be interesting to have a look and come up with a Clojure implementation based on the same domain. I'd suggest reading James <a href="http://jen20.com/2015/02/08/event-sourcing-in-go.html" shape="rect">post</a> as this one will follow the same structure.</p>
     <a href="/04-03-2016-event-sourcing-in-clojure/">Continue reading &#8594;</a>
-    <hr>
-    
-    <div class="post-header">
-        <h2>Using New Relic to monitor non web based Clojure applications.</h2>
-        <div id="post-meta">
-            
-            <div class="date">February 25, 2015</div>
-            <div>
-                <b>Tags: </b>
-                
-                <a href="/tags/clojure/">clojure</a>
-                
-                <a href="/tags/new relic/">new relic</a>
-                
-            </div>
-        </div>
-    </div>
-    <p>Recently I wanted to use <a href="http://newrelic.com/" shape="rect">New Relic</a> to monitor and profile a Clojure application. This specific application was a "sentiment agent" running as a daemon and calculating the sentiment of various URLS.</p><p>The rest of this post assumes that you've already created a <a href="http://newrelic.com/" shape="rect">New Relic</a> account and installed the <a href="http://newrelic.com/" shape="rect">New Relic</a> agent for your platform of choice.</p>
-    <a href="/25-02-2015-using-new-relic-to-monitor-non-web-applications/">Continue reading &#8594;</a>
-    <hr>
-    
-    <div class="post-header">
-        <h2>Things I learnt about Vim this week: Joining lines of text.</h2>
-        <div id="post-meta">
-            
-            <div class="date">February 21, 2015</div>
-            <div>
-                <b>Tags: </b>
-                
-                <a href="/tags/vim/">vim</a>
-                
-            </div>
-        </div>
-    </div>
-    <p>I've been using Vim now for <a href="http://www.markwoodhall.com/2014/11/13/thoughts-9-months-after-switching-to-vim/" shape="rect">over a year</a> but I'm still increasingly amazed how little I know.</p><p>This week I've been writing some documentation in markdown. Working with text that isn't a programming language like C#, Clojure or JavaScript helped me to discover a few cool Vim commands I should have known already.</p>
-    <a href="/21-02-2015-things-i-learnt-about-vim-this-week/">Continue reading &#8594;</a>
-    <hr>
-    
-    <div class="post-header">
-        <h2>Using a Clojure REPL for everyday SQL tasks.</h2>
-        <div id="post-meta">
-            
-            <div class="date">February 12, 2015</div>
-            <div>
-                <b>Tags: </b>
-                
-                <a href="/tags/clojure/">clojure</a>
-                
-                <a href="/tags/repl/">repl</a>
-                
-                <a href="/tags/sql/">sql</a>
-                
-            </div>
-        </div>
-    </div>
-    <p>I've described <a href="http://markwoodhall.com/2014/11/13/thoughts-9-months-after-switching-to-vim/" shape="rect">previously</a> how I've been trying to improve my tooling and move away from using GUI tools so much. As well as this I've also had a more general move away from Windows to OSX.</p><p>Since I'm spending most of the day doing Windows based development on the .NET Framework there are a couple of tools I keep using in a VM. I've managed to get rid of most of these but I've not really found a good replacement for SQL Server Management Studio. There is <a href="http://razorsql.com/" shape="rect">Razor</a> but I'm not very into that.</p>
-    <a href="/12-02-2015-using-a-clojure-repl-for-everyday-sql-tasks/">Continue reading &#8594;</a>
     <hr>
     
 

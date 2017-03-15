@@ -12,11 +12,109 @@ http://markwoodhall.com
 Just a software blog
 </description>
 <lastBuildDate>
-Mon, 30 May 2016 21:49:36 +0100
+Wed, 15 Mar 2017 06:49:34 +0000
 </lastBuildDate>
 <generator>
 clj-rss
 </generator>
+<item>
+<guid>
+http://markwoodhall.com/14-03-2016-dotnetcore-package-a-day/
+</guid>
+<link>
+http://markwoodhall.com/14-03-2016-dotnetcore-package-a-day/
+</link>
+<title>
+Raising awareness of great packages that already support .net core!
+</title>
+<description>
+&lt;p&gt;There appears to be a never ending stream of content out there these days about the demise of .net and the difficulties of .net core adoption. I think we could be about to hit a turning point, with the recent &lt;a href='https://github.com/dotnet/core/blob/master/release-notes/download-archives/1.1.1-download.md'&gt;1.1.1 release&lt;/a&gt; and  new tooling support in Visual Studio 2017 everything is starting to come together. I don't use Visual Studio much but the tooling in Visual Studio Code is just as good, it's a pleasure to use at the moment. &lt;/p&gt;&lt;p&gt;Many people I've spoken to about starting to use .net core have cited a lack of adoption in the community and particularly third party library authors as reasons to defer their own usage. In this series of posts I aim to highlight an awesome library that already has .net core support, every day, for 15 days.&lt;/p&gt;&lt;p&gt;If you don't want to keep checking back but do want an email in your inbox then you can subscribe to the mailing list below.&lt;/p&gt;&lt;p&gt;Posts and emails will start on the 20th March.&lt;/p&gt;&lt;p&gt;&lt;link href=&quot;//cdn-images.mailchimp.com/embedcode/slim-10_7.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt; &lt;div id=&quot;mc&lt;i&gt;embed&lt;/i&gt;signup&quot;&gt; &lt;form action=&quot;//xyz.us15.list-manage.com/subscribe/post?u=b6063259bae6e4712948e9cb9&amp;amp;id=802d24879d&quot; method=&quot;post&quot; id=&quot;mc-embedded-subscribe-form&quot; name=&quot;mc-embedded-subscribe-form&quot; class=&quot;validate&quot; target=&quot;_blank&quot; novalidate&gt; &lt;div id=&quot;mc&lt;i&gt;embed&lt;/i&gt;signup_scroll&quot;&gt; &lt;label for=&quot;mce-EMAIL&quot;&gt;Subscribe to .net core package a day emails &lt;/label&gt; &lt;br /&gt; &lt;input style=&quot;padding:2px;&quot; type=&quot;email&quot; value=&quot;&quot; name=&quot;EMAIL&quot; class=&quot;email&quot; id=&quot;mce-EMAIL&quot; placeholder=&quot; email address&quot; required&gt; &lt;!&amp;ndash; real people should not fill this in and expect good things - do not remove this or risk form bot signups&amp;ndash;&gt; &lt;div style=&quot;position: absolute; left: -5000px;&quot; aria-hidden=&quot;true&quot;&gt;&lt;input type=&quot;text&quot; name=&quot;b&lt;i&gt;b6063259bae6e4712948e9cb9&lt;/i&gt;802d24879d&quot; tabindex=&quot;-1&quot; value=&quot;&quot;&gt;&lt;/div&gt; &lt;input style=&quot;padding:2px;&quot; type=&quot;submit&quot; value=&quot;Subscribe&quot; name=&quot;subscribe&quot; id=&quot;mc-embedded-subscribe&quot; class=&quot;button&quot;&gt;&lt;/div&gt; &lt;/div&gt; &lt;/form&gt; &lt;/div&gt;&lt;/p&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Tue, 14 Mar 2017 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<guid>
+http://markwoodhall.com/12-06-2016-omnisharp-vim-and-completion-snippets/
+</guid>
+<link>
+http://markwoodhall.com/12-06-2016-omnisharp-vim-and-completion-snippets/
+</link>
+<title>
+OmniSharp-Vim and Completion Snippets
+</title>
+<description>
+&lt;p&gt;I'm really happy that I finally managed to get a long running PR for the &lt;a href='https://github.com/OmniSharp/omnisharp-vim'&gt;omnisharp-vim&lt;/a&gt; plugin merged into master. I started work on it about 12 months ago but it took some time to get it merged and the pull request became stale and needed some attention. During those 12 months I had a lot of positive feedback from people that really wanted to get the functionality merged and I spent a lot of time using it every day. This post explains a bit about the functionality and how it works.&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;what&amp;#95;does&amp;#95;it&amp;#95;do&quot;&gt;&lt;/a&gt;What does it do&lt;/h2&gt;&lt;p&gt;As far as I know the first &lt;a href='http://www.omnisharp.net/'&gt;OmniSharp&lt;/a&gt; plugin to have this functionality was &lt;a href='https://github.com/OmniSharp/omnisharp-emacs'&gt;omnisharp-emacs&lt;/a&gt;, I was first made aware of it by &lt;a href='https://twitter.com/JasonImison'&gt;@jasonimison&lt;/a&gt;. What the functionality does is use the concept of snippets to aid auto completion. Selecting a completion on a function that accepts arguments will cause a dynamic snippet to be expanded and in the case of vim place you in SELECT mode on the first argument to the function. At this point the functionality of the snippet engine takes over and you can jump to different arguments with ease. I think this is much easier to explain graphically.&lt;/p&gt;&lt;p&gt;I've included KeyCastr captures below. It's also worth pointing out I have C-j mapped to jump to the next snippet placeholder.&lt;/p&gt;&lt;h3&gt;&lt;a name=&quot;dotted&amp;#95;access&quot;&gt;&lt;/a&gt;Dotted access&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/cSUS4mV.gif&quot; alt=&quot;Dotted Access&quot; /&gt;&lt;/p&gt;&lt;h3&gt;&lt;a name=&quot;constructor&amp;#95;calls&quot;&gt;&lt;/a&gt;Constructor calls&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/ZpUsClz.gif&quot; alt=&quot;Constructors&quot; /&gt;&lt;/p&gt;&lt;h3&gt;&lt;a name=&quot;single&amp;#95;function&amp;#95;calls&quot;&gt;&lt;/a&gt;Single function calls&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/FaVslDS.gif&quot; alt=&quot;Function&quot; /&gt;&lt;/p&gt;&lt;h3&gt;&lt;a name=&quot;multiline&amp;#95;dotted&amp;#95;access&quot;&gt;&lt;/a&gt;Multiline dotted access&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/lTgPV6m.gif&quot; alt=&quot;Multiline&quot; /&gt;&lt;/p&gt;&lt;h3&gt;&lt;a name=&quot;nested&amp;#95;snippet&amp;#95;completion&quot;&gt;&lt;/a&gt;Nested snippet completion&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/pUUA6vN.gif&quot; alt=&quot;Nested&quot; /&gt;&lt;/p&gt;&lt;h3&gt;&lt;a name=&quot;generics&quot;&gt;&lt;/a&gt;Generics&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/lvp1JjR.gif&quot; alt=&quot;Generics&quot; /&gt;&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;setup&amp;#95;and&amp;#95;compatibility&quot;&gt;&lt;/a&gt;Setup and compatibility&lt;/h2&gt;&lt;p&gt;Completion snippets rely on &lt;a href='https://github.com/SirVer/ultisnips'&gt;UltiSnips&lt;/a&gt;, it is currently the only snippet engine supported. You can use regular &lt;a href='https://github.com/SirVer/ultisnips'&gt;UltiSnips&lt;/a&gt; snippets and expand generated completion snippets inside of them.&lt;/p&gt;&lt;p&gt;I have &lt;a href='https://github.com/SirVer/ultisnips'&gt;UltiSnips&lt;/a&gt; configured in my .vimrc as below:&lt;/p&gt;&lt;pre&gt;&lt;code&gt;let g:UltiSnipsListSnippets =&amp;quot;&amp;lt;c-tab&amp;gt;&amp;quot;
+let g:UltiSnipsJumpForwardTrigger=&amp;quot;&amp;lt;c-j&amp;gt;&amp;quot;
+let g:UltiSnipsJumpBackwardTrigger=&amp;quot;&amp;lt;c-b&amp;gt;&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Completion snippets work well with many completion engines in vim, I've done the majority of testing with &lt;a href='https://github.com/Shougo/neocomplete.vim'&gt;neocomplete&lt;/a&gt;, &lt;a href='https://github.com/ervandew/supertab'&gt;supertab&lt;/a&gt;, and standard C-x C-o completion. They require a recent version of vim. You can check if your version is supported by running &lt;code&gt;:echo has&amp;#40;&amp;quot;patch-7.3-598&amp;quot;&amp;#41;&lt;/code&gt;, it should output 1. This requirement is because we make use of the &lt;code&gt;CompleteDone&lt;/code&gt; event.&lt;/p&gt;&lt;p&gt;Completion snippets are not enabled by default. To enable them the following should be included in your .vimrc.&lt;/p&gt;&lt;pre&gt;&lt;code&gt;&amp;quot; Enable snippet completion, requires completeopt-=preview
+let g:OmniSharp&amp;#95;want&amp;#95;snippet=1
+&lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;&lt;a name=&quot;how&amp;#95;it&amp;#95;works&quot;&gt;&lt;/a&gt;How it works&lt;/h3&gt;&lt;p&gt;You can checkout the &lt;a href='https://github.com/OmniSharp/omnisharp-vim/pull/209/files'&gt;diff&lt;/a&gt; for the pull request if you are interested. Both &lt;a href='https://github.com/OmniSharp/omnisharp-server'&gt;omnisharp-server&lt;/a&gt; and &lt;a href='https://github.com/OmniSharp/omnisharp-roslyn'&gt;omnisharp-roslyn&lt;/a&gt; have support to return a snippet template for completion data. With the above mentioned .vimrc configuration this data is requested from the server, when vim fires it's &lt;code&gt;CompleteDone&lt;/code&gt; event then a regex is run against a combination of the completion data and the context of the current line, if the regex matches then the completion is a candidate for snippet expansion and the &lt;a href='https://github.com/SirVer/ultisnips'&gt;UltiSnips&lt;/a&gt; internals are invoked. The snippet is also cached in a dictionary, keyed by the calculated completion term.&lt;/p&gt;&lt;pre&gt;&lt;code&gt;function! OmniSharp#ExpandAutoCompleteSnippet&amp;#40;&amp;#41;
+  if !g:OmniSharp&amp;#95;want&amp;#95;snippet
+    return
+  endif
+
+  if !exists&amp;#40;&amp;quot;&amp;#42;UltiSnips#AddSnippetWithPriority&amp;quot;&amp;#41;
+    echoerr &amp;quot;g:OmniSharp&amp;#95;want&amp;#95;snippet is enabled but this requires the UltiSnips plugin and it is not installed.&amp;quot;
+    return
+  endif
+
+  let line = strpart&amp;#40;getline&amp;#40;'.'&amp;#41;, 0, col&amp;#40;'.'&amp;#41;-1&amp;#41;
+  let remove&amp;#95;whitespace&amp;#95;regex = '&amp;#94;\s&amp;#42;\&amp;#40;.\{-}\&amp;#41;\s&amp;#42;$'
+
+  let completion = matchstr&amp;#40;line, '.&amp;#42;\zs\s\W.\+&amp;#40;.&amp;#42;&amp;#41;'&amp;#41;
+  let completion = substitute&amp;#40;completion, remove&amp;#95;whitespace&amp;#95;regex, '\1', ''&amp;#41;
+
+  let should&amp;#95;expand&amp;#95;completion = len&amp;#40;completion&amp;#41; != 0
+
+  if should&amp;#95;expand&amp;#95;completion
+    let completion = split&amp;#40;completion, '\.'&amp;#41;&amp;#91;-1&amp;#93;
+    let completion = split&amp;#40;completion, 'new '&amp;#41;&amp;#91;-1&amp;#93;
+
+    if has&amp;#95;key&amp;#40;s:omnisharp&amp;#95;last&amp;#95;completion&amp;#95;dictionary, completion&amp;#41;
+      let snippet = get&amp;#40;get&amp;#40;s:omnisharp&amp;#95;last&amp;#95;completion&amp;#95;dictionary, completion, ''&amp;#41;, 'snip',''&amp;#41;
+      if !has&amp;#95;key&amp;#40;s:generated&amp;#95;snippets, completion&amp;#41;
+        call UltiSnips#AddSnippetWithPriority&amp;#40;completion, snippet, completion, 'iw', 'cs', 1&amp;#41;
+        let s:generated&amp;#95;snippets&amp;#91;completion&amp;#93; = snippet
+      endif
+      call UltiSnips#CursorMoved&amp;#40;&amp;#41;
+      call UltiSnips#ExpandSnippetOrJump&amp;#40;&amp;#41;
+    endif
+  endif
+endfunction
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;summary&quot;&gt;&lt;/a&gt;Summary&lt;/h2&gt;&lt;p&gt;I've found the completion snippets to be a real improvement over the standard completion. It is relatively complicated (for my brain) to determine exactly when a snippet should be expanded and to make sure they work well for Generics, Lambdas, and nested snippets.&lt;/p&gt;&lt;p&gt;If you notice any issues then please raise them on &lt;a href='https://github.com/OmniSharp/omnisharp-vim'&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Sun, 12 Jun 2016 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<guid>
+http://markwoodhall.com/03-06-2016-what-i-learnt-from-3-years-remote-dev-work/
+</guid>
+<link>
+http://markwoodhall.com/03-06-2016-what-i-learnt-from-3-years-remote-dev-work/
+</link>
+<title>
+What I've Learnt From 3 Years Remote Software Development
+</title>
+<description>
+&lt;h3&gt;&lt;a name=&quot;intro&amp;#95;and&amp;#95;my&amp;#95;story&quot;&gt;&lt;/a&gt;Intro and my story&lt;/h3&gt;&lt;p&gt;I've been working remotely, at the awesome &lt;a href='http://www.bybox.com'&gt;ByBox&lt;/a&gt;, for three years now. Well, I tell a lie actually, it's three years sometime in late June 2016.&lt;/p&gt;&lt;p&gt;I'd like to say that I've learnt so much about remote working that I'm now a master but I don't think that's true. It's a constant learning and improvement experience.&lt;/p&gt;&lt;p&gt;When I first started remote working I had a bit of a wobble, so much so that I handed in my notice after just a few months. I'd expected everything to be great and this new found flexibility afforded to remote workers would increase my happiness at work but the reality was somewhat different.&lt;/p&gt;&lt;p&gt;I struggled to settle in and started to feel a bit like a fraud, how could &lt;em&gt;I&lt;/em&gt; possibly get such autonomy? I felt it a privilege to be able to work remotely, one I wasn't sure I had the right to or was &quot;smart&quot; enough for.&lt;/p&gt;&lt;p&gt;I've always had a tendency towards feeling incapable or inferior to other developers, even when other people's opinions tend to indicate the exact opposite. I'd say it was &lt;a href='https://en.wikipedia.org/wiki/Impostor_syndrome'&gt;imposter syndrome&lt;/a&gt; but then I'd have to think of myself as a high achiever, which is far from true. Remote working amplified this inferiority complex.&lt;/p&gt;&lt;p&gt;You could argue, and you would be right to some degree, that I experienced similar things while working in an office every day. The difference was, it took me much longer to settle and find my place within the team than it ever did previously when I was working in an office.&lt;/p&gt;&lt;h3&gt;&lt;a name=&quot;on-boarding&amp;#95;process&quot;&gt;&lt;/a&gt;On-boarding process&lt;/h3&gt;&lt;p&gt;I think the new developer &quot;on-boarding&quot; process is key to taking on remote developers. This process has usually taken one of two forms in places I've worked:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;New developer works on an isolated but worthwhile project, maybe to improve system monitoring or similar.&lt;/li&gt;&lt;li&gt;New developer goes straight into a &quot;real world&quot; project, working on something key to the business.&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;I think each of these has positives. Working in isolation on a worthwhile project could be considered more straightforward for a new remote developer. There are less things to deal with, probably less initial &quot;learning about the business&quot; and it perhaps offers a more relaxed entry point, especially for someone who hasn't worked remotely before, at a time when that person may already be bombarded with new information.&lt;/p&gt;&lt;p&gt;In some businesses it may also allow other people in the team to monitor the work of a new developer and understand things they are particularly strong or weak at, without hindering a &quot;real project&quot;.&lt;/p&gt;&lt;p&gt;I've often looked back to the time when I started remote working. I worked on an isolated &quot;system improvement&quot; type project and thought of it as a blessing. Things like &quot;How would I have ever coped if I was dropped straight into the deep end&quot; come to mind. More recently I've started to think that maybe it wasn't that helpful though and even worse it could have actually been a hindrance?&lt;/p&gt;&lt;p&gt;It's all great working in isolation to get started but I found it quite difficult emotionally, maybe it's just me, as I said I'm prone to that kind of thing! It wasn't until I started working on a &quot;real project&quot; that I actually started to feel like I was doing something worthwhile, like I was part of a team that strived to achieve good development practices and deliver value to the business. Exposure to the rest of the team and the more &quot;real world&quot; nature of the work also helped to bring my expectations in line with reality.&lt;/p&gt;&lt;p&gt;Throughout the hiring process and during the &quot;on-boarding&quot; phase I built up an unhealthy, unrealistic expectation of just how amazing I would need to be in order to make remote working a success. I valued the skills of fellow developers much higher than my own, this was a mistake though, it's a cliché but everyone brings unique skills and different experience. Only working with my new team &quot;in the wild&quot; really enabled me to see the real world view of this and to understand that there are technical things even they don't know, that they too have insecurities, and face similar daily problems.&lt;/p&gt;&lt;p&gt;Given my experience I'd argue that the best approach is to integrate a new remote developer with the rest of the team as quickly as possible. I know we often have stand ups, daily calls etc which provide some of this integration but nothing really beats that level of communication, understanding, and empathy you share when working together constantly towards a common goal. Given that the number one problem for remote workers is isolation, delaying team building and integration for the purposes of an &quot;onboarding&quot; style project is a shame in my opinion and has the potential to hurt relationship forming with other developers. I've often found those very early stages set the tone for future relationships.&lt;/p&gt;&lt;h3&gt;&lt;a name=&quot;tips&quot;&gt;&lt;/a&gt;Tips&lt;/h3&gt;&lt;p&gt;Based on my experiences if I could give a few they would probably be:&lt;/p&gt;&lt;h4&gt;&lt;a name=&quot;give&amp;#95;it&amp;#95;time&quot;&gt;&lt;/a&gt;Give it time&lt;/h4&gt;&lt;p&gt;If everything feels a little overwhelming just give it time to settle, you know what they say about time. If I'd have gone through with serving my notice after just a few months I'd have given up what has turned out to be the best experience of my career.&lt;/p&gt;&lt;h4&gt;&lt;a name=&quot;consider&amp;#95;others&quot;&gt;&lt;/a&gt;Consider others&lt;/h4&gt;&lt;p&gt;Assume everyone else is having the same kind of issues and concerns as you. &lt;em&gt;Don't&lt;/em&gt; assume that they are doing a flawless job and there is no way you could possibly compare to them. If you were all working in the same office this would all be much more noticeable but working remotely can put up a barrier to both the good and bad things that are happening.&lt;/p&gt;&lt;h4&gt;&lt;a name=&quot;open&amp;#95;up&quot;&gt;&lt;/a&gt;Open up&lt;/h4&gt;&lt;p&gt;Try and show some personality and be considerate of the impact when writing over IM, email etc. Have empathy with the people you are working with, you are in the best position to understand the issues and problems they face. Embrace any mistakes you make as an opportunity for both &lt;em&gt;you&lt;/em&gt; and &lt;em&gt;your&lt;/em&gt; team to learn from. Don't try to cover them up, be open about them.&lt;/p&gt;&lt;h4&gt;&lt;a name=&quot;communicate&quot;&gt;&lt;/a&gt;Communicate&lt;/h4&gt;&lt;p&gt;I think it's important to engage in as much communication as possible as soon as you can. If you are given an isolated &quot;on-boarding&quot; project then involve as many other people as possible, tell them what you are working on, and ask if they have any input. I know from personal experience it can be easy to find reasons to avoid communication but I also know that everything works out better if you don't. Communication is also one of those things that becomes more difficult each time you put it off. I say this not because I'm an expert but because I still make the same mistake.&lt;/p&gt;&lt;h3&gt;&lt;a name=&quot;the&amp;#95;good&amp;#95;stuff&quot;&gt;&lt;/a&gt;The good stuff&lt;/h3&gt;&lt;p&gt;It's not all doom and gloom. Lets face it, we are pretty lucky to be able to work remotely. I'm not sure of the exact figures but in my close circle of friends and family the number of people that get to work remotely is very small. If I had to pick a few remote developer perks I'd go with:&lt;/p&gt;&lt;h4&gt;&lt;a name=&quot;distraction&amp;#95;free&amp;#95;working&quot;&gt;&lt;/a&gt;Distraction free working&lt;/h4&gt;&lt;p&gt;&lt;em&gt;Most&lt;/em&gt; of the time I get so much more distraction free time than I used to in an office. It's much easier to ignore an email for a few hours than it is to ignore someone turning up at your desk. The only downside to this is that &lt;em&gt;sometimes&lt;/em&gt; distractions at home can be even worse. Kids running into the office, people knocking the front door etc. The positive time far outweighs the negative for me though.&lt;/p&gt;&lt;h4&gt;&lt;a name=&quot;home&amp;#95;office&quot;&gt;&lt;/a&gt;Home office&lt;/h4&gt;&lt;p&gt;I love having the freedom to decorate and furnish my work area as I wish. I find it really motivating to have somewhere comfortable and funky to spend eight+ hours per day. &lt;a href='http://www.bybox.com'&gt;ByBox&lt;/a&gt; are awesome about providing kit and office stuff. Great kit and a great office also gives you somewhere cool to spend time hacking on &lt;a href='https://github.com/markwoodhall/clova'&gt;open source stuff&lt;/a&gt; projects.&lt;/p&gt;&lt;h4&gt;&lt;a name=&quot;flexibility&quot;&gt;&lt;/a&gt;Flexibility&lt;/h4&gt;&lt;p&gt;One of the biggest positives for me is the flexibilty. It's really awesome to not have to commute, for some it saves an hour plus everyday and allows you to spend that time doing something rewarding, like taking the kids to school. My youngest is 1 and he's at home all day at the moment. It's been really awesome to not miss out on any of his milestones. I got to take a 5 minute break and see him take his first steps, when he's sick I get to check on him and give him a hug.&lt;/p&gt;&lt;h4&gt;&lt;a name=&quot;cost&amp;#95;saving&quot;&gt;&lt;/a&gt;Cost saving&lt;/h4&gt;I save a considerable amount of money by not having to commute. It's something I sometimes forget but the cost saving is probably at least £1000 a year. I'm making that assumption based on a monthly train pass costing around £90. For someone who is using a car I'd imagine the saving would be much more. As it happens, remote working has allowed me to get rid of a second car and save even more money.
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Fri, 03 Jun 2016 00:00:00 +0000
+</pubDate>
+</item>
 <item>
 <guid>
 http://markwoodhall.com/27-05-2016-deploying-cryogen-to-dokku-and-digital-ocean/
@@ -48,7 +146,7 @@ rm -rf ../public
 
 </enclosure>
 <pubDate>
-Fri, 27 May 2016 00:00:00 +0100
+Fri, 27 May 2016 00:00:00 +0000
 </pubDate>
 </item>
 <item>
@@ -68,7 +166,7 @@ My Clojure Workflow and Setup.
 
 </enclosure>
 <pubDate>
-Sat, 21 May 2016 00:00:00 +0100
+Sat, 21 May 2016 00:00:00 +0000
 </pubDate>
 </item>
 <item>
@@ -103,7 +201,7 @@ lein compile :all
 
 </enclosure>
 <pubDate>
-Mon, 16 May 2016 00:00:00 +0100
+Mon, 16 May 2016 00:00:00 +0000
 </pubDate>
 </item>
 <item>
@@ -123,7 +221,7 @@ Building a distributed in-memory key value store in Clojure.
 
 </enclosure>
 <pubDate>
-Thu, 12 May 2016 00:00:00 +0100
+Thu, 12 May 2016 00:00:00 +0000
 </pubDate>
 </item>
 <item>
@@ -143,7 +241,7 @@ Finally v1.0.0 of clj-ravendb, a RavenDB client for Clojure.
 
 </enclosure>
 <pubDate>
-Mon, 09 May 2016 00:00:00 +0100
+Mon, 09 May 2016 00:00:00 +0000
 </pubDate>
 </item>
 <item>
@@ -197,7 +295,7 @@ http://markwoodhall.com/17-11-2015-introducing-clova-a-small-validation-library-
 Introducing clova, a small validation library for Clojure and ClojureScript.
 </title>
 <description>
-&lt;p&gt;TL;DR&lt;/p&gt;&lt;p&gt;I wrote a small validation library for Clojure and ClojureScript. It's &quot;alright&quot; and it's called &lt;a href='https://github.com/markwoodhall/clova'&gt;clova&lt;/a&gt;, I'd appreciate any feedback over on &lt;a href='https://github.com/markwoodhall/clova'&gt;GitHub&lt;/a&gt;.&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;about&quot;&gt;&lt;/a&gt;About&lt;/h2&gt;&lt;p&gt;&lt;a href='https://github.com/markwoodhall/clova'&gt;clova&lt;/a&gt; is a small validation library written for Clojure and ClojureScript.&lt;/p&gt;&lt;p&gt;Existing libraries like &lt;a href='https://github.com/Prismatic/schema'&gt;Prismatic Schema&lt;/a&gt; offer much more functionality but that may not be what is required. &lt;a href='https://github.com/markwoodhall/clova'&gt;clova&lt;/a&gt; focuses more on targeted validation, like checking if something is a url or an email address, instead of schematic validation.&lt;/p&gt;&lt;p&gt;&lt;a href='https://github.com/markwoodhall/clova'&gt;clova&lt;/a&gt; supports ClojureScript to enable scenarios like server and client side sharing of validation logic. To do so it makes use of &lt;a href='http://dev.clojure.org/display/design/Reader+Conditionals'&gt;reader conditionals&lt;/a&gt; introduced in Clojure 1.7. Earlier versions used &lt;a href='https://github.com/lynaghk/cljx'&gt;cljx&lt;/a&gt; but that is considered deprecated because of the language support for reader conditionals.&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;how&amp;#95;to&amp;#95;use&quot;&gt;&lt;/a&gt;How to use&lt;/h2&gt;&lt;p&gt;Add the following dependency to &lt;code&gt;project.clj :dependencies&lt;/code&gt;.&lt;/p&gt;&lt;p&gt;&lt;a href='http://clojars.org/clova'&gt;&lt;img src=&quot;http://clojars.org/clova/latest-version.svg&quot; alt=&quot;Clojars Project&quot; /&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Pull in the core namespace &lt;code&gt;&amp;#40;:require &amp;#91;clova.core :as core&amp;#93;&amp;#41;&lt;/code&gt;.&lt;/p&gt;&lt;h3&gt;&lt;a name=&quot;define&amp;#95;a&amp;#95;validation&amp;#95;set&quot;&gt;&lt;/a&gt;Define a validation set&lt;/h3&gt;&lt;p&gt;Validation sets are pairs of keys to validate and the functions used to validate them.&lt;/p&gt;&lt;p&gt;&lt;script src=&quot;https://gist.github.com/markwoodhall/bce0cc499c7c6f4e3751.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;&lt;p&gt;They support nested map access and validation functions can have variadic arity.&lt;/p&gt;&lt;h3&gt;&lt;a name=&quot;defining&amp;#95;a&amp;#95;validator&quot;&gt;&lt;/a&gt;Defining a validator&lt;/h3&gt;&lt;p&gt;Validators are just functions with some meta data and are defined using the &lt;a href='http://markwoodhall.github.io/clova/clova.core.html#var-defvalidator'&gt;defvalidator&lt;/a&gt; macro.&lt;/p&gt;&lt;p&gt;&lt;script src=&quot;https://gist.github.com/markwoodhall/442996da139e1f539514.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;&lt;p&gt;You can make use of the key name, value and any arguments passed to the validator in the &lt;code&gt;:default-message&lt;/code&gt;. The only thing to consider is the ordering of arguments, when the validation message is formatted it will supply the values in the following order: 1. The key to validate, 2. The current value, 3. The arguments passed to the validator (in the order they are specified).&lt;/p&gt;&lt;p&gt;It is worth noting that using positional arguments of the format &lt;code&gt;%1$s&lt;/code&gt; in &lt;code&gt;:default-message&lt;/code&gt; is supported in Clojure only. The string format function used in ClojureScript &lt;code&gt;goog.string.format&lt;/code&gt; does not support them.&lt;/p&gt;&lt;h3&gt;&lt;a name=&quot;using&amp;#95;a&amp;#95;validation&amp;#95;set&quot;&gt;&lt;/a&gt;Using a validation set&lt;/h3&gt;&lt;p&gt;Using a validation set is simple. Pass the validation set you want to use and the map you wish to validate.&lt;/p&gt;&lt;p&gt;&lt;script src=&quot;https://gist.github.com/markwoodhall/48e91226ebff9a6c6f17.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;&lt;p&gt;Result is a map, including a valid? flag and a sequence of results.&lt;/p&gt;&lt;p&gt;&lt;script src=&quot;https://gist.github.com/markwoodhall/bbf879f9e2f8d5b3b751.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;&lt;p&gt;You can view API documentation &lt;a href='http://markwoodhall.github.io/clova/'&gt;here&lt;/a&gt;.&lt;/p&gt;&lt;h3&gt;&lt;a name=&quot;built&amp;#95;in&amp;#95;validators&quot;&gt;&lt;/a&gt;Built in validators&lt;/h3&gt;&lt;a href='https://github.com/markwoodhall/clova'&gt;clova&lt;/a&gt; includes the following validators as of v0.4.0.&lt;ol&gt;&lt;li&gt;&lt;a href='http://markwoodhall.github.io/clova/clova.core.html#var-between.3F'&gt;between?&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://markwoodhall.github.io/clova/clova.core.html#var-email.3F'&gt;email?&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://markwoodhall.github.io/clova/clova.core.html#var-greater.3F'&gt;greater?&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://markwoodhall.github.io/clova/clova.core.html#var-lesser.3F'&gt;lesser?&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://markwoodhall.github.io/clova/clova.core.html#var-matches.3F'&gt;matches?&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://markwoodhall.github.io/clova/clova.core.html#var-negative.3F'&gt;negative?&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://markwoodhall.github.io/clova/clova.core.html#var-positive.3F'&gt;positive?&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://markwoodhall.github.io/clova/clova.core.html#var-post-code.3F'&gt;post-code?&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://markwoodhall.github.io/clova/clova.core.html#var-present.3F'&gt;present?&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://markwoodhall.github.io/clova/clova.core.html#var-url.3F'&gt;url?&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://markwoodhall.github.io/clova/clova.core.html#var-zip-code.3F'&gt;zip-code?&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;h3&gt;&lt;a name=&quot;positives&quot;&gt;&lt;/a&gt;Positives&lt;/h3&gt;&lt;ol&gt;&lt;li&gt;It is easy to create and test new validators, the built in validators are simple pure functions.&lt;/li&gt;&lt;li&gt;Error messages are specific. For example, instead of &quot;Age must be in the specified range&quot; we get &quot;Age is 10 but it should be between 18 and 30&quot;.&lt;/li&gt;&lt;/ol&gt;&lt;h3&gt;&lt;a name=&quot;to&amp;#95;do&quot;&gt;&lt;/a&gt;To do&lt;/h3&gt;&lt;p&gt;&lt;del&gt;* Custom validation messages, probably localisable.&lt;/del&gt;&lt;h1&gt;&lt;a name=&quot;&quot;&gt;&lt;/a&gt;&lt;/h1&gt;&lt;del&gt;* Composition of multiple validation functions per key.&lt;/del&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Make string interpolation for default messages more intuitive.&lt;/li&gt;&lt;/ul&gt;&lt;h3&gt;&lt;a name=&quot;alternatives&quot;&gt;&lt;/a&gt;Alternatives&lt;/h3&gt;&lt;p&gt;&lt;a href='https://github.com/markwoodhall/clova'&gt;clova&lt;/a&gt; is still new and prone to change, plus I'm still learning Clojure. Here are a couple of alternatives that are more stable.&lt;/p&gt;&lt;p&gt;&lt;a href='https://github.com/leonardoborges/bouncer'&gt;bouncer&lt;/a&gt; | &lt;a href='https://github.com/michaelklishin/validateur'&gt;validateur&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;TL;DR&lt;/p&gt;&lt;p&gt;I wrote a small validation library for Clojure and ClojureScript. It's &quot;alright&quot; and it's called &lt;a href='https://github.com/markwoodhall/clova'&gt;clova&lt;/a&gt;, I'd appreciate any feedback over on &lt;a href='https://github.com/markwoodhall/clova'&gt;GitHub&lt;/a&gt;.&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;about&quot;&gt;&lt;/a&gt;About&lt;/h2&gt;&lt;p&gt;&lt;a href='https://github.com/markwoodhall/clova'&gt;clova&lt;/a&gt; is a small validation library written for Clojure and ClojureScript.&lt;/p&gt;&lt;p&gt;Existing libraries like &lt;a href='https://github.com/Prismatic/schema'&gt;Prismatic Schema&lt;/a&gt; offer much more functionality but that may not be what is required. &lt;a href='https://github.com/markwoodhall/clova'&gt;clova&lt;/a&gt; focuses more on targeted validation, like checking if something is a url or an email address, instead of schematic validation.&lt;/p&gt;&lt;p&gt;&lt;a href='https://github.com/markwoodhall/clova'&gt;clova&lt;/a&gt; supports ClojureScript to enable scenarios like server and client side sharing of validation logic. To do so it makes use of &lt;a href='http://dev.clojure.org/display/design/Reader+Conditionals'&gt;reader conditionals&lt;/a&gt; introduced in Clojure 1.7. Earlier versions used &lt;a href='https://github.com/lynaghk/cljx'&gt;cljx&lt;/a&gt; but that is considered deprecated because of the language support for reader conditionals.&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;how&amp;#95;to&amp;#95;use&quot;&gt;&lt;/a&gt;How to use&lt;/h2&gt;&lt;p&gt;Add the following dependency to &lt;code&gt;project.clj :dependencies&lt;/code&gt;.&lt;/p&gt;&lt;p&gt;&lt;a href='http://clojars.org/clova'&gt;&lt;img src=&quot;http://clojars.org/clova/latest-version.svg&quot; alt=&quot;Clojars Project&quot; /&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Pull in the core namespace &lt;code&gt;&amp;#40;:require &amp;#91;clova.core :as core&amp;#93;&amp;#41;&lt;/code&gt;.&lt;/p&gt;&lt;h3&gt;&lt;a name=&quot;define&amp;#95;a&amp;#95;validation&amp;#95;set&quot;&gt;&lt;/a&gt;Define a validation set&lt;/h3&gt;&lt;p&gt;Validation sets are pairs of keys to validate and the functions used to validate them.&lt;/p&gt;&lt;p&gt;&lt;script src=&quot;https://gist.github.com/markwoodhall/bce0cc499c7c6f4e3751.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;&lt;p&gt;They support nested map access and validation functions can have variadic arity.&lt;/p&gt;&lt;h3&gt;&lt;a name=&quot;defining&amp;#95;a&amp;#95;validator&quot;&gt;&lt;/a&gt;Defining a validator&lt;/h3&gt;&lt;p&gt;Validators are just functions with some meta data and are defined using the &lt;a href='http://markwoodhall.github.io/clova/clova.core.html#var-defvalidator'&gt;defvalidator&lt;/a&gt; macro.&lt;/p&gt;&lt;p&gt;&lt;script src=&quot;https://gist.github.com/markwoodhall/442996da139e1f539514.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;&lt;p&gt;You can make use of the key name, value and any arguments passed to the validator in the &lt;code&gt;:default-message&lt;/code&gt;. The only thing to consider is the ordering of arguments, when the validation message is formatted it will supply the values in the following order: 1. The key to validate, 2. The current value, 3. The arguments passed to the validator (in the order they are specified).&lt;/p&gt;&lt;p&gt;It is worth noting that using positional arguments of the format &lt;code&gt;%1$s&lt;/code&gt; in &lt;code&gt;:default-message&lt;/code&gt; is supported in Clojure only. The string format function used in ClojureScript &lt;code&gt;goog.string.format&lt;/code&gt; does not support them.&lt;/p&gt;&lt;h3&gt;&lt;a name=&quot;using&amp;#95;a&amp;#95;validation&amp;#95;set&quot;&gt;&lt;/a&gt;Using a validation set&lt;/h3&gt;&lt;p&gt;Using a validation set is simple. Pass the validation set you want to use and the map you wish to validate.&lt;/p&gt;&lt;p&gt;&lt;script src=&quot;https://gist.github.com/markwoodhall/48e91226ebff9a6c6f17.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;&lt;p&gt;Result is a map, including a valid? flag and a sequence of results.&lt;/p&gt;&lt;p&gt;&lt;script src=&quot;https://gist.github.com/markwoodhall/bbf879f9e2f8d5b3b751.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;&lt;p&gt;You can view API documentation &lt;a href='http://markwoodhall.github.io/clova/'&gt;here&lt;/a&gt;.&lt;/p&gt;&lt;h3&gt;&lt;a name=&quot;built&amp;#95;in&amp;#95;validators&quot;&gt;&lt;/a&gt;Built in validators&lt;/h3&gt;&lt;a href='https://github.com/markwoodhall/clova'&gt;clova&lt;/a&gt; includes the following validators as of v0.4.0.&lt;ol&gt;&lt;li&gt;&lt;a href='http://markwoodhall.github.io/clova/clova.core.html#var-between.3F'&gt;between?&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://markwoodhall.github.io/clova/clova.core.html#var-email.3F'&gt;email?&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://markwoodhall.github.io/clova/clova.core.html#var-greater.3F'&gt;greater?&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://markwoodhall.github.io/clova/clova.core.html#var-lesser.3F'&gt;lesser?&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://markwoodhall.github.io/clova/clova.core.html#var-matches.3F'&gt;matches?&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://markwoodhall.github.io/clova/clova.core.html#var-negative.3F'&gt;negative?&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://markwoodhall.github.io/clova/clova.core.html#var-positive.3F'&gt;positive?&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://markwoodhall.github.io/clova/clova.core.html#var-post-code.3F'&gt;post-code?&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://markwoodhall.github.io/clova/clova.core.html#var-not-nil.3F'&gt;not-nil?&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://markwoodhall.github.io/clova/clova.core.html#var-required.3F'&gt;required?&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://markwoodhall.github.io/clova/clova.core.html#var-url.3F'&gt;url?&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://markwoodhall.github.io/clova/clova.core.html#var-zip-code.3F'&gt;zip-code?&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://markwoodhall.github.io/clova/clova.core.html#var-length.3F'&gt;length?&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://markwoodhall.github.io/clova/clova.core.html#var-longer.3F'&gt;longer?&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://markwoodhall.github.io/clova/clova.core.html#var-shorter.3F'&gt;shorter?&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://markwoodhall.github.io/clova/clova.core.html#var-one-of.3F'&gt;one-of?&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://markwoodhall.github.io/clova/clova.core.html#var-all.3F'&gt;all?&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://markwoodhall.github.io/clova/clova.core.html#var-credit-card.3F'&gt;credit-card?&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://markwoodhall.github.io/clova/clova.core.html#var-numeric.3F'&gt;numeric?&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://markwoodhall.github.io/clova/clova.core.html#var-stringy.3F'&gt;stringy?&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://markwoodhall.github.io/clova/clova.core.html#var-date.3F'&gt;date?&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://markwoodhall.github.io/clova/clova.core.html#var-before.3F'&gt;before?&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://markwoodhall.github.io/clova/clova.core.html#var-after.3F'&gt;after?&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://markwoodhall.github.io/clova/clova.core.html#var-.3Ddate.3F'&gt;=date?&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://markwoodhall.github.io/clova/clova.core.html#var-.3D.3F'&gt;=?&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;h3&gt;&lt;a name=&quot;positives&quot;&gt;&lt;/a&gt;Positives&lt;/h3&gt;&lt;ol&gt;&lt;li&gt;It is easy to create and test new validators, the built in validators are simple pure functions.&lt;/li&gt;&lt;li&gt;Error messages are specific. For example, instead of &quot;Age must be in the specified range&quot; we get &quot;Age is 10 but it should be between 18 and 30&quot;.&lt;/li&gt;&lt;/ol&gt;&lt;h3&gt;&lt;a name=&quot;to&amp;#95;do&quot;&gt;&lt;/a&gt;To do&lt;/h3&gt;&lt;p&gt;&lt;del&gt;* Custom validation messages, probably localisable.&lt;/del&gt;&lt;h1&gt;&lt;a name=&quot;&quot;&gt;&lt;/a&gt;&lt;/h1&gt;&lt;del&gt;* Composition of multiple validation functions per key.&lt;/del&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Make string interpolation for default messages more intuitive.&lt;/li&gt;&lt;/ul&gt;&lt;h3&gt;&lt;a name=&quot;alternatives&quot;&gt;&lt;/a&gt;Alternatives&lt;/h3&gt;&lt;p&gt;&lt;a href='https://github.com/markwoodhall/clova'&gt;clova&lt;/a&gt; is still new and prone to change, plus I'm still learning Clojure. Here are a couple of alternatives that are more stable.&lt;/p&gt;&lt;p&gt;&lt;a href='https://github.com/leonardoborges/bouncer'&gt;bouncer&lt;/a&gt; | &lt;a href='https://github.com/michaelklishin/validateur'&gt;validateur&lt;/a&gt;&lt;/p&gt;
 </description>
 <enclosure>
 
@@ -223,7 +321,7 @@ Event sourcing in Clojure.
 
 </enclosure>
 <pubDate>
-Mon, 04 May 2015 00:00:00 +0100
+Mon, 04 May 2015 00:00:00 +0000
 </pubDate>
 </item>
 <item>
@@ -473,7 +571,7 @@ tdo ls -s C
 
 </enclosure>
 <pubDate>
-Wed, 02 Jul 2014 00:00:00 +0100
+Wed, 02 Jul 2014 00:00:00 +0000
 </pubDate>
 </item>
 <item>
@@ -507,7 +605,7 @@ Failed to validate &amp;quot;-p 100000&amp;quot;: Must be a number between 0 and
 
 </enclosure>
 <pubDate>
-Thu, 26 Jun 2014 00:00:00 +0100
+Thu, 26 Jun 2014 00:00:00 +0000
 </pubDate>
 </item>
 <item>
@@ -527,7 +625,7 @@ Destructuring in Clojure.
 
 </enclosure>
 <pubDate>
-Mon, 23 Jun 2014 00:00:00 +0100
+Mon, 23 Jun 2014 00:00:00 +0000
 </pubDate>
 </item>
 <item>
@@ -548,7 +646,7 @@ Using RavenDB in Clojure, part three.
 
 </enclosure>
 <pubDate>
-Sun, 22 Jun 2014 00:00:00 +0100
+Sun, 22 Jun 2014 00:00:00 +0000
 </pubDate>
 </item>
 <item>
@@ -568,7 +666,7 @@ Using RavenDB in Clojure, part two.
 
 </enclosure>
 <pubDate>
-Sat, 21 Jun 2014 00:00:00 +0100
+Sat, 21 Jun 2014 00:00:00 +0000
 </pubDate>
 </item>
 <item>
@@ -592,7 +690,7 @@ Using RavenDB in Clojure, part one.
 
 </enclosure>
 <pubDate>
-Sat, 21 Jun 2014 00:00:00 +0100
+Sat, 21 Jun 2014 00:00:00 +0000
 </pubDate>
 </item>
 </channel>
