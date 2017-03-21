@@ -15,7 +15,7 @@ In my opinion StructureMap is one of the most well thought out container librari
 
 StructureMap development is led by [Jeremy Miller](https://twitter.com/jeremydmiller) and is actively developed, it offers dotnet core support and has done for over 6 months. The publish of its v4.3.0 release to NuGet on the 1st August 2016 was the first version to support dotnet core (.net standard 1.3 and .net standard 1.5). There is also support to play nicely with the new Microsoft.Extensions.DependencyInjection default container, this is available as a [seperate package](https://github.com/structuremap/StructureMap.Microsoft.DependencyInjection). 
 
-I am using StructureMap quite heavily as part of a migration to dotnet core at [Open Energy Market](https://www.openenergymarket.com) and have found it intuitave and easy to use. The favoured container library in the past was [Ninject](https://github.com/ninject/Ninject) but at the time of writing there are only beta packages available with dotnet core support. Moving to StructureMap has been friction free and as pleasurable to use as a container library. 
+I am using StructureMap quite heavily as part of a migration to dotnet core at [Open Energy Market](https://www.openenergymarket.com) and have found it intuitave and easy to use. The favoured container library in the past was [Ninject](https://github.com/ninject/Ninject) but at the time of writing there are only beta packages available with dotnet core support. Moving to StructureMap has been friction free and as pleasurable to use as any container library. 
 
 ### What the community thinks
 
