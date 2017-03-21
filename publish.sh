@@ -6,6 +6,5 @@ cp -r ../public/* ./
 git add .
 git commit . -m "Publish"
 git push origin master
-git push deploy1 master
-git push deploy2 master
+git push deploy master
 rm -rf ../public
