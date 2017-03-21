@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Mark Woodhall: Using New Relic to monitor non web based Clojure applications.</title>
+    <link rel="canonical" href="http://markwoodhall.com/25-02-2015-using-new-relic-to-monitor-non-web-applications/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/default.min.css">
+    <link href="/css/screen.css" rel="stylesheet" type="text/css" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@markwodhall" />
+    <meta name="twitter:description" content="Mark Woodhall - Just a software blog" />
+    <meta name="twitter:title" content="Using New Relic to monitor non web based Clojure applications." />
+    <meta name="twitter:image" content="" />
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-56746791-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+
+
+<nav class="navbar navbar-default">
+
+    <div class="container">
+        <div id="navbar" class="">
+            <a class="navbar-brand" href="/">
+                <div class="navbar-brand-image"></div>
+            </a>
+        </div><!--/.nav-collapse -->
+    </div><!--/.container-fluid -->
+</nav>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div id="content">
+                
+<div id="post">
+    <div class="post-header">
+    <div id="post-meta" class="row">
+        <div class="col-lg-6">February 25, 2015</div>
+        
+    </div>
+    <h2>Using New Relic to monitor non web based Clojure applications.</h2>
+</div>
+<div>
+    
+    <p>Recently I wanted to use <a href='http://newrelic.com/'>New Relic</a> to monitor and profile a Clojure application. This specific application was a "sentiment agent" running as a daemon and calculating the sentiment of various URLS.</p><p>The rest of this post assumes that you've already created a <a href='http://newrelic.com/'>New Relic</a> account and installed the <a href='http://newrelic.com/'>New Relic</a> agent for your platform of choice.</p><p>In order to record basic information in <a href='http://newrelic.com/'>New Relic</a> all I needed to do was start my application using <code>newrelic.jar</code> as the <code>-javaagent</code>. While not perfect I decided that I'd bundle <code>newrelic.jar</code> and <code>newrelic.yml</code> with my application, so I commited them to BitBucket.</p><pre><code>java $JVM&#95;OPTS -javaagent:newrelic/newrelic.jar -cp newrelic/newrelic.jar -jar target/sentimizer.jar
+</code></pre><p>This is enough to get basic metrics like memory and CPU but I'm used to using <a href='http://newrelic.com/'>New Relic</a> for web applications and exploring the data it captures for "Transactions".</p><p>This <a href='http://blog.newrelic.com/2012/11/13/setting-up-custom-instrumentation-using-the-new-relic-java-agent/'>blog post</a> provides instructions for adding custom instrumentation to Java applications. All we really need to do is make sure <code>newrelic.jar</code> is on the class path and that we have set <code>enable&#95;custom&#95;tracing</code> equal to <code>true</code>. Then we can <code>import com.newrelic.api.agent.Trace;</code> and decorate the method we wish to consider a transaction with the <code>@Trace&#40;dispatcher=true&#41;</code> annotation. The <code>dispatcher=true</code> part is what tells <a href='http://newrelic.com/'>New Relic</a> that we should consider this to be a new transaction.</p><p>As luck would have it, Clojure also has support for annotations. As far as I understand to be able to use annotations as we require, we need to use a record or type in Clojure. I just came up with the simple record below.</p><p><script src="https://gist.github.com/markwoodhall/d27c8957396caf172cce.js"></script></p><p>This allows us to use a <code>Profiler</code> to wrap any function and have its execution recorded as a <a href='http://newrelic.com/'>New Relic</a> transaction. Like so:</p><p><script src="https://gist.github.com/markwoodhall/fd1295f7b51ff0f0dce7.js"></script></p><p>Instrumenting our function like this gives us much more detail. We will be able to see throughput and timings as well as a whole host of information relating to external resources, like databases, HTTP apis etc.</p><p>As an added bonus we can also uses <a href='http://newrelic.com/thread-profiler'>New Relics "Thread Profiler"</a> to profile and find hot spots in our Clojure application.</p><p>Thanks to <a href='http://corfield.org/blog/post.cfm/instrumenting-clojure-for-new-relic-monitoring'>Sean Corfield</a> for documenting his efforts.</p>
+</div>
+
+<div id="post-tags">
+    <b>Tags: </b>
+    
+    <a href="/tags/clojure/">clojure</a>
+    
+    <a href="/tags/new relic/">new relic</a>
+    
+</div>
+
+
+    <div id="prev-next">
+        
+        <a href="/04-03-2016-event-sourcing-in-clojure/">&laquo; Event sourcing in Clojure.</a>
+        
+        
+        <a class="right" href="/21-02-2015-things-i-learnt-about-vim-this-week/">Things I learnt about Vim this week: Joining lines of text. &raquo;</a>
+        
+    </div>
+
+    
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//markwoodhall.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    
+
+
+</div>
+
+            </div>
+        </div>
+    </div>
+    <footer>Copyright &copy;  Mark Woodhall
+        <br />
+        <a href="/">Home</a> |
+        <a href="/about">About</a> |
+        <a href="/archives/">Archives</a> |
+        <a href="/feed.xml">Subscribe</a>
+        <p style="text-align: center;">Powered by <a href="http://cryogenweb.org">Cryogen</a></p></footer>
+</div>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="/js/highlight.pack.js" type="text/javascript"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

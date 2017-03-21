@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Mark Woodhall: Serilog - dotnet core package a day - 1</title>
+    <link rel="canonical" href="http://markwoodhall.com/20-03-2017-dotnetcore-package-a-day-1/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/default.min.css">
+    <link href="/css/screen.css" rel="stylesheet" type="text/css" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@markwodhall" />
+    <meta name="twitter:description" content="Mark Woodhall - Just a software blog" />
+    <meta name="twitter:title" content="Serilog - dotnet core package a day - 1" />
+    <meta name="twitter:image" content="http://i.imgur.com/moEuXDY.jpg" />
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-56746791-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+
+
+<nav class="navbar navbar-default">
+
+    <div class="container">
+        <div id="navbar" class="">
+            <a class="navbar-brand" href="/">
+                <div class="navbar-brand-image"></div>
+            </a>
+        </div><!--/.nav-collapse -->
+    </div><!--/.container-fluid -->
+</nav>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div id="content">
+                
+<div id="post">
+    <div class="post-header">
+    <div id="post-meta" class="row">
+        <div class="col-lg-6">March 20, 2017</div>
+        
+    </div>
+    <h2>Serilog - dotnet core package a day - 1</h2>
+</div>
+<div>
+    
+    <h3><a name="overview"></a>Overview</h3><p>This post is part of a series, dotnet core package a day, where for 15 days I will be posting an overview of an awesome OSS dotnet package that already has support for dotnet core. In this post we will cover <a href='https://serilog.net'>Serilog</a>.</p><p>Serilog is an awesome dotnet library for logging. Don't take my word for it though, at the time of writing it has 1,868,319 downloads on NuGet. Here is the official take on it:</p><blockquote><p>  Like many other libraries for .NET, Serilog provides diagnostic logging to files, the console, and elsewhere. It is easy to set up, has a clean API, and is portable between recent dotnet platforms. </p><p>  Unlike other logging libraries, Serilog is built from the ground up to record structured event data. </p></blockquote><p>Serilog is backed heavily by the dotnet community and is very actively developed, it offers "best-in-class" dotnet core support and as far as I can tell has done for quite some time. The publish of its v2.0.0 release to NuGet on the 27th June 2016 was the first version to support dotnet core (.net standard 1.0 and .net standard 1.3). It also has support for the new Microsoft.Extensions.Logging abstraction. </p><p>Serilog exposes the concept of sinks, there are sinks available to write log events to a variety of storage platforms and formats. Ranging from the console to cloud analytics platforms such as Azure Analytics, New Relic, and Stackify, there is almost certainly a sink available that will fit your logging needs. Many of the sinks are maintained by the core Serilog team but there is also an ecosystem of community developed sinks. Even better is that many of the available sinks also have dotnet core support. </p><p>I am using Serilog quite heavily as part of a migration to dotnet core at the awesome <a href='https://www.openenergymarket.com'>Open Energy Market</a> and am happy to be doing so with well written, community developed, cross platform, and easy to use libraries like Serilog. </p><h3><a name="what&#95;the&#95;community&#95;thinks"></a>What the community thinks</h3><p><a href='https://twitter.com/mvalipour/status/828942749235830784'><img src="http://i.imgur.com/9ZBkFjF.png" alt="tweet" /></a></p><p><a href='https://twitter.com/dmitryzaets/status/825383217024860160'><img src="http://i.imgur.com/LLhz2l9.png" alt="tweet" /></a></p><p><a href='https://twitter.com/ChrisBriggsy/status/836392875122282496'><img src="http://i.imgur.com/dofJMaC.png" alt="tweet" /></a></p><h3><a name="links"></a>Links</h3><ul><li>Serilog <a href='https://serilog.net/'>Website</a></li><li>Serilog <a href='https://github.com/serilog/serilog'>GitHub</a></li><li><a href='https://github.com/serilog/serilog/wiki/Getting-Started'>Getting Stared Guide</a></li><li>I love the <a href='https://github.com/serilog/serilog-sinks-literate'>literate sink</a></li></ul><p>Massive thanks to <a href='https://twitter.com/nblumhardt'>Nicholas</a> and the community. </p><h3><a name="alternatives"></a>Alternatives</h3><p>Some other alternatives with dotnet core support.</p><ul><li><a href='https://github.com/NLog/NLog'>NLog</a></li></ul><p>If you don't want to keep checking back for more posts in this series but do want an email in your inbox then you can subscribe to the mailing list below.</p><p><link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css"> <div id="mc<i>embed</i>signup"> <form action="//xyz.us15.list-manage.com/subscribe/post?u=b6063259bae6e4712948e9cb9&amp;id=802d24879d" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate> <div id="mc<i>embed</i>signup_scroll"> <label for="mce-EMAIL">Subscribe to dotnet core package a day emails </label> <br /> <input style="padding:2px;" type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder=" email address" required> <!&ndash; real people should not fill this in and expect good things - do not remove this or risk form bot signups&ndash;> <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b<i>b6063259bae6e4712948e9cb9</i>802d24879d" tabindex="-1" value=""></div> <input style="padding:2px;" type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div> </div> </form> </div></p>
+</div>
+
+<div id="post-tags">
+    <b>Tags: </b>
+    
+    <a href="/tags/dotnet core serilog logging/">dotnet core serilog logging</a>
+    
+</div>
+
+
+    <div id="prev-next">
+        
+        <a href="/21-03-2017-dotnetcore-package-a-day-2/">&laquo; StructureMap - dotnet core package a day - 2</a>
+        
+        
+        <a class="right" href="/14-03-2016-dotnetcore-package-a-day/">Raising awareness of great packages that already support dotnet core! &raquo;</a>
+        
+    </div>
+
+    
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//markwoodhall.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    
+
+
+</div>
+
+            </div>
+        </div>
+    </div>
+    <footer>Copyright &copy;  Mark Woodhall
+        <br />
+        <a href="/">Home</a> |
+        <a href="/about">About</a> |
+        <a href="/archives/">Archives</a> |
+        <a href="/feed.xml">Subscribe</a>
+        <p style="text-align: center;">Powered by <a href="http://cryogenweb.org">Cryogen</a></p></footer>
+</div>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="/js/highlight.pack.js" type="text/javascript"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

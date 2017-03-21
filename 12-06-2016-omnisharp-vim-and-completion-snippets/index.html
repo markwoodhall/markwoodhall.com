@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Mark Woodhall: OmniSharp-Vim and Completion Snippets</title>
+    <link rel="canonical" href="http://markwoodhall.com/12-06-2016-omnisharp-vim-and-completion-snippets/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/default.min.css">
+    <link href="/css/screen.css" rel="stylesheet" type="text/css" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@markwodhall" />
+    <meta name="twitter:description" content="Mark Woodhall - Just a software blog" />
+    <meta name="twitter:title" content="OmniSharp-Vim and Completion Snippets" />
+    <meta name="twitter:image" content="http://i.imgur.com/cSUS4mV.gif" />
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-56746791-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+
+
+<nav class="navbar navbar-default">
+
+    <div class="container">
+        <div id="navbar" class="">
+            <a class="navbar-brand" href="/">
+                <div class="navbar-brand-image"></div>
+            </a>
+        </div><!--/.nav-collapse -->
+    </div><!--/.container-fluid -->
+</nav>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div id="content">
+                
+<div id="post">
+    <div class="post-header">
+    <div id="post-meta" class="row">
+        <div class="col-lg-6">June 12, 2016</div>
+        
+    </div>
+    <h2>OmniSharp-Vim and Completion Snippets</h2>
+</div>
+<div>
+    
+    <p>I'm really happy that I finally managed to get a long running PR for the <a href='https://github.com/OmniSharp/omnisharp-vim'>omnisharp-vim</a> plugin merged into master. I started work on it about 12 months ago but it took some time to get it merged and the pull request became stale and needed some attention. During those 12 months I had a lot of positive feedback from people that really wanted to get the functionality merged and I spent a lot of time using it every day. This post explains a bit about the functionality and how it works.</p><h2><a name="what&#95;does&#95;it&#95;do"></a>What does it do</h2><p>As far as I know the first <a href='http://www.omnisharp.net/'>OmniSharp</a> plugin to have this functionality was <a href='https://github.com/OmniSharp/omnisharp-emacs'>omnisharp-emacs</a>, I was first made aware of it by <a href='https://twitter.com/JasonImison'>@jasonimison</a>. What the functionality does is use the concept of snippets to aid auto completion. Selecting a completion on a function that accepts arguments will cause a dynamic snippet to be expanded and in the case of vim place you in SELECT mode on the first argument to the function. At this point the functionality of the snippet engine takes over and you can jump to different arguments with ease. I think this is much easier to explain graphically.</p><p>I've included KeyCastr captures below. It's also worth pointing out I have C-j mapped to jump to the next snippet placeholder.</p><h3><a name="dotted&#95;access"></a>Dotted access</h3><p><img src="http://i.imgur.com/cSUS4mV.gif" alt="Dotted Access" /></p><h3><a name="constructor&#95;calls"></a>Constructor calls</h3><p><img src="http://i.imgur.com/ZpUsClz.gif" alt="Constructors" /></p><h3><a name="single&#95;function&#95;calls"></a>Single function calls</h3><p><img src="http://i.imgur.com/FaVslDS.gif" alt="Function" /></p><h3><a name="multiline&#95;dotted&#95;access"></a>Multiline dotted access</h3><p><img src="http://i.imgur.com/lTgPV6m.gif" alt="Multiline" /></p><h3><a name="nested&#95;snippet&#95;completion"></a>Nested snippet completion</h3><p><img src="http://i.imgur.com/pUUA6vN.gif" alt="Nested" /></p><h3><a name="generics"></a>Generics</h3><p><img src="http://i.imgur.com/lvp1JjR.gif" alt="Generics" /></p><h2><a name="setup&#95;and&#95;compatibility"></a>Setup and compatibility</h2><p>Completion snippets rely on <a href='https://github.com/SirVer/ultisnips'>UltiSnips</a>, it is currently the only snippet engine supported. You can use regular <a href='https://github.com/SirVer/ultisnips'>UltiSnips</a> snippets and expand generated completion snippets inside of them.</p><p>I have <a href='https://github.com/SirVer/ultisnips'>UltiSnips</a> configured in my .vimrc as below:</p><pre><code>let g:UltiSnipsListSnippets =&quot;&lt;c-tab&gt;&quot;
+let g:UltiSnipsJumpForwardTrigger=&quot;&lt;c-j&gt;&quot;
+let g:UltiSnipsJumpBackwardTrigger=&quot;&lt;c-b&gt;&quot;
+</code></pre><p>Completion snippets work well with many completion engines in vim, I've done the majority of testing with <a href='https://github.com/Shougo/neocomplete.vim'>neocomplete</a>, <a href='https://github.com/ervandew/supertab'>supertab</a>, and standard C-x C-o completion. They require a recent version of vim. You can check if your version is supported by running <code>:echo has&#40;&quot;patch-7.3-598&quot;&#41;</code>, it should output 1. This requirement is because we make use of the <code>CompleteDone</code> event.</p><p>Completion snippets are not enabled by default. To enable them the following should be included in your .vimrc.</p><pre><code>&quot; Enable snippet completion, requires completeopt-=preview
+let g:OmniSharp&#95;want&#95;snippet=1
+</code></pre><h3><a name="how&#95;it&#95;works"></a>How it works</h3><p>You can checkout the <a href='https://github.com/OmniSharp/omnisharp-vim/pull/209/files'>diff</a> for the pull request if you are interested. Both <a href='https://github.com/OmniSharp/omnisharp-server'>omnisharp-server</a> and <a href='https://github.com/OmniSharp/omnisharp-roslyn'>omnisharp-roslyn</a> have support to return a snippet template for completion data. With the above mentioned .vimrc configuration this data is requested from the server, when vim fires it's <code>CompleteDone</code> event then a regex is run against a combination of the completion data and the context of the current line, if the regex matches then the completion is a candidate for snippet expansion and the <a href='https://github.com/SirVer/ultisnips'>UltiSnips</a> internals are invoked. The snippet is also cached in a dictionary, keyed by the calculated completion term.</p><pre><code>function! OmniSharp#ExpandAutoCompleteSnippet&#40;&#41;
+  if !g:OmniSharp&#95;want&#95;snippet
+    return
+  endif
+
+  if !exists&#40;&quot;&#42;UltiSnips#AddSnippetWithPriority&quot;&#41;
+    echoerr &quot;g:OmniSharp&#95;want&#95;snippet is enabled but this requires the UltiSnips plugin and it is not installed.&quot;
+    return
+  endif
+
+  let line = strpart&#40;getline&#40;'.'&#41;, 0, col&#40;'.'&#41;-1&#41;
+  let remove&#95;whitespace&#95;regex = '&#94;\s&#42;\&#40;.\{-}\&#41;\s&#42;$'
+
+  let completion = matchstr&#40;line, '.&#42;\zs\s\W.\+&#40;.&#42;&#41;'&#41;
+  let completion = substitute&#40;completion, remove&#95;whitespace&#95;regex, '\1', ''&#41;
+
+  let should&#95;expand&#95;completion = len&#40;completion&#41; != 0
+
+  if should&#95;expand&#95;completion
+    let completion = split&#40;completion, '\.'&#41;&#91;-1&#93;
+    let completion = split&#40;completion, 'new '&#41;&#91;-1&#93;
+
+    if has&#95;key&#40;s:omnisharp&#95;last&#95;completion&#95;dictionary, completion&#41;
+      let snippet = get&#40;get&#40;s:omnisharp&#95;last&#95;completion&#95;dictionary, completion, ''&#41;, 'snip',''&#41;
+      if !has&#95;key&#40;s:generated&#95;snippets, completion&#41;
+        call UltiSnips#AddSnippetWithPriority&#40;completion, snippet, completion, 'iw', 'cs', 1&#41;
+        let s:generated&#95;snippets&#91;completion&#93; = snippet
+      endif
+      call UltiSnips#CursorMoved&#40;&#41;
+      call UltiSnips#ExpandSnippetOrJump&#40;&#41;
+    endif
+  endif
+endfunction
+</code></pre><h2><a name="summary"></a>Summary</h2><p>I've found the completion snippets to be a real improvement over the standard completion. It is relatively complicated (for my brain) to determine exactly when a snippet should be expanded and to make sure they work well for Generics, Lambdas, and nested snippets.</p><p>If you notice any issues then please raise them on <a href='https://github.com/OmniSharp/omnisharp-vim'>GitHub</a>.</p>
+</div>
+
+<div id="post-tags">
+    <b>Tags: </b>
+    
+    <a href="/tags/.net/">.net</a>
+    
+    <a href="/tags/omnisharp/">omnisharp</a>
+    
+    <a href="/tags/snippets/">snippets</a>
+    
+    <a href="/tags/vim/">vim</a>
+    
+    <a href="/tags/completion/">completion</a>
+    
+</div>
+
+
+    <div id="prev-next">
+        
+        <a href="/14-03-2016-dotnetcore-package-a-day/">&laquo; Raising awareness of great packages that already support dotnet core!</a>
+        
+        
+        <a class="right" href="/03-06-2016-what-i-learnt-from-3-years-remote-dev-work/">What I&#39;ve Learnt From 3 Years Remote Software Development &raquo;</a>
+        
+    </div>
+
+    
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//markwoodhall.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    
+
+
+</div>
+
+            </div>
+        </div>
+    </div>
+    <footer>Copyright &copy;  Mark Woodhall
+        <br />
+        <a href="/">Home</a> |
+        <a href="/about">About</a> |
+        <a href="/archives/">Archives</a> |
+        <a href="/feed.xml">Subscribe</a>
+        <p style="text-align: center;">Powered by <a href="http://cryogenweb.org">Cryogen</a></p></footer>
+</div>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="/js/highlight.pack.js" type="text/javascript"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+
