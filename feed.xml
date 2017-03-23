@@ -12,11 +12,31 @@ http://markwoodhall.com
 Just a software blog
 </description>
 <lastBuildDate>
-Wed, 22 Mar 2017 21:11:13 +0000
+Thu, 23 Mar 2017 19:41:37 +0000
 </lastBuildDate>
 <generator>
 clj-rss
 </generator>
+<item>
+<guid>
+http://markwoodhall.com/23-03-2017-dotnetcore-package-a-day-4/
+</guid>
+<link>
+http://markwoodhall.com/23-03-2017-dotnetcore-package-a-day-4/
+</link>
+<title>
+AutoMapper - dotnet core package a day - 4
+</title>
+<description>
+&lt;h3&gt;&lt;a name=&quot;overview&quot;&gt;&lt;/a&gt;Overview&lt;/h3&gt;&lt;p&gt;This post is part of a series, dotnet core package a day, where for 15 days I will be posting an overview of an awesome OSS dotnet package that already has support for dotnet core. In this post we will cover &lt;a href='https://github.com/AutoMapper/AutoMapper'&gt;AutoMapper&lt;/a&gt;.&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt; AutoMapper is a simple little library built to solve a deceptively complex problem - getting rid of code that mapped one object to another. This type of code is rather dreary and boring to write, so why not invent a tool to do it for us?  AutoMapper uses a fluent configuration API to define an object-object mapping strategy and a convention-based matching algorithm to match up source to destination values. Currently, AutoMapper is designed for model projection scenarios to flatten complex object models to DTOs and other simple objects, whose design is better suited for serialization, communication, messaging, or simply an anti-corruption layer between the domain and application layer. &lt;/p&gt;&lt;/blockquote&gt;&lt;p&gt;AutoMapper is the most widely used object mapping library for the dotnet platform. It has a rather impressive 7,716,215 downloads on NuGet, 1,030,380 of those downloads are for a single version (v3.3.1). It averages 3,403 downloads a day. The publish of it's v5.0.2 release to NuGet on the 7th July 2016 added support for dotnet core (.net standard 1.1 &amp; .net standard 1.3).&lt;/p&gt;&lt;p&gt;AutoMapper development is led by &lt;a href='https://twitter.com/jbogard'&gt;Jimmy Bogard&lt;/a&gt;, there have been a number of contributions from the wider community as well, at the time of writing 80+ individuals have commited to AutoMapper.&lt;/p&gt;&lt;p&gt;I've used AutoMapper on a lot of projects now and as long as I've favoured convention over configuraton it has been an awesome library to use. I've also used Mapster and had good experiences with that too.&lt;/p&gt;&lt;h3&gt;&lt;a name=&quot;what&amp;#95;the&amp;#95;community&amp;#95;thinks&quot;&gt;&lt;/a&gt;What the community thinks&lt;/h3&gt;&lt;p&gt;&lt;a href='https://twitter.com/SakisK/status/836978146259963905'&gt;&lt;img src=&quot;http://i.imgur.com/CuegG6I.png&quot; alt=&quot;tweet&quot; /&gt;&lt;/a&gt; &lt;a href='https://twitter.com/kamranayub/status/822169571771772929'&gt;&lt;img src=&quot;http://i.imgur.com/kdAN4jT.png&quot; alt=&quot;tweet&quot; /&gt;&lt;/a&gt; &lt;a href='https://twitter.com/jbogard/status/816740750872498189'&gt;&lt;img src=&quot;http://i.imgur.com/UYteizv.png&quot; alt=&quot;tweet&quot; /&gt;&lt;/a&gt; &lt;a href='https://twitter.com/CharlesPeet/status/814200801824538625'&gt;&lt;img src=&quot;http://i.imgur.com/PDI9AGo.png&quot; alt=&quot;tweet&quot; /&gt;&lt;/a&gt;&lt;/p&gt;&lt;h3&gt;&lt;a name=&quot;links&quot;&gt;&lt;/a&gt;Links&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;AutoMapper &lt;a href='http://automapper.org/'&gt;Website&lt;/a&gt;&lt;/li&gt;&lt;li&gt;AutoMapper &lt;a href='https://github.com/AutoMapper/AutoMapper'&gt;GitHub&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='https://github.com/AutoMapper/AutoMapper/wiki'&gt;Documentation&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='https://github.com/AutoMapper/AutoMapper/wiki/Getting-started'&gt;Getting Started Guide&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Massive thanks to &lt;a href='https://twitter.com/jbogard'&gt;Jimmy&lt;/a&gt; and the community.&lt;/p&gt;&lt;h3&gt;&lt;a name=&quot;alternatives&quot;&gt;&lt;/a&gt;Alternatives&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='https://github.com/eswann/Mapster'&gt;Mapster&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Mapster is a good alternative that also has dotnet core (.net standard 1.3) support. &lt;/p&gt;&lt;blockquote&gt;&lt;p&gt; A fast, fun and stimulating object to object mapper. Kind of like AutoMapper, just simpler and way, way faster. &lt;/p&gt;&lt;/blockquote&gt;&lt;p&gt;If you don't want to keep checking back for more posts in this series but do want an email in your inbox then you can subscribe to the mailing list below.&lt;/p&gt;&lt;p&gt;&lt;link href=&quot;//cdn-images.mailchimp.com/embedcode/slim-10_7.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt; &lt;div id=&quot;mc&lt;i&gt;embed&lt;/i&gt;signup&quot;&gt; &lt;form action=&quot;//xyz.us15.list-manage.com/subscribe/post?u=b6063259bae6e4712948e9cb9&amp;amp;id=802d24879d&quot; method=&quot;post&quot; id=&quot;mc-embedded-subscribe-form&quot; name=&quot;mc-embedded-subscribe-form&quot; class=&quot;validate&quot; target=&quot;_blank&quot; novalidate&gt; &lt;div id=&quot;mc&lt;i&gt;embed&lt;/i&gt;signup_scroll&quot;&gt; &lt;label for=&quot;mce-EMAIL&quot;&gt;Subscribe to dotnet core package a day emails &lt;/label&gt; &lt;br /&gt; &lt;input style=&quot;padding:2px;&quot; type=&quot;email&quot; value=&quot;&quot; name=&quot;EMAIL&quot; class=&quot;email&quot; id=&quot;mce-EMAIL&quot; placeholder=&quot; email address&quot; required&gt; &lt;!&amp;ndash; real people should not fill this in and expect good things - do not remove this or risk form bot signups&amp;ndash;&gt; &lt;div style=&quot;position: absolute; left: -5000px;&quot; aria-hidden=&quot;true&quot;&gt;&lt;input type=&quot;text&quot; name=&quot;b&lt;i&gt;b6063259bae6e4712948e9cb9&lt;/i&gt;802d24879d&quot; tabindex=&quot;-1&quot; value=&quot;&quot;&gt;&lt;/div&gt; &lt;input style=&quot;padding:2px;&quot; type=&quot;submit&quot; value=&quot;Subscribe&quot; name=&quot;subscribe&quot; id=&quot;mc-embedded-subscribe&quot; class=&quot;button&quot;&gt;&lt;/div&gt; &lt;/div&gt; &lt;/form&gt; &lt;/div&gt;&lt;/p&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Thu, 23 Mar 2017 00:00:00 +0000
+</pubDate>
+</item>
 <item>
 <guid>
 http://markwoodhall.com/22-03-2017-dotnetcore-package-a-day-3/
