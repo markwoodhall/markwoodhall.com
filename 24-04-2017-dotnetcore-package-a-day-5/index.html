@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Mark Woodhall: DataStax C# Driver - dotnet core package a day - 5</title>
+    <link rel="canonical" href="http://markwoodhall.com/24-04-2017-dotnetcore-package-a-day-5/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/default.min.css">
+    <link href="/css/screen.css" rel="stylesheet" type="text/css" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@markwodhall" />
+    <meta name="twitter:description" content="Mark Woodhall - Just a software blog" />
+    <meta name="twitter:title" content="DataStax C# Driver - dotnet core package a day - 5" />
+    <meta name="twitter:image" content="http://i.imgur.com/moEuXDY.jpg" />
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-56746791-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+
+
+<nav class="navbar navbar-default">
+
+    <div class="container">
+        <div id="navbar" class="">
+            <a class="navbar-brand" href="/">
+                <div class="navbar-brand-image"></div>
+            </a>
+        </div><!--/.nav-collapse -->
+    </div><!--/.container-fluid -->
+</nav>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div id="content">
+                
+<div id="post">
+    <div class="post-header">
+    <div id="post-meta" class="row">
+        <div class="col-lg-6">March 24, 2017</div>
+        
+    </div>
+    <h2>DataStax C# Driver - dotnet core package a day - 5</h2>
+</div>
+<div>
+    
+    <h3><a name="overview"></a>Overview</h3><p>This post is part of a series, dotnet core package a day, where for 15 days I will be posting an overview of an awesome OSS dotnet package that already has support for dotnet core. In this post we will cover <a href='https://github.com/datastax/csharp-driver'>DataStax C# Driver</a>.</p><blockquote><p> A modern, feature-rich and highly tunable C# client library for Apache Cassandra (1.2+) and DataStax Enterprise (3.1+) using exclusively Cassandra's binary protocol and Cassandra Query Language v3. </p><p> Features: </p><p> Sync and Async API<br />  Simple, Prepared, and Batch statements<br />  Asynchronous IO, parallel execution, request pipelining<br />  Connection pooling<br />  Auto node discovery<br />  Automatic reconnection<br />  Configurable load balancing and retry policies<br />  Works with any cluster size<br />  Linq2Cql and Ado.Net support<br /> </p></blockquote><p>DataStax C# Driver is the most actively developed dotnet client for Apache Cassandra. At the time of writing it has 145,882 downloads on NuGet. The publish of it's v3.1.0 release to NuGet on the 17th October 2016 added support for dotnet core (.net standard 1.5).</p><p>DataStax C# Driver development is led by the Client Drivers team at DataStax. There have been small contributions from the community but the guys at DataStax are doing an awesome job and were quick to get a dotnet core version out. It's pretty awesome to think that we have a fast and reliable cross platform C# cassandra driver.</p><h3><a name="what&#95;the&#95;community&#95;thinks"></a>What the community thinks</h3><p>This is another one where there is little interaction on social media sites like twitter, so the examples below are a little old. </p><p><a href='https://twitter.com/KyleSonaty/status/539953176473251843'><img src="http://i.imgur.com/KNITFnr.png" alt="tweet" /></a> <a href='https://twitter.com/DataStaxEng/status/811620775941799936'><img src="http://i.imgur.com/Fa5OlXk.png" alt="tweet" /></a> <a href='https://twitter.com/kellabyte/status/301046046052724736'><img src="http://i.imgur.com/CkGtCi2.png" alt="tweet" /></a></p><h3><a name="links"></a>Links</h3><ul><li>DataStax C# Driver <a href='http://docs.datastax.com/en/developer/csharp-driver/3.2/'>Website</a></li><li>DataStax C# Driver <a href='https://github.com/datastax/csharp-driver'>GitHub</a></li><li><a href='http://docs.datastax.com/en/developer/csharp-driver/3.2/'>Documentation</a></li><li><a href='https://academy.datastax.com/resources/getting-started-apache-cassandra-and-c-net'>Getting Started Guide</a></li></ul><h3><a name="alternatives"></a>Alternatives</h3><p>There are currently no alternative Cassandra libraries for dotnet core, there is <a href='https://github.com/pchalamet/cassandra-sharp'>cassandra-sharp</a> but it does not have dotnet core support.</p><p>If you don't want to keep checking back for more posts in this series but do want an email in your inbox then you can subscribe to the mailing list below.</p><p><link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css"> <div id="mc<i>embed</i>signup"> <form action="//xyz.us15.list-manage.com/subscribe/post?u=b6063259bae6e4712948e9cb9&amp;id=802d24879d" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate> <div id="mc<i>embed</i>signup_scroll"> <label for="mce-EMAIL">Subscribe to dotnet core package a day emails </label> <br /> <input style="padding:2px;" type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder=" email address" required> <!&ndash; real people should not fill this in and expect good things - do not remove this or risk form bot signups&ndash;> <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b<i>b6063259bae6e4712948e9cb9</i>802d24879d" tabindex="-1" value=""></div> <input style="padding:2px;" type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div> </div> </form> </div></p>
+</div>
+
+<div id="post-tags">
+    <b>Tags: </b>
+    
+    <a href="/tags/dotnet core cassandra datastax/">dotnet core cassandra datastax</a>
+    
+</div>
+
+
+    <div id="prev-next">
+        
+        
+        <a class="right" href="/23-03-2017-dotnetcore-package-a-day-4/">AutoMapper - dotnet core package a day - 4 &raquo;</a>
+        
+    </div>
+
+    
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//markwoodhall.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    
+
+
+</div>
+
+            </div>
+        </div>
+    </div>
+    <footer>Copyright &copy;  Mark Woodhall
+        <br />
+        <a href="/">Home</a> |
+        <a href="/about">About</a> |
+        <a href="/archives/">Archives</a> |
+        <a href="/feed.xml">Subscribe</a>
+        <p style="text-align: center;">Powered by <a href="http://cryogenweb.org">Cryogen</a></p></footer>
+</div>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="/js/highlight.pack.js" type="text/javascript"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+
