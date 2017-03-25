@@ -15,7 +15,7 @@ Dapper is a micro ORM for the dotnet framework, it's lightweight and easy to use
 
 Dapper development is led by [Nick Craver](https://twitter.com/Nick_Craver) and [Marc Gravell](https://twitter.com/marcgravell) but it is very much a community project, it currently has 100+ contributors.
 
-I am using Dapper quite heavily as part of a migration to dotnet core at [Open Energy Market](http://www.openenergymarket.com) and having used it on a number of other projects too I have always appreciated it's simplicitly, I'm super happy it's already available on dotnet core. 
+I am using Dapper quite heavily as part of a migration to dotnet core at [Open Energy Market](http://www.openenergymarket.com) and having used it on a number of other projects too I have always appreciated it's simplicity, I'm super happy it's already available on dotnet core. 
 
 ### What the community thinks
 
