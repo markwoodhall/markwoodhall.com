@@ -13,7 +13,7 @@ This post is part of a series, dotnet core package a day, where for 15 days I wi
 
 Dapper is a micro ORM for the dotnet framework, it's lightweight and easy to use. At the time of writing it has 2,708,300 downloads on NuGet. The publish of it's v1.50.0 release to NuGet on the 1st July 2016 added support for dotnet core (.net standard 1.3).
 
-Dapper development is led by [Nick Craver](https://twitter.com/Nick_Craver) and [Mark Gravell](https://twitter.com/marcgravell) but it is very much a community project, it currently has 100+ contributors.
+Dapper development is led by [Nick Craver](https://twitter.com/Nick_Craver) and [Marc Gravell](https://twitter.com/marcgravell) but it is very much a community project, it currently has 100+ contributors.
 
 I am using Dapper quite heavily as part of a migration to dotnet core at [Open Energy Market](http://www.openenergymarket.com) and having used it on a number of other projects too I have always appreciated it's simplicitly, I'm super happy it's already available on dotnet core. 
 
@@ -23,7 +23,7 @@ I am using Dapper quite heavily as part of a migration to dotnet core at [Open E
 [![tweet](http://i.imgur.com/t3XTLDE.png)](https://twitter.com/reverentgeek/status/839638440199110657)
 [![tweet](http://i.imgur.com/XpvNgcd.png)](https://twitter.com/KerryRitter/status/788537959410610178)
 
-Massive thanks to [Nick](https://twitter.com/Nick_Craver), [Mark](https://twitter.com/marcgravell), and the wider community.
+Massive thanks to [Nick](https://twitter.com/Nick_Craver), [Marc](https://twitter.com/marcgravell), and the wider community.
 
 ### Links
 
