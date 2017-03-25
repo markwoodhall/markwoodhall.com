@@ -1,4 +1,4 @@
-{:title  "Dapper - dotnet core package a day - 5"
+{:title  "Dapper - dotnet core package a day - 6"
  :layout :post
  :date   "25-03-2017"
  :image  "http://i.imgur.com/moEuXDY.jpg"
