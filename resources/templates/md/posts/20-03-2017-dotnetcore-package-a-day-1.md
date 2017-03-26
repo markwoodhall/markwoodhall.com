@@ -2,7 +2,7 @@
  :layout :post
  :date   "20-03-2017"
  :image  "http://i.imgur.com/moEuXDY.jpg"
- :tags   ["dotnet core serilog logging"]}
+ :tags   ["dotnet core" "serilog" "logging"]}
 
 
 ### Overview

@@ -2,7 +2,7 @@
  :layout :post
  :date   "23-03-2017"
  :image  "http://i.imgur.com/moEuXDY.jpg"
- :tags   ["dotnet core automapper"]}
+ :tags   ["dotnet core" "automapper"]}
 
 
 ### Overview

@@ -2,7 +2,7 @@
  :layout :post
  :date   "24-03-2017"
  :image  "http://i.imgur.com/moEuXDY.jpg"
- :tags   ["dotnet core cassandra datastax"]}
+ :tags   ["dotnet core" "cassandra" "datastax"]}
 
 
 ### Overview
