@@ -12,11 +12,31 @@ http://markwoodhall.com
 Just a software blog
 </description>
 <lastBuildDate>
-Sun, 26 Mar 2017 19:08:14 +0000
+Sun, 26 Mar 2017 20:08:10 +0000
 </lastBuildDate>
 <generator>
 clj-rss
 </generator>
+<item>
+<guid>
+http://markwoodhall.com/26-03-2017-dotnetcore-package-a-day-7/
+</guid>
+<link>
+http://markwoodhall.com/26-03-2017-dotnetcore-package-a-day-7/
+</link>
+<title>
+Jil - dotnet core package a day - 7
+</title>
+<description>
+&lt;h3&gt;&lt;a name=&quot;overview&quot;&gt;&lt;/a&gt;Overview&lt;/h3&gt;&lt;p&gt;This post is part of a series, dotnet core package a day, where for 15 days I will be posting an overview of an awesome OSS dotnet package that already has support for dotnet core. In this post we will cover &lt;a href='https://github.com/kevin-montrose/Jil'&gt;Jil&lt;/a&gt;.&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt; A fast JSON (de)serializer, built on Sigil with a number of somewhat crazy optimization tricks. &lt;/p&gt;&lt;/blockquote&gt;&lt;p&gt;Jil is a fast JSON serialization library. There are some very interesting numbers to quantify &quot;fast&quot; available &lt;a href='https://docs.google.com/spreadsheets/d/1Jx7DAGopJo3BC0St_L5qHJJrWpZe9x9BCHgdeY9-b-w/edit#gid=0'&gt;here&lt;/a&gt;. At the time of writing it has 163,674 downloads on NuGet. It's latest stable version, v2.15.0, was published on the 9th January 2017. This publish updated it's &lt;a href='https://github.com/kevin-montrose/Sigil'&gt;Sigil&lt;/a&gt; dependency and also added dotnet core support (.net standard 1.6). &lt;/p&gt;&lt;p&gt;Jil development is led by &lt;a href='https://twitter.com/kevinmontrose'&gt;Kevin Montrose&lt;/a&gt;. There have been ~20 community contributors and the project is actively developed.&lt;br /&gt;&lt;/p&gt;&lt;p&gt;I have started to look at using Jil where there is a genuine need for a faster serializer. It is a really great option to have available on dotnet core and is used heavily in production at Stack Overflow.&lt;/p&gt;&lt;h3&gt;&lt;a name=&quot;what&amp;#95;the&amp;#95;community&amp;#95;thinks&quot;&gt;&lt;/a&gt;What the community thinks&lt;/h3&gt;&lt;p&gt;&lt;a href='https://twitter.com/kevinmontrose/status/818489828740317184'&gt;&lt;img src=&quot;http://i.imgur.com/x2IuwnM.png&quot; alt=&quot;tweet&quot; /&gt;&lt;/a&gt; &lt;a href='https://twitter.com/zahmed/status/639419712250728448'&gt;&lt;img src=&quot;http://i.imgur.com/ZogU8Fw.png&quot; alt=&quot;tweet&quot; /&gt;&lt;/a&gt; &lt;a href='https://twitter.com/Scooletz/status/664428811606474753'&gt;&lt;img src=&quot;http://i.imgur.com/1biY92z.png&quot; alt=&quot;tweet&quot; /&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Thanks again to &lt;a href='https://twitter.com/kevinmontrose'&gt;Kevin&lt;/a&gt;, and the wider community.&lt;/p&gt;&lt;h3&gt;&lt;a name=&quot;links&quot;&gt;&lt;/a&gt;Links&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;Jil &lt;a href='https://github.com/kevin-montrose/Jil'&gt;GitHub&lt;/a&gt;&lt;/li&gt;&lt;li&gt;Sigil &lt;a href='https://github.com/kevin-montrose/Sigil'&gt;GitHub&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;h3&gt;&lt;a name=&quot;alternatives&quot;&gt;&lt;/a&gt;Alternatives&lt;/h3&gt;&lt;p&gt;Alternatives include the widely used NewtonSoft.Json. Even the Jil documentation suggests that it's focus on speed &lt;a href='https://github.com/kevin-montrose/Jil/wiki/Common-Pitfalls'&gt;can hinder usability&lt;/a&gt;, so do consider how appropriate it is. &lt;/p&gt;&lt;blockquote&gt;&lt;p&gt; Jil can be more difficult to use than other JSON libraries due to it's focus on speed, rather than flexibility or ease of use, above all else. &lt;/p&gt;&lt;/blockquote&gt;&lt;p&gt;&lt;a href='http://www.newtonsoft.com/json'&gt;Newtonsoft.Json&lt;/a&gt; added dotnet core support in it's v9.0.1 release, and has had over 50,000,000 downloads on NuGet.&lt;/p&gt;&lt;p&gt;If you don't want to keep checking back for more posts in this series but do want an email in your inbox then you can subscribe to the mailing list below.&lt;/p&gt;&lt;p&gt;&lt;link href=&quot;//cdn-images.mailchimp.com/embedcode/slim-10_7.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt; &lt;div id=&quot;mc&lt;i&gt;embed&lt;/i&gt;signup&quot;&gt; &lt;form action=&quot;//xyz.us15.list-manage.com/subscribe/post?u=b6063259bae6e4712948e9cb9&amp;amp;id=802d24879d&quot; method=&quot;post&quot; id=&quot;mc-embedded-subscribe-form&quot; name=&quot;mc-embedded-subscribe-form&quot; class=&quot;validate&quot; target=&quot;_blank&quot; novalidate&gt; &lt;div id=&quot;mc&lt;i&gt;embed&lt;/i&gt;signup_scroll&quot;&gt; &lt;label for=&quot;mce-EMAIL&quot;&gt;Subscribe to dotnet core package a day emails &lt;/label&gt; &lt;br /&gt; &lt;input style=&quot;padding:2px;&quot; type=&quot;email&quot; value=&quot;&quot; name=&quot;EMAIL&quot; class=&quot;email&quot; id=&quot;mce-EMAIL&quot; placeholder=&quot; email address&quot; required&gt; &lt;!&amp;ndash; real people should not fill this in and expect good things - do not remove this or risk form bot signups&amp;ndash;&gt; &lt;div style=&quot;position: absolute; left: -5000px;&quot; aria-hidden=&quot;true&quot;&gt;&lt;input type=&quot;text&quot; name=&quot;b&lt;i&gt;b6063259bae6e4712948e9cb9&lt;/i&gt;802d24879d&quot; tabindex=&quot;-1&quot; value=&quot;&quot;&gt;&lt;/div&gt; &lt;input style=&quot;padding:2px;&quot; type=&quot;submit&quot; value=&quot;Subscribe&quot; name=&quot;subscribe&quot; id=&quot;mc-embedded-subscribe&quot; class=&quot;button&quot;&gt;&lt;/div&gt; &lt;/div&gt; &lt;/form&gt; &lt;/div&gt;&lt;/p&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Sun, 26 Mar 2017 00:00:00 +0000
+</pubDate>
+</item>
 <item>
 <guid>
 http://markwoodhall.com/25-03-2017-dotnetcore-package-a-day-6/
