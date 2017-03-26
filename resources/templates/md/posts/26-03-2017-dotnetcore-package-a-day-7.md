@@ -32,11 +32,11 @@ Thanks again to [Kevin](https://twitter.com/kevinmontrose), and the wider commun
 
 ### Alternatives
 
-Alternatives include the widely used NewtonSoft.Json. Even the Jil documentation suggests that it's focus on speed [can hinder usability](https://github.com/kevin-montrose/Jil/wiki/Common-Pitfalls), so do consider how appropriate it is. 
+Alternatives include the widely used [Newtonsoft.Json](http://www.newtonsoft.com/json). Even the Jil documentation suggests that it's focus on speed [can hinder usability](https://github.com/kevin-montrose/Jil/wiki/Common-Pitfalls), so do consider how appropriate it is. 
 
 > Jil can be more difficult to use than other JSON libraries due to it's focus on speed, rather than flexibility or ease of use, above all else.
 
-[Newtonsoft.Json](http://www.newtonsoft.com/json) added dotnet core support in it's v9.0.1 release, and has had over 50,000,000 downloads on NuGet.
+Newtonsoft.Json added dotnet core support in it's v9.0.1 release, and has had over 50,000,000 downloads on NuGet.
 
 If you don't want to keep checking back for more posts in this series but do want an email in your inbox then you can subscribe to the mailing list below.
 
