@@ -42,11 +42,11 @@ Mapster is a good alternative that also has dotnet core (.net standard 1.3) supp
 
 > A fast, fun and stimulating object to object mapper. Kind of like AutoMapper, just simpler and way, way faster*.
 
-If you don't want to keep checking back for more posts in this series but do want an email in your inbox then you can subscribe to the mailing list below.
-
 *AutoMapper has made significant performance improvements since it's v4.2.1 release. [Benchmarks](https://lostechies.com/jimmybogard/2016/06/24/automapper-5-0-speed-increases/), [More Benchmarks](http://geekswithblogs.net/mrsteve/archive/2016/12/28/object-mapper-performance-comparison-allowpartiallytrustedcallers.aspx)
 
 [![tweet](http://i.imgur.com/n9UjcjP.png)](https://twitter.com/jbogard/status/845042238396796929)
+
+If you don't want to keep checking back for more posts in this series but do want an email in your inbox then you can subscribe to the mailing list below.
 
 <link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css">
 <div id="mc_embed_signup">
