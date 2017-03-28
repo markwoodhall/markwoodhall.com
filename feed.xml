@@ -12,11 +12,31 @@ http://markwoodhall.com
 Just a software blog
 </description>
 <lastBuildDate>
-Mon, 27 Mar 2017 21:03:50 +0000
+Tue, 28 Mar 2017 20:15:29 +0100
 </lastBuildDate>
 <generator>
 clj-rss
 </generator>
+<item>
+<guid>
+http://markwoodhall.com/28-03-2017-dotnetcore-package-a-day-9/
+</guid>
+<link>
+http://markwoodhall.com/28-03-2017-dotnetcore-package-a-day-9/
+</link>
+<title>
+Npgsql - dotnet core package a day - 9
+</title>
+<description>
+&lt;h3&gt;&lt;a name=&quot;overview&quot;&gt;&lt;/a&gt;Overview&lt;/h3&gt;&lt;p&gt;This post is part of a series, dotnet core package a day, where for 15 days I will be posting an overview of an awesome OSS dotnet package that already has support for dotnet core. In this post we will cover &lt;a href='https://github.com/jbogard/Npgsql'&gt;Npgsql&lt;/a&gt;.  &lt;/p&gt;&lt;blockquote&gt;&lt;p&gt; Npgsql is an open source ADO.NET Data Provider for PostgreSQL, it allows programs written in C#, Visual Basic, F# to access the PostgreSQL database server. It is implemented in 100% C# code, is free and is open source. &lt;/p&gt;&lt;p&gt; In addition, providers have been written for Entity Framework Core and for Entity Framework 6.x. &lt;/p&gt;&lt;/blockquote&gt;&lt;p&gt;Npgsql is by far the most popular dotnet data provider for PostgreSQL. At the time of writing it has 987,642 downloads on NuGet. The publish of it's v3.1.0 release to NuGet on the 16th May 2016 added support for dotnet core (.net standard 1.3), that is pretty impressive.&lt;/p&gt;&lt;p&gt;Npgsql development is led by &lt;a href='https://twitter.com/shayrojansky'&gt;Shay Rojansky&lt;/a&gt;, it is under active development and there have been contributions from ~60 individuals.&lt;/p&gt;&lt;p&gt;I've only recently started to use PostgreSQL so Npgsql is still quite new to me. I'm enjoying using it so far. For anyone who is already familiar with dotnet database drivers it is easy to use and will look very familiar.&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt; Npgsql aims to be fully ADO.NET-compatible, its API should feel almost identical to other .NET database drivers. Here's a basic code snippet to get you started. &lt;/p&gt;&lt;/blockquote&gt;&lt;h3&gt;&lt;a name=&quot;what&amp;#95;the&amp;#95;community&amp;#95;thinks&quot;&gt;&lt;/a&gt;What the community thinks&lt;/h3&gt;&lt;p&gt;&lt;a href='https://twitter.com/FransBouma/status/840857586178129920'&gt;&lt;img src=&quot;http://i.imgur.com/BDWmdgd.png&quot; alt=&quot;tweet&quot; /&gt;&lt;/a&gt; &lt;a href='https://twitter.com/shayrojansky/status/844238439117737984'&gt;&lt;img src=&quot;http://i.imgur.com/WBYlKSQ.png&quot; alt=&quot;tweet&quot; /&gt;&lt;/a&gt; &lt;a href='https://twitter.com/oss_csharp/status/842697581130145792'&gt;&lt;img src=&quot;http://i.imgur.com/RI0i0Lb.png&quot; alt=&quot;tweet&quot; /&gt;&lt;/a&gt;&lt;/p&gt;&lt;h3&gt;&lt;a name=&quot;links&quot;&gt;&lt;/a&gt;Links&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;Npgsql &lt;a href='http://www.npgsql.org/'&gt;Website&lt;/a&gt;&lt;/li&gt;&lt;li&gt;Npgsql &lt;a href='https://github.com/npgsql/npgsql'&gt;GitHub&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://www.npgsql.org/doc/index.html'&gt;Getting Started Guide&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Massive thanks to &lt;a href='https://twitter.com/shayrojansky'&gt;Shay&lt;/a&gt; and the community.&lt;/p&gt;&lt;p&gt;If you don't want to keep checking back for more posts in this series but do want an email in your inbox then you can subscribe to the mailing list below.&lt;/p&gt;&lt;p&gt;&lt;link href=&quot;//cdn-images.mailchimp.com/embedcode/slim-10_7.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt; &lt;div id=&quot;mc&lt;i&gt;embed&lt;/i&gt;signup&quot;&gt; &lt;form action=&quot;//xyz.us15.list-manage.com/subscribe/post?u=b6063259bae6e4712948e9cb9&amp;amp;id=802d24879d&quot; method=&quot;post&quot; id=&quot;mc-embedded-subscribe-form&quot; name=&quot;mc-embedded-subscribe-form&quot; class=&quot;validate&quot; target=&quot;_blank&quot; novalidate&gt; &lt;div id=&quot;mc&lt;i&gt;embed&lt;/i&gt;signup_scroll&quot;&gt; &lt;label for=&quot;mce-EMAIL&quot;&gt;Subscribe to dotnet core package a day emails &lt;/label&gt; &lt;br /&gt; &lt;input style=&quot;padding:2px;&quot; type=&quot;email&quot; value=&quot;&quot; name=&quot;EMAIL&quot; class=&quot;email&quot; id=&quot;mce-EMAIL&quot; placeholder=&quot; email address&quot; required&gt; &lt;!&amp;ndash; real people should not fill this in and expect good things - do not remove this or risk form bot signups&amp;ndash;&gt; &lt;div style=&quot;position: absolute; left: -5000px;&quot; aria-hidden=&quot;true&quot;&gt;&lt;input type=&quot;text&quot; name=&quot;b&lt;i&gt;b6063259bae6e4712948e9cb9&lt;/i&gt;802d24879d&quot; tabindex=&quot;-1&quot; value=&quot;&quot;&gt;&lt;/div&gt; &lt;input style=&quot;padding:2px;&quot; type=&quot;submit&quot; value=&quot;Subscribe&quot; name=&quot;subscribe&quot; id=&quot;mc-embedded-subscribe&quot; class=&quot;button&quot;&gt;&lt;/div&gt; &lt;/div&gt; &lt;/form&gt; &lt;/div&gt;&lt;/p&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Tue, 28 Mar 2017 00:00:00 +0100
+</pubDate>
+</item>
 <item>
 <guid>
 http://markwoodhall.com/27-03-2017-dotnetcore-package-a-day-8/
@@ -34,7 +54,7 @@ MediatR - dotnet core package a day - 8
 
 </enclosure>
 <pubDate>
-Mon, 27 Mar 2017 00:00:00 +0000
+Mon, 27 Mar 2017 00:00:00 +0100
 </pubDate>
 </item>
 <item>
@@ -252,7 +272,7 @@ endfunction
 
 </enclosure>
 <pubDate>
-Sun, 12 Jun 2016 00:00:00 +0000
+Sun, 12 Jun 2016 00:00:00 +0100
 </pubDate>
 </item>
 <item>
@@ -272,7 +292,7 @@ What I've Learnt From 3 Years Remote Software Development
 
 </enclosure>
 <pubDate>
-Fri, 03 Jun 2016 00:00:00 +0000
+Fri, 03 Jun 2016 00:00:00 +0100
 </pubDate>
 </item>
 <item>
@@ -306,7 +326,7 @@ rm -rf ../public
 
 </enclosure>
 <pubDate>
-Fri, 27 May 2016 00:00:00 +0000
+Fri, 27 May 2016 00:00:00 +0100
 </pubDate>
 </item>
 <item>
@@ -326,7 +346,7 @@ My Clojure Workflow and Setup.
 
 </enclosure>
 <pubDate>
-Sat, 21 May 2016 00:00:00 +0000
+Sat, 21 May 2016 00:00:00 +0100
 </pubDate>
 </item>
 <item>
@@ -361,7 +381,7 @@ lein compile :all
 
 </enclosure>
 <pubDate>
-Mon, 16 May 2016 00:00:00 +0000
+Mon, 16 May 2016 00:00:00 +0100
 </pubDate>
 </item>
 <item>
@@ -381,7 +401,7 @@ Building a distributed in-memory key value store in Clojure.
 
 </enclosure>
 <pubDate>
-Thu, 12 May 2016 00:00:00 +0000
+Thu, 12 May 2016 00:00:00 +0100
 </pubDate>
 </item>
 <item>
@@ -401,7 +421,7 @@ Finally v1.0.0 of clj-ravendb, a RavenDB client for Clojure.
 
 </enclosure>
 <pubDate>
-Mon, 09 May 2016 00:00:00 +0000
+Mon, 09 May 2016 00:00:00 +0100
 </pubDate>
 </item>
 <item>
@@ -481,7 +501,7 @@ Event sourcing in Clojure.
 
 </enclosure>
 <pubDate>
-Mon, 04 May 2015 00:00:00 +0000
+Mon, 04 May 2015 00:00:00 +0100
 </pubDate>
 </item>
 <item>
@@ -731,7 +751,7 @@ tdo ls -s C
 
 </enclosure>
 <pubDate>
-Wed, 02 Jul 2014 00:00:00 +0000
+Wed, 02 Jul 2014 00:00:00 +0100
 </pubDate>
 </item>
 <item>
@@ -765,7 +785,7 @@ Failed to validate &amp;quot;-p 100000&amp;quot;: Must be a number between 0 and
 
 </enclosure>
 <pubDate>
-Thu, 26 Jun 2014 00:00:00 +0000
+Thu, 26 Jun 2014 00:00:00 +0100
 </pubDate>
 </item>
 <item>
@@ -785,7 +805,7 @@ Destructuring in Clojure.
 
 </enclosure>
 <pubDate>
-Mon, 23 Jun 2014 00:00:00 +0000
+Mon, 23 Jun 2014 00:00:00 +0100
 </pubDate>
 </item>
 <item>
@@ -806,7 +826,7 @@ Using RavenDB in Clojure, part three.
 
 </enclosure>
 <pubDate>
-Sun, 22 Jun 2014 00:00:00 +0000
+Sun, 22 Jun 2014 00:00:00 +0100
 </pubDate>
 </item>
 <item>
@@ -826,7 +846,7 @@ Using RavenDB in Clojure, part two.
 
 </enclosure>
 <pubDate>
-Sat, 21 Jun 2014 00:00:00 +0000
+Sat, 21 Jun 2014 00:00:00 +0100
 </pubDate>
 </item>
 <item>
@@ -850,7 +870,7 @@ Using RavenDB in Clojure, part one.
 
 </enclosure>
 <pubDate>
-Sat, 21 Jun 2014 00:00:00 +0000
+Sat, 21 Jun 2014 00:00:00 +0100
 </pubDate>
 </item>
 </channel>
