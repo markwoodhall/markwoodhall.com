@@ -12,11 +12,31 @@ http://markwoodhall.com
 Just a software blog
 </description>
 <lastBuildDate>
-Tue, 28 Mar 2017 20:15:29 +0100
+Wed, 29 Mar 2017 20:39:15 +0100
 </lastBuildDate>
 <generator>
 clj-rss
 </generator>
+<item>
+<guid>
+http://markwoodhall.com/29-03-2017-dotnetcore-package-a-day-10/
+</guid>
+<link>
+http://markwoodhall.com/29-03-2017-dotnetcore-package-a-day-10/
+</link>
+<title>
+RabbitMQ.Client - dotnet core package a day - 10
+</title>
+<description>
+&lt;h3&gt;&lt;a name=&quot;overview&quot;&gt;&lt;/a&gt;Overview&lt;/h3&gt;&lt;p&gt;This post is part of a series, dotnet core package a day, where for 15 days I will be posting an overview of an awesome OSS dotnet package that already has support for dotnet core. In this post we will cover &lt;a href='https://github.com/rabbitmq/rabbitmq-dotnet-client'&gt;RabbitMQ.Client&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;For those not familiar with RabbitMQ....&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt; RabbitMQ is a message broker. The principal idea is pretty simple: it accepts and forwards messages. You can think about it as a post office: when you send mail to the post box you're pretty sure that Mr. Postman will eventually deliver the mail to your recipient. Using this metaphor RabbitMQ is a post box, a post office and a postman. &lt;/p&gt;&lt;p&gt; The major difference between RabbitMQ and the post office is the fact that it doesn't deal with paper, instead it accepts, stores and forwards binary blobs of data ‒ messages. &lt;/p&gt;&lt;/blockquote&gt;&lt;p&gt;RabbitMQ.Client is a dotnet client driver for RabbitMQ. At the time of writing it has 1,330,872 downloads on NuGet. The publish of it's v4.0.0 release to NuGet on the 19th August 2016 added support for dotnet core (.net standard 1.5).&lt;/p&gt;&lt;p&gt;I've not been using RabbitMQ.Client for that long but it does feel a bit disjointed to me, I've seen other people say similar things too. Many people prefer to use distributed application frameworks like NServiceBus and MassTransit on top of RabbitMQ, these make use of the RabbitMQ.Client library but provide a more cohesive experience, in my opinion. The difficulty is that neither are currently available on dotnet core. The team at &lt;a href='https://particular.net/'&gt;Particular Software&lt;/a&gt; have &lt;a href='https://particular.net/blog/nservicebus-on-net-core-why-not'&gt;previously mentioned the MSMQ dependency as one of stumbling blocks of moving to dotnet core&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;RabbitMQ.Client development is led by the team at &lt;a href='https://pivotal.io/'&gt;Pivotal&lt;/a&gt;, it is under active development and there have been contributions from ~30 individuals. The team at &lt;a href='https://particular.net/'&gt;Particular Software&lt;/a&gt; are also contributors.&lt;/p&gt;&lt;h3&gt;&lt;a name=&quot;what&amp;#95;the&amp;#95;community&amp;#95;thinks&quot;&gt;&lt;/a&gt;What the community thinks&lt;/h3&gt;&lt;p&gt;&lt;a href='https://twitter.com/RabbitMQ/status/846697829729009664'&gt;&lt;img src=&quot;http://i.imgur.com/h34Lpda.png&quot; alt=&quot;tweet&quot; /&gt;&lt;/a&gt; &lt;a href='https://twitter.com/RabbitMQ/status/846697829729009664'&gt;&lt;img src=&quot;http://i.imgur.com/6Yr5PIV.png&quot; alt=&quot;tweet&quot; /&gt;&lt;/a&gt;&lt;/p&gt;&lt;h3&gt;&lt;a name=&quot;links&quot;&gt;&lt;/a&gt;Links&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;RabbitMQ &lt;a href='https://www.rabbitmq.com/'&gt;Website&lt;/a&gt;&lt;/li&gt;&lt;li&gt;RabbitMQ.Client &lt;a href='https://github.com/rabbitmq/rabbitmq-dotnet-client'&gt;GitHub&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://www.rabbitmq.com/tutorials/tutorial-one-dotnet.html'&gt;Getting Started Guide&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;h3&gt;&lt;a name=&quot;alternatives&quot;&gt;&lt;/a&gt;Alternatives&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='https://github.com/pardahlman/RawRabbit'&gt;RawRabbit&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Massive thanks to the team at &lt;a href='https://pivotal.io/'&gt;Pivotal&lt;/a&gt;, and the community.&lt;/p&gt;&lt;p&gt;If you don't want to keep checking back for more posts in this series but do want an email in your inbox then you can subscribe to the mailing list below.&lt;/p&gt;&lt;p&gt;&lt;link href=&quot;//cdn-images.mailchimp.com/embedcode/slim-10_7.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt; &lt;div id=&quot;mc&lt;i&gt;embed&lt;/i&gt;signup&quot;&gt; &lt;form action=&quot;//xyz.us15.list-manage.com/subscribe/post?u=b6063259bae6e4712948e9cb9&amp;amp;id=802d24879d&quot; method=&quot;post&quot; id=&quot;mc-embedded-subscribe-form&quot; name=&quot;mc-embedded-subscribe-form&quot; class=&quot;validate&quot; target=&quot;_blank&quot; novalidate&gt; &lt;div id=&quot;mc&lt;i&gt;embed&lt;/i&gt;signup_scroll&quot;&gt; &lt;label for=&quot;mce-EMAIL&quot;&gt;Subscribe to dotnet core package a day emails &lt;/label&gt; &lt;br /&gt; &lt;input style=&quot;padding:2px;&quot; type=&quot;email&quot; value=&quot;&quot; name=&quot;EMAIL&quot; class=&quot;email&quot; id=&quot;mce-EMAIL&quot; placeholder=&quot; email address&quot; required&gt; &lt;!&amp;ndash; real people should not fill this in and expect good things - do not remove this or risk form bot signups&amp;ndash;&gt; &lt;div style=&quot;position: absolute; left: -5000px;&quot; aria-hidden=&quot;true&quot;&gt;&lt;input type=&quot;text&quot; name=&quot;b&lt;i&gt;b6063259bae6e4712948e9cb9&lt;/i&gt;802d24879d&quot; tabindex=&quot;-1&quot; value=&quot;&quot;&gt;&lt;/div&gt; &lt;input style=&quot;padding:2px;&quot; type=&quot;submit&quot; value=&quot;Subscribe&quot; name=&quot;subscribe&quot; id=&quot;mc-embedded-subscribe&quot; class=&quot;button&quot;&gt;&lt;/div&gt; &lt;/div&gt; &lt;/form&gt; &lt;/div&gt;&lt;/p&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Wed, 29 Mar 2017 00:00:00 +0100
+</pubDate>
+</item>
 <item>
 <guid>
 http://markwoodhall.com/28-03-2017-dotnetcore-package-a-day-9/
