@@ -12,11 +12,31 @@ http://markwoodhall.com
 Just a software blog
 </description>
 <lastBuildDate>
-Wed, 29 Mar 2017 20:45:38 +0100
+Thu, 30 Mar 2017 21:43:03 +0100
 </lastBuildDate>
 <generator>
 clj-rss
 </generator>
+<item>
+<guid>
+http://markwoodhall.com/30-03-2017-dotnetcore-package-a-day-11/
+</guid>
+<link>
+http://markwoodhall.com/30-03-2017-dotnetcore-package-a-day-11/
+</link>
+<title>
+MailKit - dotnet core package a day - 11
+</title>
+<description>
+&lt;h3&gt;&lt;a name=&quot;overview&quot;&gt;&lt;/a&gt;Overview&lt;/h3&gt;&lt;p&gt;This post is part of a series, dotnet core package a day, where for 15 days I will be posting an overview of an awesome OSS dotnet package that already has support for dotnet core. In this post we will cover &lt;a href='https://github.com/jstedfast/MailKit'&gt;MailKit&lt;/a&gt;.&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt; MailKit is a cross-platform mail client library built on top of &lt;a href='https://github.com/jstedfast/MimeKit'&gt;MimeKit&lt;/a&gt;. &lt;/p&gt;&lt;p&gt; The main goal of this project is to provide the .NET world with robust, fully featured and RFC-compliant SMTP, POP3, and IMAP client implementations. &lt;/p&gt;&lt;p&gt; All of the other .NET IMAP client implementations that I could find suffer from major architectural problems such as ignoring unexpected untagged responses, assuming that literal string tokens will never be used for anything other than message bodies (when in fact they could be used for pretty much any string token in a response), assuming that the way to find the end of a message body in a FETCH response is by scanning for &quot;) UID&quot;, and not properly handling mailbox names with international characters to simply name a few. &lt;/p&gt;&lt;/blockquote&gt;&lt;p&gt;Since there is currently no support for System.Net.Mail.SmtpClient MailKit is by far the most recommended email client for dotnet core. At the time of writing it has 1,216,2492 downloads on NuGet. The publish of it's v1.4.0 release to NuGet on the 1st July 2016 added support for dotnet core (.net standard 1.3).&lt;/p&gt;&lt;p&gt;MailKit development is led by &lt;a href='twitter.com/jstedfast'&gt;Jeffrey Stedfast&lt;/a&gt;, it is under active development with contributions from a small community.&lt;/p&gt;&lt;h3&gt;&lt;a name=&quot;what&amp;#95;the&amp;#95;community&amp;#95;thinks&quot;&gt;&lt;/a&gt;What the community thinks&lt;/h3&gt;&lt;p&gt;&lt;a href='https://twitter.com/CsharpCorner/status/844311433240166401'&gt;&lt;img src=&quot;http://i.imgur.com/VAIUSuv.png&quot; alt=&quot;tweet&quot; /&gt;&lt;/a&gt; &lt;a href='http://i.imgur.com/AB36LL2.png](https://twitter.com/kshyju/status/806309223399325697'&gt;&lt;img src=&quot;http://i.imgur.com/AB36LL2.png&quot; alt=&quot;tweet&quot; /&gt;&lt;/a&gt; &lt;a href='https://twitter.com/woisttuza/status/758313541464195072'&gt;&lt;img src=&quot;http://i.imgur.com/BxzcKMB.png&quot; alt=&quot;tweet&quot; /&gt;&lt;/a&gt;&lt;/p&gt;&lt;h3&gt;&lt;a name=&quot;links&quot;&gt;&lt;/a&gt;Links&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;MailKit &lt;a href='https://github.com/jstedfast/MailKit'&gt;GitHub&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://www.mimekit.net'&gt;MimeKit&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;h3&gt;&lt;a name=&quot;alternatives&quot;&gt;&lt;/a&gt;Alternatives&lt;/h3&gt;&lt;p&gt;I'm not sure that there are currently any alternatives available on dotnet core but using the rest apis provided by services like MailGun and SendGrid is probably viable.&lt;/p&gt;&lt;p&gt;Massive thanks to &lt;a href='twitter.com/jstedfast'&gt;Jeffrey Stedfast&lt;/a&gt;, and the community.&lt;/p&gt;&lt;p&gt;If you don't want to keep checking back for more posts in this series but do want an email in your inbox then you can subscribe to the mailing list below.&lt;/p&gt;&lt;p&gt;&lt;link href=&quot;//cdn-images.mailchimp.com/embedcode/slim-10_7.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt; &lt;div id=&quot;mc&lt;i&gt;embed&lt;/i&gt;signup&quot;&gt; &lt;form action=&quot;//xyz.us15.list-manage.com/subscribe/post?u=b6063259bae6e4712948e9cb9&amp;amp;id=802d24879d&quot; method=&quot;post&quot; id=&quot;mc-embedded-subscribe-form&quot; name=&quot;mc-embedded-subscribe-form&quot; class=&quot;validate&quot; target=&quot;_blank&quot; novalidate&gt; &lt;div id=&quot;mc&lt;i&gt;embed&lt;/i&gt;signup_scroll&quot;&gt; &lt;label for=&quot;mce-EMAIL&quot;&gt;Subscribe to dotnet core package a day emails &lt;/label&gt; &lt;br /&gt; &lt;input style=&quot;padding:2px;&quot; type=&quot;email&quot; value=&quot;&quot; name=&quot;EMAIL&quot; class=&quot;email&quot; id=&quot;mce-EMAIL&quot; placeholder=&quot; email address&quot; required&gt; &lt;!&amp;ndash; real people should not fill this in and expect good things - do not remove this or risk form bot signups&amp;ndash;&gt; &lt;div style=&quot;position: absolute; left: -5000px;&quot; aria-hidden=&quot;true&quot;&gt;&lt;input type=&quot;text&quot; name=&quot;b&lt;i&gt;b6063259bae6e4712948e9cb9&lt;/i&gt;802d24879d&quot; tabindex=&quot;-1&quot; value=&quot;&quot;&gt;&lt;/div&gt; &lt;input style=&quot;padding:2px;&quot; type=&quot;submit&quot; value=&quot;Subscribe&quot; name=&quot;subscribe&quot; id=&quot;mc-embedded-subscribe&quot; class=&quot;button&quot;&gt;&lt;/div&gt; &lt;/div&gt; &lt;/form&gt; &lt;/div&gt;&lt;/p&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Thu, 30 Mar 2017 00:00:00 +0100
+</pubDate>
+</item>
 <item>
 <guid>
 http://markwoodhall.com/29-03-2017-dotnetcore-package-a-day-10/
