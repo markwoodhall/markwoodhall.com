@@ -15,7 +15,7 @@ This post is part of a series, dotnet core package a day, where for 15 days I wi
 >
 > All of the other .NET IMAP client implementations that I could find suffer from major architectural problems such as ignoring unexpected untagged responses, assuming that literal string tokens will never be used for anything other than message bodies (when in fact they could be used for pretty much any string token in a response), assuming that the way to find the end of a message body in a FETCH response is by scanning for ") UID", and not properly handling mailbox names with international characters to simply name a few.
 
-Since there is currently no support for System.Net.Mail.SmtpClient MailKit is by far the most recommended email client for dotnet core. At the time of writing it has 1,216,2492 downloads on NuGet. The publish of it's v1.4.0 release to NuGet on the 1st July 2016 added support for dotnet core (.net standard 1.3).
+Since there is currently no support for System.Net.Mail.SmtpClient MailKit is by far the most recommended email client for dotnet core. At the time of writing it has 1,216,249 downloads on NuGet. The publish of it's v1.4.0 release to NuGet on the 1st July 2016 added support for dotnet core (.net standard 1.3).
 
 MailKit development is led by [Jeffrey Stedfast](twitter.com/jstedfast), it is under active development with contributions from a small community.
 
