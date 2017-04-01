@@ -13,7 +13,7 @@ This post is part of a series, dotnet core package a day, where for 15 days I wi
 
 At the time of writing FluentValidation has 1,932,052 downloads on NuGet. The publish of it's v6.4.0 release to NuGet on the 3rd March 2017 added support for dotnet core (.net standard 1.0). It's v6.3.3 alpha release available via NuGet added support for dotnet core on the 27th May 2016 for those wishing to take an early release.
 
-FluentValidation has quite a long history in the dotnet community, It has been developed and maintained for a period of 8+ years now and in that time has been the "go to" validation library for many developers. I've used it on many projects and am super happy it now supports dotnet core.
+FluentValidation has quite a long history in the dotnet community, it has been developed and maintained for a period of 8+ years now and in that time has been the "go to" validation library for many developers. I've used it on a number of projects and am super happy it now supports dotnet core.
 
 FluentValidation development is led by [Jeremy Skinner](https://twitter.com/JeremySkinner), it is under active development with contributions has contributions from ~60 community members.
 
