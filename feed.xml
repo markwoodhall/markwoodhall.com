@@ -12,11 +12,31 @@ http://markwoodhall.com
 Just a software blog
 </description>
 <lastBuildDate>
-Fri, 31 Mar 2017 21:01:22 +0100
+Sat, 01 Apr 2017 21:28:37 +0100
 </lastBuildDate>
 <generator>
 clj-rss
 </generator>
+<item>
+<guid>
+http://markwoodhall.com/01-04-2017-dotnetcore-package-a-day-13/
+</guid>
+<link>
+http://markwoodhall.com/01-04-2017-dotnetcore-package-a-day-13/
+</link>
+<title>
+FluentValidation - dotnet core package a day - 13
+</title>
+<description>
+&lt;h3&gt;&lt;a name=&quot;overview&quot;&gt;&lt;/a&gt;Overview&lt;/h3&gt;&lt;p&gt;This post is part of a series, dotnet core package a day, where for 15 days I will be posting an overview of an awesome OSS dotnet package that already has support for dotnet core. In this post we will cover &lt;a href='https://github.com/JeremySkinner/FluentValidation'&gt;FluentValidation&lt;/a&gt;.&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt; A small validation library for .NET that uses a fluent interface and lambda expressions for building validation rules. Written by &lt;a href='http://www.jeremyskinner.co.uk'&gt;Jeremy Skinner&lt;/a&gt; and licensed under Apache 2. &lt;/p&gt;&lt;/blockquote&gt;&lt;p&gt;At the time of writing FluentValidation has 1,932,052 downloads on NuGet. The publish of it's v6.4.0 release to NuGet on the 3rd March 2017 added support for dotnet core (.net standard 1.0). It's v6.3.3 alpha release available via NuGet added support for dotnet core on the 27th May 2016 for those wishing to take an early release.&lt;/p&gt;&lt;p&gt;FluentValidation has quite a long history in the dotnet community, It has been developed and maintained for a period of 8+ years now and in that time has been the &quot;go to&quot; validation library for many developers. I've used it on many projects and am super happy it now supports dotnet core.&lt;/p&gt;&lt;p&gt;FluentValidation development is led by &lt;a href='https://twitter.com/JeremySkinner'&gt;Jeremy Skinner&lt;/a&gt;, it is under active development with contributions has contributions from ~60 community members.&lt;/p&gt;&lt;h3&gt;&lt;a name=&quot;what&amp;#95;the&amp;#95;community&amp;#95;thinks&quot;&gt;&lt;/a&gt;What the community thinks&lt;/h3&gt;&lt;p&gt;&lt;a href='https://twitter.com/angelochiello/status/835064257016385536'&gt;&lt;img src=&quot;http://i.imgur.com/8c2cSwC.png&quot; alt=&quot;tweet&quot; /&gt;&lt;/a&gt; &lt;a href='https://twitter.com/kamranayub/status/822169571771772929'&gt;&lt;img src=&quot;http://i.imgur.com/p5Hgjik.png&quot; alt=&quot;tweet&quot; /&gt;&lt;/a&gt; &lt;a href='https://twitter.com/JeremySkinner/status/837607665140396033'&gt;&lt;img src=&quot;http://i.imgur.com/PYkONOV.png&quot; alt=&quot;tweet&quot; /&gt;&lt;/a&gt;&lt;/p&gt;&lt;h3&gt;&lt;a name=&quot;links&quot;&gt;&lt;/a&gt;Links&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;FluentValidation &lt;a href='https://github.com/JeremySkinner/FluentValidation'&gt;GitHub&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='https://github.com/JeremySkinner/FluentValidation/wiki'&gt;Documentaton&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Massive thanks to &lt;a href='https://twitter.com/JeremySkinner'&gt;Jeremy Skinner&lt;/a&gt;, and the community.&lt;/p&gt;&lt;p&gt;If you don't want to keep checking back for more posts in this series but do want an email in your inbox then you can subscribe to the mailing list below.&lt;/p&gt;&lt;p&gt;&lt;link href=&quot;//cdn-images.mailchimp.com/embedcode/slim-10_7.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt; &lt;div id=&quot;mc&lt;i&gt;embed&lt;/i&gt;signup&quot;&gt; &lt;form action=&quot;//xyz.us15.list-manage.com/subscribe/post?u=b6063259bae6e4712948e9cb9&amp;amp;id=802d24879d&quot; method=&quot;post&quot; id=&quot;mc-embedded-subscribe-form&quot; name=&quot;mc-embedded-subscribe-form&quot; class=&quot;validate&quot; target=&quot;_blank&quot; novalidate&gt; &lt;div id=&quot;mc&lt;i&gt;embed&lt;/i&gt;signup_scroll&quot;&gt; &lt;label for=&quot;mce-EMAIL&quot;&gt;Subscribe to dotnet core package a day emails &lt;/label&gt; &lt;br /&gt; &lt;input style=&quot;padding:2px;&quot; type=&quot;email&quot; value=&quot;&quot; name=&quot;EMAIL&quot; class=&quot;email&quot; id=&quot;mce-EMAIL&quot; placeholder=&quot; email address&quot; required&gt; &lt;!&amp;ndash; real people should not fill this in and expect good things - do not remove this or risk form bot signups&amp;ndash;&gt; &lt;div style=&quot;position: absolute; left: -5000px;&quot; aria-hidden=&quot;true&quot;&gt;&lt;input type=&quot;text&quot; name=&quot;b&lt;i&gt;b6063259bae6e4712948e9cb9&lt;/i&gt;802d24879d&quot; tabindex=&quot;-1&quot; value=&quot;&quot;&gt;&lt;/div&gt; &lt;input style=&quot;padding:2px;&quot; type=&quot;submit&quot; value=&quot;Subscribe&quot; name=&quot;subscribe&quot; id=&quot;mc-embedded-subscribe&quot; class=&quot;button&quot;&gt;&lt;/div&gt; &lt;/div&gt; &lt;/form&gt; &lt;/div&gt;&lt;/p&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Sat, 01 Apr 2017 00:00:00 +0100
+</pubDate>
+</item>
 <item>
 <guid>
 http://markwoodhall.com/31-03-2017-dotnetcore-package-a-day-12/
