@@ -26,7 +26,7 @@ FluentValidation development is led by [Jeremy Skinner](https://twitter.com/Jere
 ### Links
 
 * FluentValidation [GitHub](https://github.com/JeremySkinner/FluentValidation)
-* [Documentaton](https://github.com/JeremySkinner/FluentValidation/wiki)
+* [Documentation](https://github.com/JeremySkinner/FluentValidation/wiki)
 
 Massive thanks to [Jeremy Skinner](https://twitter.com/JeremySkinner), and the community.
 
