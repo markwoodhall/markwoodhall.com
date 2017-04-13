@@ -28,6 +28,7 @@ When I'm not developing or learning new skills I enjoy ultra running, spending t
 - TSQL
 
 ### Products and technologies
+- [.NET Core](https://www.microsoft.com/net/core)
 - [ASP.NET MVC](http://www.asp.net/mvc)
 - [ASP.NET WebAPI](http://www.asp.net/web-api)
 - [RavenDB](http://ravendb.net)
@@ -66,6 +67,7 @@ When I'm not developing or learning new skills I enjoy ultra running, spending t
 - [vim-figwheel](https://github.com/markwoodhall/vim-figwheel) - Vim plugin to support working with [Figwheel](https://github.com/bhauman/lein-figwheel)
 - [clj-ravendb](https://github.com/markwoodhall/clj-ravendb) - Clojure client for RavenDB
 - [ravendb-py](https://github.com/firegrass/ravendb-py) - Python client for RavenDB
+- [vim-nuget](https://github.com/markwoodhall/vim-nuget) - NuGet integration for vim
 
 ## Contributions
 
@@ -75,6 +77,7 @@ When I'm not developing or learning new skills I enjoy ultra running, spending t
 - [omnisharp-vim](https://github.com/OmniSharp/omnisharp-vim)
 - [AutoFixture](https://github.com/AutoFixture/AutoFixture)
 - [ServiceStack](https://github.com/ServiceStack/ServiceStack)
+- [vim-test](https://github.com/janko-m/vim-test)
 
 # Experience
 
