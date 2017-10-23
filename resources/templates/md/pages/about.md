@@ -81,17 +81,9 @@ When I'm not developing or learning new skills I enjoy ultra running, spending t
 
 # Experience
 
-### [Open Energy Market](http://www.openenergymarket.com)
-#### Software Developer
-#####February 2017 to present
-
-Open Energy Market was established in 2013 to give a business a way to see the real cost of energy before they signed the contract. While it seems logical, no one had done it before. 
-
-My role at Open Energy Market involves working as part of a distributed, remote development team that is focused on driving forward the Open Energy Market energy buying platform.
-
 ### [ByBox](http://www.bybox.com)
 #### Software Developer
-#####June 2013 to February 2017
+#####June 2013 to Present
 
 ByBox manages more dropboxes than any other company in the UK, and delivers over 20 million parcels a year.  My role at ByBox involves working in a distributed, remote development team to constantly improve the technology platform and therefore the services offered to customers.
 
