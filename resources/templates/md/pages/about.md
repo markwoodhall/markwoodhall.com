@@ -24,6 +24,7 @@ When I'm not developing or learning new skills I enjoy ultra running, spending t
 - JavaScript
     - ES6
 - Clojure
+- ClojureScript
 - HTML/CSS
 - TSQL
 
@@ -35,16 +36,11 @@ When I'm not developing or learning new skills I enjoy ultra running, spending t
 - [NServiceBus](http://particular.net/nservicebus)
 - [elasticsearch](http://www.elasticsearch.org)
 - [Microsft SQL Server](http://en.wikipedia.org/wiki/Microsoft_SQL_Server)
-- [SignalR](http://signalr.net)
-- [Nancy](http://nancyfx.org)
-- [Castle Windsor](http://docs.castleproject.org/Default.aspx?Page=MainPage&NS=Windsor&AspxAutoDetectCookieSupport=1)
 - [Git](http://git-scm.com)
 - [Mercurial](http://mercurial.selenic.com)
 - [Docker](https://www.docker.com)
 - [Dokku](https://github.com/progrium/dokku)
 - [React](https://facebook.github.io/react/)
-- [Cordova](https://cordova.apache.org/)
-- [Ember](http://emberjs.com)
 
 ### Patterns and practices
 - [CQRS](http://martinfowler.com/bliki/CQRS.html)
@@ -73,11 +69,12 @@ When I'm not developing or learning new skills I enjoy ultra running, spending t
 
 - [yada](https://github.com/juxt/yada)
 - [clostache](https://github.com/fhd/clostache)
+- [vim-sayid](https://github.com/arsenerei/vim-sayid)
 - [vim-fsharp](https://github.com/fsharp/vim-fsharp)
+- [vim-test](https://github.com/janko-m/vim-test)
 - [omnisharp-vim](https://github.com/OmniSharp/omnisharp-vim)
 - [AutoFixture](https://github.com/AutoFixture/AutoFixture)
 - [ServiceStack](https://github.com/ServiceStack/ServiceStack)
-- [vim-test](https://github.com/janko-m/vim-test)
 
 # Experience
 
