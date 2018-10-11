@@ -5,7 +5,7 @@
 
 [Twitter](http://twitter.com/markwoodhall) | [Email](mailto:mark.woodhall@gmail.com) | [Skype](skype:markwoodhall1?call) | [Blog](http://www.markwoodhall.com)
 
-I'm Mark, a passionate, 32 year old software developer based in the West Midlands, England. I've spent the last 10+ years developing using C# on the .NET framework.
+I'm Mark, a passionate and enthusiastic software developer based in the West Midlands, England. I've spent the last 12+ years developing using a range of technologies.
 
 In that time I've used a range of technologies while continually learning and improving as both a developer and a team member.
 
@@ -20,11 +20,11 @@ When I'm not developing or learning new skills I enjoy ultra running, spending t
 # Skills
 
 ### Languages
+- Clojure
+- ClojureScript
 - C#
 - JavaScript
     - ES6
-- Clojure
-- ClojureScript
 - HTML/CSS
 - TSQL
 
@@ -78,9 +78,15 @@ When I'm not developing or learning new skills I enjoy ultra running, spending t
 
 # Experience
 
+### [JUXT](http://juxt.pro)
+#### Software Developer
+#####Feb 2018 to Present
+
+> JUXT delivers secure and compliant bespoke software applications and platforms: from the world's busiest websites to complex financial systems.
+
 ### [ByBox](http://www.bybox.com)
 #### Software Developer
-#####June 2013 to Present
+#####June 2013 to Feb 2018
 
 ByBox manages more dropboxes than any other company in the UK, and delivers over 20 million parcels a year.  My role at ByBox involves working in a distributed, remote development team to constantly improve the technology platform and therefore the services offered to customers.
 
