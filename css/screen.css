@@ -63,6 +63,9 @@ body {
     height: 100px;
     background-size: cover;
     background-image: url('../img/circle.png');
+    -webkit-border-radius: 62px; 
+    -moz-border-radius: 62px; 
+    border-radius: 62px;
 }
 
 .navbar-default .navbar-description {
