@@ -1,4 +1,5 @@
 {
-  "root": "/",
-  "clean_urls": false
+  "root": "public",
+  "clean_urls": false,
+  "error_page": "public/404.html"
 }
