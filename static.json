@@ -1,5 +1,5 @@
 {
   "root": "public",
   "clean_urls": false,
-  "error_page": "public/404.html"
+  "error_page": "404.html"
 }
