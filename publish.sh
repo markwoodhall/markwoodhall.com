@@ -7,5 +7,4 @@ git add .
 git commit . -m "Publish"
 git push origin master
 git push deploy master
-git push deploy2 master
 rm -rf ../public
