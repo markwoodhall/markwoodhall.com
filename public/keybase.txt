@@ -1,0 +1,73 @@
+==================================================================
+https://keybase.io/markwoodhall
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://markw.xyz
+  * I am markwoodhall (https://keybase.io/markwoodhall) on keybase.
+  * I have a public key with fingerprint 81B2 51EA B3B7 3978 E188  AA3D 2685 570E E328 B7C8
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "012086387c0478de2f53d99c9441b01dffa10df0b0670573555a0aafda30d8e354830a",
+      "fingerprint": "81b251eab3b73978e188aa3d2685570ee328b7c8",
+      "host": "keybase.io",
+      "key_id": "2685570ee328b7c8",
+      "kid": "01017cd7dfa4d70c47e1cdb5ae09a9ac84ec8b508473d585239d3d15125ac982b2410a",
+      "uid": "db1ffd23459fe4fcfbf3677236d41c19",
+      "username": "markwoodhall"
+    },
+    "service": {
+      "hostname": "markw.xyz",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1539540448,
+  "expire_in": 157680000,
+  "prev": "e6e95c25aa553ac165b09d3ac41cc92e90f30a80f7c208d0c0599e387ca3fee2",
+  "seqno": 28,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+
+owFtUmtMVEcUXpAWxKLU0lZqpOU2bFcl69zH7L13hRRqJRSEgi1BBVnm3pkL24Vd
+3F1YVhACzYK8FFtCxNBijRFibWM1AWwxrUUeBiEhrU1rfYCllCU0aaKIGoq9S0rS
+H50/kznzfd853zmnOWSVJshP68lc+5uuZ9hvxCtpsvo93jJKsmE3ZSyjLGT5IgWY
+OJwmixlTRgrQDBAMrMDLgOMFTBgFslgUZZHjaAnQWFEQDbACJGDgAeRZCCECCCkY
+sQALhIWcwAJERVOK2ZpH7EV2s9Wpygq0xECaIImVeFbkBUILAkIsZgwChDwghGUE
+iZcFlZhvc/gYanESchC92abG1Idpubz/wa/UDWhexjxWEId5IHM8oWUsQUSAiEQk
+CxyRBQkCgeNZDAXIsCJmMQ1pBiJZFBiJ4ejluouX5bBEKwpmWA6KCuEUWZEU1sDz
+DGvAHC3Tog/oIHYrKiQquhDZLS6bDeejggLqUDSl/pSYZeJrrs/Nf1H6UvdBlVxk
+tzltsq1ADec7nUUOo4/mdBf5cC4imf5VMElmK1YbqTJKiN1htlkpI60iZafZJ0lD
+VoQc4DghmiKlRWY7MZl9CMgbBKAeXx5SokoSAxGhvE/1iiBkkUwboATUBiBZdSOL
+DBGBoo5NAAovq/PHQAZQFIlvDRCrEMJQPlMHrDbKyKi5nChPFXWY86zIWWwn1KHg
+On82QOMXpNn0UmRA1YX02Ys9Yunk4bOxK9v3jL9v9TTBq0NXIsbOUE3V6aDKlIKK
+tBuTD3QXywZiUgCocQ43vLtxfWNMRNrs9VHT1q/2x9QXW/r/6HaVZHRuWdjXu+7y
+nfZL9pOhx9tqRjdvO+V+cqY/zNNSdeuuce/53+O++XW2bgv7RM6oq9qQ9rezOz8/
+eq5Vm0Olv4wvXe425MaLtYl7B+Ou7GwvHF26nxEVFVmXC7qCRz/ATxd1qZ6GzbUH
+W7O3t3onuPLes0d2XBE07DD1nhSRldtwNWvVUPL28I6Qrc12sbe6rUVvTtKe/mRc
+t6temlwfP6DblnC0f9jy+EDKrNze9Hrn4MjMkkv7Zrx053t3c5PY/Nx3z4/PjO2O
+tehr+qe5de9bPvrx88a1i2mvHZlKyPm68Wjfx6MOv8dvHbs3X+Ud9+s9E3Y7qWt3
+65J+ZED78IfOPSGuqMjxk44Sd4tlQ2bb/YnqPxNncv7SZ+8J9CSSgBPg02PXsvW/
+iA1rzkW4/A2JP2c+mzw151463ldQeVsM8G5KjH144cT0Z48s1VON9qjawcaZq4M3
+Fw8nVLg7rtcrnnl9/+qF/WLHWPh064t1CwsVWiHVnjnw9reVaXfXDKLyqvmBW8HX
+xCSY6gkM7+OFL8KGvnxELW0sNzTp7mXWBb4jD8x4o3eW2aK64pJvLKQPzVWH7CLn
+zkc9eGOi3P8F3amb+T8ljWlf/bCnMTC66CkKcb4SY/oH
+=GMwh
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/markwoodhall
+
+==================================================================
