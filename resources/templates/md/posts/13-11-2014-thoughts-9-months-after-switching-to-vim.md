@@ -167,7 +167,7 @@ Not only is it totally awesome but it started a chain of learning that I think w
 
 - NuGet support
 
-While there is some level of NuGet support outside of Visual Studio you can't rely on it for everything. Packages that use Visual Studios DTE will be problomatic.
+While there is some level of NuGet support outside of Visual Studio you can't rely on it for everything. Packages that use Visual Studios DTE will be problematic.
 
 - Pairing
 
