@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Mark Woodhall: Thoughts 9 months after switching to Vim for .NET.</title>
+    <link rel="canonical" href="http://markwoodhall.com/13-11-2014-thoughts-9-months-after-switching-to-vim/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/default.min.css">
+    <link href="/css/screen.css" rel="stylesheet" type="text/css" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@markwodhall" />
+    <meta name="twitter:description" content="Mark Woodhall - Just a software blog" />
+    <meta name="twitter:title" content="Thoughts 9 months after switching to Vim for .NET." />
+    <meta name="twitter:image" content="" />
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-56746791-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+
+
+<nav class="navbar navbar-default">
+
+    <div class="container">
+        <div id="navbar" class="">
+            <a class="navbar-brand" href="/">
+                <div class="navbar-brand-image"></div>
+            </a>
+        </div><!--/.nav-collapse -->
+    </div><!--/.container-fluid -->
+</nav>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div id="content">
+                
+<div id="post">
+    <div class="post-header">
+    <div id="post-meta" class="row">
+        <div class="col-lg-6">November 13, 2014</div>
+        
+    </div>
+    <h2>Thoughts 9 months after switching to Vim for .NET.</h2>
+</div>
+<div>
+    
+    <p>It was about 9 months ago that I first started trying to invest in using Vim. Up to then I'd spent nearly 100% of development time in Visual Studio. If I was playing around learning something new then I might use Sublime Text.</p><p>My first experience of Vim was some years ago and it was very brief, at the time I was doing some development in PHP and I remember, when initially firing up vim, thinking I'd downloaded the wrong thing. I moved quickly onto NuSphere PhpEd.</p><p>Fast forward a good few years and I decided to spend some time getting comfortable in Vim, initially by doing Clojure development. Once I felt comfortable I was ready to give .NET a go, hopefully I'd be productive enough to use it for the day job as well.</p><p>At this point I was mostly using terminal Vim on Windows. With the fantastic <a href='https://code.google.com/p/conemu-maximus5/'>ConEmu</a> I was able to get a really great setup with decent colour support in the terminal.</p><h2><a name="essential&#95;plugins"></a>Essential Plugins</h2><ul><li><a href='http://www.omnisharp.net/'>OmniSharp</a></li></ul><p>OmniSharp is just awesome. It is made up of a <a href='https://github.com/OmniSharp/omnisharp-vim'>client</a> and <a href='https://github.com/OmniSharp/omnisharp-server'>server</a>. The client consumes an API exposed by the server over HTTP. There are clients available for a number of text editors that allow us to make use of functionality from <a href='https://github.com/icsharpcode/NRefactory'>NRefactory</a>.</p><p>It gives us the following:</p><p>-	Code completion</p><ul><li>Find types, implementations and usages</li><li>Refactoring suggestions</li><li>Building</li><li>Test runner</li></ul><p>There is way more though, have a look at the <a href='https://github.com/OmniSharp/omnisharp-vim'>OmniSharp</a> github page.</p><ul><li><a href='https://github.com/kien/ctrlp.vim'>ctrlp</a></li></ul><p>ctrlp is a fuzzy file search plugin, for ReSharper users it gives you functionality like "Go to File". I use ctrlp so much, especially when I'm working on a project that follows good structural and naming conventions.</p><p>Again, this is very brief, there is much more to ctrlp so go and <a href='https://github.com/kien/ctrlp.vim'>check it out</a>.</p><ul><li><a href='https://github.com/scrooloose/nerdtree'>NerdTREE</a></li></ul><p>Although I'm finding files 99% of the time using CtrlP sometimes I do need that help you get from looking at a visual tree of files. NerdTREE allows easy file/directory navigation and manipulation. These days though I'm only using it to get a mental picture of the structure of unfamiliar projects.</p><ul><li><a href='https://github.com/Shougo/neocomplete.vim'>neocomplete</a></li></ul><p>In order to get code completion as you type you can install the neocomplete plugin, it is a little bit more complicated to install than some other plugins and it requires that you have a Vim install with Lua enabled.</p><h2><a name="improving&#95;the&#95;experience"></a>Improving the experience</h2><p>I think thats probably it for essential plugins, there are however a few more plugins that really improve the experience.</p><ul><li><a href='http://ctags.sourceforge.net/'>Exuberant Ctags</a></li></ul><p>This isnt actually a plugin but a command line utility that generates an index of all identifiers (tags) in a project, so for C# we end up with an index of classes, interfaces, methods etc. Using Vim you can easily navigate a project by tags. I like mapping <code>&lt;leader&gt;}</code> to jump to the tag under the cursor. <a href='https://github.com/kien/ctrlp.vim'>ctrlp</a> also has support for fuzzy match searching of tags.</p><ul><li><a href='https://github.com/kien/ctrlp.vim'>vim-csharp</a></li></ul><p>vim-csharp has a bunch of useful functionality for working with C# in Vim. I just use it as it provides better syntax highlighting than standard.</p><ul><li><a href='https://github.com/scrooloose/syntastic'>syntastic</a></li></ul><p>Syntastic is an awesome syntax checking plugin for Vim, it has support for lots of languages and shows syntax errors in a number of ways.</p><ul><li>A list of syntax errors in the location list</li><li>Shows the syntax error for the position of the cursor in the command window</li><li>Signs are displayed in the gutter for lines with syntax errors</li><li>Error ballons when the mouse is hovered over a syntax error</li><li>Parts of a line have syntax errors highlighted</li></ul><h2><a name="scaffolding"></a>Scaffolding</h2>In order to scaffold .NET solutions I'm making use of <a href='http://gruntjs.com/project-scaffolding'>grunt-init</a>. Its really easy to create templates of common .NET projects.<h2><a name="scripting"></a>Scripting</h2><p>While <a href='http://www.omnisharp.net/'>OmniSharp</a> provides good functionality for building and testing I decided to write a few simple scripts to handle that for me.</p><p>Initially these were PowerShell scripts. Since I was using the bash bundled with <a href='http://msysgit.github.io/'>mysysgit</a> as the shell for ConEmu I created bash aliases to make calling them simpler.</p><p>The following are the bash aliases I setup.</p><p><code>rmsb</code> - Recursively calls msbuild for all *.sln files in the current directory.</p><p><code>rtest</code> - Recursivly calls common tests runners for all *.Tests.&#42;.dll in the current directory.</p><p><code>rbt</code> - Calls rmsb and rtest</p><p><code>autocmd $cmd</code> - Watches the current directory for changes to &#42;.cs|&#42;.csproj|*.config etc and calls the specified command. So <code>autocmd rbt</code> watches and triggers a build/test when there are changes.</p><h2><a name="rolling&#95;with&#95;it"></a>Rolling with it</h2><p>I settled on this setup and stuck with it for 4-5 months. It was generally pretty awesome and I felt as productive as I was before. I was working on both personal projects and projects for my day job, developing great software at <a href='http://www.bybox.com/'>ByBox</a>.</p><h4><a name="little&#95;niggles"></a>Little niggles</h4>There were however a few little problems, some of them I'd spent a ridiculous number of hours trying to fix.<p>The biggest thing that I couldn't easily manage outside of Visual Studio was installing NuGet packages that had a dependency on the DTE environment, to this day there still isn't a good story for that.</p><p>I was also feeling a bit limited by terminal support in Windows and I had some annoying screen rendering issues with ConEmu and Vim. It was totally useable but I wanted it to be better.</p><h2><a name="big&#95;changes"></a>Big changes</h2><p>I'd seen screenshots and videos of other people using similar setups on Linux and OS X and everything was much more polished. I decided I should try it out, so instead of using my Windows VM I started using OS X on my iMac.</p><p>Now, I knew I could roll with using Mono for my personal projects but I also knew that wouldn't be possible for the day job. Even if I could reliably build all the projects with Mono, all of the related scripting would be reliant on PowerShell and Windows.</p><p>In an ideal world I'd have setup an SSH server on Windows, used iTerm2, SSH'd to the Windows box and called it a day but I had endless problems with terminal colors and weird cursor behaviour and a host of other little things.</p><p>So, in the end, I decided I should do as much as possible on OS X and decided on the following:</p><h4><a name="os&#95;x"></a>OS X</h4><ul><li>iTerm2/Tmux/Vim (With all the above mentioned plugins)</li><li>Source code (hg/git)</li><li>Port the <code>autocmd</code> alias mentioned above to bash</li><li>Bash scripting to <code>tar</code>, <code>gzip</code> and <code>scp</code> the current working directory to a mirror location on a remote box</li><li>Aliases to make <code>scp</code> operations easier.</li><li>- <code>scpmk</code> - Does a full copy of the working directory over SSH<ul><li><code>scpwd</code> - Does a partial copy of the working   directory over SSH based on differences reported by hg or git</li></ul></li><li><code>srcpd $pattern</code> - Does a copy of remote files matching <code>$pattern</code> via SSH to the working directory</li></ul></li><li>Aliases for <code>rmsb</code> and <code>rbt</code> that run over SSH and so build and test on Windows</li><li>The <code>rmsb</code> alias starts a background job to <code>srcpd /Packages/&#42;</code> so that NuGet packages are pulled down to OS X and the OmniSharp server can find them for code completion. If I had access to corporate VPN from OS X I'd just run NuGet locally and be done with it</li></ul><h4><a name="windows"></a>Windows</h4><ul><li>Msbuild, test runners, iisexpress, sql server</li><li>Sql server management studio (I am using the <a href='https://github.com/vim-scripts/dbext.vim'>dbext plugin</a> for Vim to run basic queries)</li><li>VPNS required for work that aren't compatible with OS X (Also aliased for easy use over SSH)</li><li>SSH server</li></ul><p>This structure makes it possible to:</p><ol><li>Clone a project on OS X using hg/git</li><li>Init that project on the remote Windows box, using <code>scpmk</code></li><li>Start an <code>autocmd rbt</code> in bash on OS X</li><li>Make some code changes using Vim on OS X</li><li>The <code>autocmd rbt</code> picks up the change, does an <code>scpwd</code> to copy the differences to the remote windows box and then issues the <code>rbt</code> command over SSH to run a build and test</li><li>Commit changes from OS X using hg/git</li></ol><p>This is all much nicer than it sounds and using the tools outside of Windows has been a much better experience. Keep in mind that I'm jumping through hoops that aren't relevant if you just make use of Mono, I can't really get away without building and testing on a Windows box.</p><p>Many of these issues will hopefully go away as the <a href='http://news.microsoft.com/2014/11/12/microsoft-takes-net-open-source-and-cross-platform-adds-new-development-capabilities-with-visual-studio-2015-net-2015-and-visual-studio-online/'>.NET platform becomes more open and we get compatability with Linux and OS X</a>. Its a great time to be doing .NET development.</p><h2><a name="the&#95;positives"></a>The positives</h2><ul><li>Transferable knowledge</li></ul><p>Using Vim as a primary editor for a variety of languages means that none of the investment is wasted. If you move onto a different language in the future its pretty certain Vim will have support for it.</p><ul><li>The command line</li></ul><p>Working using a combination of iTerm2, Tmux, Vim and SSH is really quite nice. It forces you to learn more about the command line and become less reliant on the mouse, ultimately I think this is a productivity win.</p><ul><li>Cross platform editor</li></ul><p>Since Vim is cross platform, again, the investment put into learning it means that you can take your development skills anywhere. Version controlling your dot files makes this pretty easy.</p><ul><li>Not relying on Visual Studio</li></ul><p>There is nothing wrong with Visual Studio but I think breaking the reliance is a good thing. Being able to do development in whatever environment suits you is a liberating feeling.</p><ul><li>Using Vim every day</li></ul><p>Not only is it totally awesome but it started a chain of learning that I think will change the way I develop for the better.</p><h2><a name="the&#95;negatives"></a>The negatives</h2><ul><li>NuGet support</li></ul><p>While there is some level of NuGet support outside of Visual Studio you can't rely on it for everything. Packages that use Visual Studios DTE will be problematic.</p><ul><li>Pairing</li></ul><p>Pairing with colleagues who may have an expectation that you are using Visual Studio can be awkward.</p><ul><li>Debugging</li></ul><p>Visual Studio has an awesome debugger. In some scenarios I'll fire it up just to debug an issue but mostly I've found that making subtle improvements to logging and tests not only help investigate the issue but also have a positive impact in the long term.</p><p>Here are a couple of videos.</p><p><iframe width="420" height="315" src="//www.youtube.com/embed/bl58hR1FpAI" frameborder="0" allowfullscreen></iframe></p><p><iframe width="420" height="315" src="//www.youtube.com/embed/73B3QHMqNRs" frameborder="0" allowfullscreen></iframe></p>
+</div>
+
+<div id="post-tags">
+    <b>Tags: </b>
+    
+    <a href="/tags/.net/">.net</a>
+    
+    <a href="/tags/vim/">vim</a>
+    
+</div>
+
+
+    <div id="prev-next">
+        
+        <a href="/16-11-2014-use-drip-to-make-your-clojure-applications-start-faster/">&laquo; Use drip to make your Clojure (or Java) application start faster.</a>
+        
+        
+        <a class="right" href="/11-11-2014-creating-clj-tdo-a-command-line-todo-list-part-two/">Creating clj-tdo, a command line todo list, part 2. &raquo;</a>
+        
+    </div>
+
+    
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//markwoodhall.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    
+
+
+</div>
+
+            </div>
+        </div>
+    </div>
+    <footer>Copyright &copy;  Mark Woodhall
+        <br />
+        <a href="/">Home</a> |
+        <a href="/about">About</a> |
+        <a href="/archives/">Archives</a> |
+        <a href="/feed.xml">Subscribe</a>
+        <p style="text-align: center;">Powered by <a href="http://cryogenweb.org">Cryogen</a></p></footer>
+</div>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="/js/highlight.pack.js" type="text/javascript"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

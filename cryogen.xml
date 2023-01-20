@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rss version='2.0' xmlns:atom='http://www.w3.org/2005/Atom'>
+<channel>
+<atom:link href='http://markwoodhall.com' rel='self' type='application/rss+xml'/>
+<title>
+Mark Woodhall
+</title>
+<link>
+http://markwoodhall.com
+</link>
+<description>
+Just a software blog
+</description>
+<lastBuildDate>
+Fri, 20 Jan 2023 09:52:14 +0000
+</lastBuildDate>
+<generator>
+clj-rss
+</generator>
+<item>
+<guid>
+http://markwoodhall.com/27-05-2016-deploying-cryogen-to-dokku-and-digital-ocean/
+</guid>
+<link>
+http://markwoodhall.com/27-05-2016-deploying-cryogen-to-dokku-and-digital-ocean/
+</link>
+<title>
+Deploying Cryogen to Dokku and Digital Ocean.
+</title>
+<description>
+&lt;p&gt; I've recently moved my blog away from &lt;a href='https://ghost.org/'&gt;Ghost Blog&lt;/a&gt; hosted at Digital Ocean.  While I enjoyed using &lt;a href='https://ghost.org/'&gt;Ghost&lt;/a&gt; I always found upgrading a bit of a pain and  wanted a little bit more control than it gave me.&lt;/p&gt;&lt;p&gt; I've used static site generators previously and this time opted to go with &lt;a href='http://cryogenweb.org/'&gt;Cryogen&lt;/a&gt;. I chose  it because it's written in Clojure using technology I like and am familiar with, it looks relatively complete and  gave a number of options for deployment.&lt;/p&gt;&lt;p&gt; This post is a guide to deploying a &lt;a href='http://cryogenweb.org/'&gt;Cryogen&lt;/a&gt; site using &lt;a href='https://github.com/dokku/dokku'&gt;Dokku&lt;/a&gt; to the cloud infrastructure at  Digital Ocean. In reality though, it's a guide to deploying to anywhere you can host &lt;a href='https://github.com/dokku/dokku'&gt;Dokku&lt;/a&gt;. I choose Digital Ocean because  it's easy and convenient to set &lt;a href='https://github.com/dokku/dokku'&gt;Dokku&lt;/a&gt; up.&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;setting&amp;#95;up&amp;#95;dokku&quot;&gt;&lt;/a&gt;Setting up Dokku&lt;/h2&gt;&lt;p&gt; You will need a Digital Ocean account, once you have one head over to their &lt;a href='https://cloud.digitalocean.com'&gt;management interface&lt;/a&gt; and login. You should  see a list of your current droplets. Click on the &quot;Create Droplet&quot; button highlighted below.&lt;/p&gt;&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/JrYNpxW.png&quot; alt=&quot;Create Droplet&quot; /&gt;&lt;/p&gt;&lt;p&gt;After you have clicked &quot;Create Droplet&quot; look for the &quot;One Click Apps&quot; tab.&lt;/p&gt;&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/kxgyEDy.png&quot; alt=&quot;One Click&quot; /&gt;&lt;/p&gt;&lt;p&gt;Then we are looking for the &lt;a href='https://github.com/dokku/dokku'&gt;Dokku&lt;/a&gt; image.&lt;/p&gt;&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/j3d5nAF.png&quot; alt=&quot;Dokku&quot; /&gt;&lt;/p&gt;&lt;p&gt;Next we select a size and region for our Droplet.&lt;/p&gt;&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/PVkhwZp.png&quot; alt=&quot;Size &amp; Region&quot; /&gt;&lt;/p&gt;&lt;p&gt;We configure any additional options, I usually add an ssh key and then click &quot;Create&quot;.&lt;/p&gt;&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/qn1dFMM.png&quot; alt=&quot;Options&quot; /&gt;&lt;/p&gt;&lt;p&gt;I want to setup a domain name to point at the &lt;a href='https://github.com/dokku/dokku'&gt;Dokku&lt;/a&gt; instance, so once the Droplet is created I make a note of the IP and head over to the &quot;Networking&quot; tab, below.&lt;/p&gt;&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/1tPlayj.png&quot; alt=&quot;Networking&quot; /&gt;&lt;/p&gt;&lt;p&gt;I then add a domain name for the IP address I made a note of, the domain name below just happens to be one I have spare.&lt;/p&gt;&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/hVv0Gmh.png&quot; alt=&quot;Domain&quot; /&gt;&lt;/p&gt;&lt;p&gt;With that out the way it should be possible to head to http://ultrarunn.in and see the &lt;a href='https://github.com/dokku/dokku'&gt;Dokku&lt;/a&gt; setup. I want to use the domain name I setup and I configure the use of virtual host naming, then I click &quot;Finish Setup&quot;.&lt;/p&gt;&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/z0IJTwt.png&quot; alt=&quot;Dokku Setup&quot; /&gt;&lt;/p&gt;&lt;p&gt;Now that is done we have a &lt;a href='https://github.com/dokku/dokku'&gt;Dokku&lt;/a&gt; instance that we can deploy to. In our case we will be able to do a:&lt;/p&gt;&lt;pre&gt;&lt;code&gt;git remote add deploy dokku@ultrarunn.in:ultrarunn.in # this will deploy to the root domain
+git remote add deploy dokku@ultrarunn.in:blog # this will deploy to the blog sub domain
+
+git push deploy master
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Right, let's get something to deploy.&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;cryogen&quot;&gt;&lt;/a&gt;Cryogen&lt;/h2&gt;&lt;p&gt;It's easy to get started with &lt;a href='http://cryogenweb.org/'&gt;Cryogen&lt;/a&gt;, in a suitable directory run the following.&lt;/p&gt;&lt;pre&gt;&lt;code&gt;lein new cryogen my-blog
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Then &lt;code&gt;cd my-blog&lt;/code&gt; and run &lt;code&gt;lein ring server&lt;/code&gt;. You should then see the default &lt;a href='http://cryogenweb.org/'&gt;Cryogen&lt;/a&gt; site in your default browser.&lt;/p&gt;&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/76qltCr.png&quot; alt=&quot;Default Cryogen&quot; /&gt;&lt;/p&gt;&lt;p&gt;Next, stop the ring server. While still in the &lt;code&gt;my-blog&lt;/code&gt; directory run &lt;code&gt;git init&lt;/code&gt; and &lt;code&gt;git remote add deploy dokku@ultrarunn.in:ultrarunn.in&lt;/code&gt;.&lt;/p&gt;&lt;p&gt;At this point I take a copy of everything in the &lt;code&gt;my-blog&lt;/code&gt; directory and  clear it down, apart from the git required files. I then move the contents of &lt;code&gt;resources/public&lt;/code&gt; from the copy I made of &lt;code&gt;my-blog&lt;/code&gt; into the root of the &lt;code&gt;my-blog&lt;/code&gt; folder and commit everything to the master branch.&lt;/p&gt;&lt;p&gt;I then add a &lt;code&gt;.env&lt;/code&gt; file in the root with the following contents.&lt;/p&gt;&lt;pre&gt;&lt;code&gt;export BUILDPACK&amp;#95;URL=https://github.com/markwoodhall/buildpack-nginx.git
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This instructs &lt;a href='https://github.com/dokku/dokku'&gt;Dokku&lt;/a&gt; to use the GitHub repo for it's build back. This build back is an nginx buildpack that supports static site generators, I didn't create it but forked it and made some small adjustments.&lt;/p&gt;&lt;p&gt;This buildpack also requires a &lt;code&gt;.static&lt;/code&gt; file to exist, so I run &lt;code&gt;touch .static&lt;/code&gt; and commit the changes to &lt;code&gt;master&lt;/code&gt;.&lt;/p&gt;&lt;p&gt;Now it's as easy as running a &lt;code&gt;git push deploy master&lt;/code&gt;.&lt;/p&gt;&lt;p&gt;After a couple of minutes (It's longer the first time as it downloads the buildpack, which is then cached) browsing to http://ultrarunn.in/blog should result in.&lt;/p&gt;&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/ylkBYfw.png&quot; alt=&quot;Result&quot; /&gt;&lt;/p&gt;&lt;p&gt;Note, the &lt;code&gt;/blog&lt;/code&gt; comes from Cryogens config and can be easily changed, if desired.&lt;/p&gt;&lt;p&gt;With all of that done I run &lt;code&gt;git checkout -b source&lt;/code&gt; and copy the contents from the copy I made of &lt;code&gt;my-blog&lt;/code&gt;, I then commit that to the source branch. This leaves us with &lt;code&gt;master&lt;/code&gt; containing the results of &lt;code&gt;lein ring server&lt;/code&gt; i.e. the static blog and &lt;code&gt;source&lt;/code&gt; containing the source code. Anytime I push &lt;code&gt;master&lt;/code&gt; to the &lt;code&gt;deploy&lt;/code&gt; remote I update the deployed blog. I then push the git repo to GitHub/BitBucket etc.&lt;/p&gt;&lt;p&gt;I ended up creating a less than perfect script to automate this somewhat. I checkout the &lt;code&gt;source&lt;/code&gt; branch, run &lt;code&gt;vim publish.sh&lt;/code&gt; and add the following.&lt;pre&gt;&lt;code&gt;cp -r resources/public ../public
+git checkout master
+cp -r ../public/&amp;#42; ./
+git add .
+git commit . -m &amp;quot;Publish&amp;quot;
+git push origin master
+git push deploy master
+rm -rf ../public
+ &lt;/code&gt;&lt;/pre&gt; I then commit &lt;code&gt;publish.sh&lt;/code&gt;, run &lt;code&gt;lein ring server&lt;/code&gt; and then kill it. Running &lt;code&gt;publish.sh&lt;/code&gt; while on the &lt;code&gt;source&lt;/code&gt; branch will copy the static content from &lt;code&gt;resources/public&lt;/code&gt;, stash it a level higher up in &lt;code&gt;../public&lt;/code&gt;, checkout the &lt;code&gt;master&lt;/code&gt; branch, copy &lt;code&gt;../public/&amp;#42;&lt;/code&gt; back in and commit the change. After which it will push to &lt;code&gt;deploy&lt;/code&gt; and &lt;code&gt;master&lt;/code&gt;.&lt;/p&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Fri, 27 May 2016 00:00:00 +0100
+</pubDate>
+</item>
+</channel>
+</rss>
